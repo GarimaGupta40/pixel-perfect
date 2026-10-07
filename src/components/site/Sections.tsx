@@ -25,7 +25,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) {
+        if (e?.isIntersecting) {
           el.classList.add("is-visible");
           io.disconnect();
         }
@@ -297,7 +297,7 @@ export function Capabilities() {
               ))}
               <div className="absolute bottom-0 left-0 bg-navy px-6 py-4">
                 <p className="eyebrow text-navy-foreground">
-                  <span className="text-primary">{String(active + 1).padStart(2, "0")}</span> / {CAPS[active].t}
+                  <span className="text-primary">{String(active + 1).padStart(2, "0")}</span> / {CAPS[active]?.t}
                 </p>
               </div>
             </div>
@@ -344,7 +344,7 @@ export function Industries() {
                 />
               ))}
               <p className="eyebrow absolute left-0 top-0 bg-primary px-4 py-3 text-primary-foreground">
-                {String(active + 1).padStart(2, "0")} — {INDUSTRIES[active].t}
+                {String(active + 1).padStart(2, "0")} — {INDUSTRIES[active]?.t}
               </p>
             </div>
             <img src={evaporator} alt="Stainless steel evaporator system" loading="lazy" className="col-span-2 hidden h-full min-h-[250px] w-full object-cover sm:block" />
@@ -508,7 +508,7 @@ function CountUp({ to }: { to: number }) {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
+      if (!e?.isIntersecting) return;
       io.disconnect();
       const start = performance.now();
       const tick = (t: number) => {
