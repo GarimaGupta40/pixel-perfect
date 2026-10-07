@@ -1,24 +1,68 @@
 import { createFileRoute } from "@tanstack/react-router";
+import {
+  Navbar,
+  Hero,
+  Intro,
+  Lifecycle,
+  Capabilities,
+  Industries,
+  Manufacturing,
+  EngineeringDesign,
+  Why,
+  ProjectExperience,
+  WhoWeServe,
+  FinalCta,
+  Footer,
+} from "@/components/site/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Lexus India Engineering Solutions | Engineering, Fabrication & EPC";
+const DESC =
+  "Engineering, fabrication and project execution for process industries — plant design, equipment manufacturing, site execution and commissioning. Pune, India.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Lexus India Engineering Solutions",
+  alternateName: "3A-Engg. Solution",
+  address: [
+    { "@type": "PostalAddress", streetAddress: "Shivaji Nagar", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
+    { "@type": "PostalAddress", streetAddress: "MIDC, Bhosari", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
+  ],
+};
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Intro />
+        <Lifecycle />
+        <Capabilities />
+        <Industries />
+        <Manufacturing />
+        <EngineeringDesign />
+        <Why />
+        <ProjectExperience />
+        <WhoWeServe />
+        <FinalCta />
+      </main>
+      <Footer />
+    </>
   );
 }
