@@ -170,4 +170,80 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .slow-zoom { animation: none; }
+  html { scroll-behavior: auto; }
+  .lifecycle-progress, .lifecycle-marker { transition: none !important; }
+}
+
+/* Image-led opening: keep the plant legible while preserving a quiet text field. */
+.hero-image-wash {
+  background:
+    linear-gradient(90deg, color-mix(in oklab, var(--overlay) 58%, transparent) 0%, color-mix(in oklab, var(--overlay) 24%, transparent) 47%, transparent 82%),
+    linear-gradient(0deg, color-mix(in oklab, var(--overlay) 54%, transparent) 0%, transparent 42%);
+}
+
+/* A selectable process rail that reorients from a horizontal sequence to a vertical one. */
+.lifecycle-axis {
+  left: 7px;
+  top: 11px;
+  bottom: 131px;
+  width: 1px;
+  background: var(--steel);
+}
+.lifecycle-progress {
+  left: 6px;
+  top: 11px;
+  bottom: 131px;
+  width: 3px;
+  background: var(--primary);
+  transform: scaleY(var(--progress));
+  transform-origin: top;
+  transition: transform 500ms cubic-bezier(.2,.75,.25,1);
+}
+.lifecycle-track > li { min-height: 142px; }
+.lifecycle-stage { min-height: 100%; }
+.lifecycle-marker { transition-duration: 300ms; }
+
+@media (min-width: 1024px) {
+  .lifecycle-axis {
+    left: 7px;
+    right: 14.2857%;
+    top: 7px;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+  }
+  .lifecycle-progress {
+    left: 7px;
+    top: 6px;
+    right: 14.2857%;
+    width: auto;
+    height: 3px;
+    transform: scaleX(var(--progress));
+    transform-origin: left;
+  }
+  .lifecycle-track > li { min-height: 0; }
+}
+
+/* Fine drafting cues frame the engineering image without competing with it. */
+.blueprint-section {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--steel-blue) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--steel-blue) 5%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center 3rem;
+}
+.blueprint-markers {
+  pointer-events: none;
+  background:
+    linear-gradient(var(--primary), var(--primary)) left 22px top 22px / 1px 34px no-repeat,
+    linear-gradient(var(--primary), var(--primary)) left 22px top 22px / 34px 1px no-repeat,
+    linear-gradient(var(--primary), var(--primary)) right 22px bottom 22px / 1px 34px no-repeat,
+    linear-gradient(var(--primary), var(--primary)) right 22px bottom 22px / 34px 1px no-repeat;
+  opacity: .8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lifecycle-progress { transition-duration: 0ms; }
+  .capability-image { transition: none !important; transform: none !important; }
 }

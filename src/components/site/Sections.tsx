@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, ArrowUpRight, Plus, Minus } from "lucide-react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import hero from "@/assets/hero-plant.jpg";
 import fabrication from "@/assets/fabrication.jpg";
 import engineering from "@/assets/engineering.jpg";
@@ -96,19 +96,18 @@ export function Hero() {
         width={1920}
         height={1088}
         fetchPriority="high"
-        className="slow-zoom absolute inset-0 h-full w-full object-cover"
+        className="slow-zoom absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="hero-overlay absolute inset-0" />
-      <div className="container-x relative flex flex-1 flex-col justify-center pb-12 pt-32">
+      <div className="hero-overlay hero-image-wash absolute inset-0" />
+      <div className="container-x relative flex flex-1 flex-col justify-center pb-14 pt-32">
         <Label light>Lexus India Engineering Solutions</Label>
         <h1 className="headline mt-6 max-w-5xl text-[2.6rem] sm:text-6xl lg:text-[5.5rem]">
           Engineering complexity.
           <br />
           <span className="text-navy-foreground/75">Built for real-world execution.</span>
         </h1>
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-navy-foreground/85 sm:text-lg">
-          Engineering, fabrication and project execution solutions for process industries — from plant design and
-          equipment manufacturing to site execution and commissioning.
+        <p className="mt-7 max-w-xl text-base leading-relaxed text-navy-foreground/90 sm:text-lg">
+          Integrated engineering, fabrication and execution for process plants.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a href="#contact" className="btn-primary">
@@ -139,41 +138,59 @@ export function Hero() {
 /* ---------- intro ---------- */
 export function Intro() {
   return (
-    <section id="about" className="py-24 lg:py-36">
-      <div className="container-x grid gap-14 lg:grid-cols-12 lg:gap-10">
-        <Reveal className="lg:col-span-6">
+    <section id="about" className="overflow-hidden py-24 lg:py-36">
+      <div className="container-x">
+        <Reveal>
           <Label>01 — Who we are</Label>
-          <h2 className="headline mt-6 text-4xl text-navy sm:text-5xl lg:text-6xl">
+          <h2 className="headline mt-7 max-w-5xl text-4xl text-navy sm:text-6xl lg:text-[5.4rem]">
             Engineering capability.
             <br />
             <span className="text-steel-blue">Execution that connects it.</span>
           </h2>
-          <div className="mt-10 max-w-lg border-l-2 border-primary pl-6">
-            <p className="text-lg leading-relaxed">
-              Lexus India Engineering Solutions combines engineering design, equipment fabrication, EPC execution and
-              site services to support complex process-industry projects across multiple stages of the project.
-            </p>
-            <p className="eyebrow mt-6 text-muted-foreground">Also referred to as 3A-Engg. Solution</p>
-          </div>
         </Reveal>
-        <Reveal className="lg:col-span-6" delay={150}>
-          <figure>
-            <div className="overflow-hidden">
-              <img
-                src={fabrication}
-                alt="Stainless steel process column shell being welded in a fabrication workshop"
-                width={1600}
-                height={1104}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.03] lg:aspect-[5/6]"
-              />
+        <div className="relative mt-12 grid items-start gap-10 lg:mt-16 lg:grid-cols-12">
+          <Reveal className="relative z-10 lg:col-span-4 lg:pt-16">
+            <div className="max-w-md border-l-2 border-primary pl-6">
+              <p className="text-lg leading-relaxed">
+                Lexus India Engineering Solutions combines engineering design, equipment fabrication, EPC execution and
+                site services to support complex process-industry projects across multiple stages of the project.
+              </p>
+              <p className="eyebrow mt-6 text-muted-foreground">Also referred to as 3A-Engg. Solution</p>
             </div>
-            <figcaption className="eyebrow mt-4 flex justify-between border-t border-border pt-4 text-muted-foreground">
-              <span>Fabrication / Working facility</span>
-              <span>MIDC, Bhosari, Pune</span>
-            </figcaption>
-          </figure>
-        </Reveal>
+            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-border pt-6">
+              <div>
+                <span className="font-display text-4xl font-extrabold leading-none text-primary">01</span>
+                <p className="eyebrow mt-3 text-steel-blue">Design to detail</p>
+              </div>
+              <div>
+                <span className="font-display text-4xl font-extrabold leading-none text-primary">02</span>
+                <p className="eyebrow mt-3 text-steel-blue">Plan to plant</p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal className="relative lg:col-span-7 lg:col-start-6 lg:-mt-10" delay={150}>
+            <figure className="relative">
+              <div className="overflow-hidden">
+                <img
+                  src={fabrication}
+                  alt="Stainless steel process column shell being welded in a fabrication workshop"
+                  width={1600}
+                  height={1104}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover lg:aspect-[1.12/1]"
+                />
+              </div>
+              <span aria-hidden className="absolute -left-3 -top-3 h-16 w-16 border-l border-t border-primary lg:-left-5 lg:-top-5 lg:h-24 lg:w-24" />
+              <figcaption className="eyebrow mt-4 flex flex-wrap justify-between gap-2 border-t border-border pt-4 text-muted-foreground">
+                <span>Fabrication / Working facility</span>
+                <span>MIDC, Bhosari, Pune</span>
+              </figcaption>
+            </figure>
+          </Reveal>
+          <p className="eyebrow flex items-center gap-3 text-steel-blue lg:absolute lg:bottom-8 lg:left-0 lg:w-4/12">
+            <span className="h-px w-8 bg-primary" />Integrated project delivery / India
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -191,6 +208,7 @@ const STAGES = [
 ];
 
 export function Lifecycle() {
+  const [active, setActive] = useState(0);
   return (
     <section className="border-y border-border bg-paper py-24 lg:py-32">
       <div className="container-x">
@@ -202,19 +220,37 @@ export function Lifecycle() {
           </h2>
           <p className="eyebrow text-steel-blue">Project lifecycle / 07 stages</p>
         </Reveal>
-        <ol className="relative mt-20 grid gap-0 lg:grid-cols-7">
-          <span aria-hidden className="absolute left-[7px] top-0 h-full w-px bg-steel lg:left-0 lg:top-[7px] lg:h-px lg:w-full" />
+        <ol className="lifecycle-track relative mt-16 grid gap-0 lg:mt-20 lg:grid-cols-7">
+          <span aria-hidden className="lifecycle-axis absolute" />
+          <span
+            aria-hidden
+            className="lifecycle-progress absolute"
+            style={
+              { "--progress": active / (STAGES.length - 1) } as CSSProperties & {
+                "--progress": number;
+              }
+            }
+          />
           {STAGES.map(([t, d], i) => (
-            <li key={t} className="relative pb-10 pl-10 lg:pb-0 lg:pl-0 lg:pr-6 lg:pt-12">
-              <span aria-hidden className="absolute left-0 top-1 h-[15px] w-[15px] border-2 border-primary bg-paper lg:top-0" />
-              <Reveal delay={i * 80}>
-                <span className="font-display text-5xl font-extrabold text-steel lg:text-6xl">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 font-display text-lg font-bold uppercase tracking-wide text-navy">{t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
-              </Reveal>
+            <li key={t} className="relative pb-0 pl-10 lg:pl-0 lg:pr-5 lg:pt-12">
+              <button
+                type="button"
+                onClick={() => setActive(i)}
+                aria-pressed={active === i}
+                aria-label={`Stage ${i + 1}: ${t}. ${d}`}
+                className="lifecycle-stage group relative z-10 block w-full text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                <span className={`lifecycle-marker absolute left-[-40px] top-1 flex h-[15px] w-[15px] items-center justify-center border-2 transition-colors lg:left-0 lg:top-[-42px] ${active >= i ? "border-primary bg-primary" : "border-steel bg-paper"}`}>
+                  {active === i && <span className="h-1 w-1 bg-paper" />}
+                </span>
+                <span className={`font-display text-4xl font-extrabold transition-colors lg:text-5xl ${active === i ? "text-primary" : "text-steel"}`}>{String(i + 1).padStart(2, "0")}</span>
+                <span className="mt-3 block font-display text-base font-bold uppercase tracking-wide text-navy lg:text-lg">{t}</span>
+                <span className={`mt-2 block max-w-[14rem] text-sm leading-relaxed transition-colors ${active === i ? "text-foreground" : "text-muted-foreground"}`}>{d}</span>
+              </button>
             </li>
           ))}
         </ol>
+        <p className="sr-only" aria-live="polite">Selected stage {active + 1} of 7: {STAGES[active]?.[0]}</p>
       </div>
     </section>
   );
@@ -232,6 +268,7 @@ const CAPS = [
 
 export function Capabilities() {
   const [active, setActive] = useState(0);
+  const activeCapability = CAPS[active] ?? CAPS[0]!;
   return (
     <section id="capabilities" className="py-24 lg:py-36">
       <div className="container-x">
@@ -249,57 +286,94 @@ export function Capabilities() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-12">
-          <ul className="border-t border-navy lg:col-span-6">
+        <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <ul className="border-t border-navy lg:col-span-5">
             {CAPS.map((c, i) => {
               const on = active === i;
               return (
-                <li key={c.t} className="border-b border-border">
+                <li key={c.t} className="relative border-b border-border">
                   <button
                     type="button"
                     onMouseEnter={() => setActive(i)}
                     onFocus={() => setActive(i)}
                     onClick={() => setActive(i)}
-                    aria-expanded={on}
-                    className="group flex w-full items-start gap-6 py-7 text-left"
+                    aria-pressed={on}
+                    className="group relative flex w-full items-center gap-5 py-6 pl-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:gap-6 lg:py-7"
                   >
-                    <span className={`font-display text-sm font-bold transition-colors ${on ? "text-primary" : "text-steel-blue"}`}>
+                    <span aria-hidden className={`absolute inset-y-0 left-0 w-[2px] origin-top bg-primary transition-transform duration-500 ${on ? "scale-y-100" : "scale-y-0"}`} />
+                    <span className={`font-display text-sm font-bold transition-colors ${on ? "text-primary" : "text-steel-blue/75"}`}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="flex-1">
-                      <span className={`block font-display text-xl font-extrabold uppercase tracking-tight transition-colors sm:text-2xl ${on ? "text-navy" : "text-foreground/55"}`}>
+                      <span className={`block font-display text-xl font-extrabold uppercase tracking-tight transition-colors sm:text-2xl lg:text-[1.65rem] ${on ? "text-navy" : "text-foreground/50 group-hover:text-navy/80"}`}>
                         {c.t}
                       </span>
-                      <span className={`grid transition-all duration-500 ${on ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                        <span className="overflow-hidden text-base leading-relaxed text-muted-foreground">
-                          {c.d}
-                          <img src={c.img} alt={c.alt} loading="lazy" className="mt-5 aspect-[16/10] w-full object-cover lg:hidden" />
-                        </span>
-                      </span>
                     </span>
-                    <span className="pt-1 text-steel-blue lg:hidden">{on ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}</span>
-                    <ArrowUpRight className={`hidden h-6 w-6 transition-all lg:block ${on ? "text-primary" : "-translate-x-2 text-transparent"}`} />
+                    <ArrowUpRight className={`h-5 w-5 shrink-0 transition-all duration-300 ${on ? "translate-x-0 text-primary" : "-translate-x-1 text-transparent group-hover:translate-x-0 group-hover:text-steel-blue"}`} />
                   </button>
                 </li>
               );
             })}
           </ul>
-          <div className="relative hidden lg:col-span-6 lg:block">
-            <div className="sticky top-28 aspect-[4/5] overflow-hidden bg-navy">
-              {CAPS.map((c, i) => (
-                <img
-                  key={c.t}
-                  src={c.img}
-                  alt={c.alt}
-                  loading="lazy"
-                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${active === i ? "scale-100 opacity-100" : "scale-105 opacity-0"}`}
-                />
-              ))}
-              <div className="absolute bottom-0 left-0 bg-navy px-6 py-4">
-                <p className="eyebrow text-navy-foreground">
-                  <span className="text-primary">{String(active + 1).padStart(2, "0")}</span> / {CAPS[active]?.t}
+          <div className="lg:col-span-7">
+            <div className="hidden lg:block">
+              <div className="sticky top-28">
+                <div className="relative aspect-[16/10] overflow-hidden bg-navy">
+                  {CAPS.map((c, i) => (
+                    <img
+                      key={c.t}
+                      src={c.img}
+                      alt={active === i ? c.alt : ""}
+                      aria-hidden={active !== i}
+                      loading="lazy"
+                      className={`capability-image absolute inset-0 h-full w-full object-cover transition-all duration-700 ${active === i ? "scale-100 opacity-100" : "scale-[1.035] opacity-0"}`}
+                    />
+                  ))}
+                </div>
+                <div className="mt-7 grid gap-6 border-t border-border pt-5 sm:grid-cols-[auto_1fr] sm:gap-8">
+                  <p className="eyebrow text-steel-blue">
+                    <span className="text-primary">{String(active + 1).padStart(2, "0")}</span>
+                    <span className="mx-2 text-border">/</span>
+                    06
+                  </p>
+                  <div>
+                    <h3 className="font-display text-2xl font-extrabold uppercase leading-tight tracking-tight text-navy lg:text-3xl">
+                      {activeCapability.t}
+                    </h3>
+                    <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+                      {activeCapability.d}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              </div>
+            <div className="mt-8 lg:hidden">
+              <div className="relative aspect-[16/10] overflow-hidden bg-navy">
+                {CAPS.map((c, i) => (
+                  <img
+                    key={c.t}
+                    src={c.img}
+                    alt={active === i ? c.alt : ""}
+                    aria-hidden={active !== i}
+                    loading="lazy"
+                    className={`capability-image absolute inset-0 h-full w-full object-cover transition-all duration-700 ${active === i ? "scale-100 opacity-100" : "scale-[1.035] opacity-0"}`}
+                  />
+                ))}
+              </div>
+              <div className="mt-5 border-t border-border pt-4">
+                <p className="eyebrow text-steel-blue">
+                  <span className="text-primary">{String(active + 1).padStart(2, "0")}</span>
+                  <span className="mx-2 text-border">/</span>
+                  06
+                </p>
+                <h3 className="mt-3 font-display text-2xl font-extrabold uppercase tracking-tight text-navy">
+                  {activeCapability.t}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  {activeCapability.d}
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -384,38 +458,41 @@ const EQUIP = ["Distillation columns", "Evaporators", "Storage tanks", "Condense
 
 export function Manufacturing() {
   return (
-    <section className="relative overflow-hidden bg-navy text-navy-foreground">
-      <img src={fabrication} alt="In-house fabrication of a large stainless steel process vessel" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="hero-overlay absolute inset-0" />
-      <div className="container-x relative grid min-h-[100vh] gap-12 py-24 lg:grid-cols-12 lg:py-32">
-        <Reveal className="flex flex-col justify-center lg:col-span-7">
-          <Label light>04 — Manufacturing</Label>
-          <h2 className="headline mt-6 text-5xl sm:text-6xl lg:text-8xl">
-            Where engineering
-            <br />
-            becomes equipment.
-          </h2>
-          <p className="mt-8 max-w-md text-lg text-navy-foreground/85">
-            In-house industrial fabrication capability for process equipment built around project requirements.
-          </p>
+    <section className="overflow-hidden bg-paper">
+      <div className="grid lg:min-h-[760px] lg:grid-cols-12">
+        <Reveal className="relative bg-navy lg:col-span-7 lg:min-h-[760px]">
+          <figure className="flex h-full min-h-[430px] flex-col lg:min-h-[760px]">
+            <div className="relative min-h-[370px] flex-1 overflow-hidden lg:min-h-0">
+              <img src={fabrication} alt="In-house fabrication of a large stainless steel process vessel" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <figcaption className="eyebrow flex flex-wrap justify-between gap-2 border-t border-border bg-background px-5 py-4 text-muted-foreground sm:px-8">
+              <span>Fabrication / Working facility</span>
+              <span>MIDC, Bhosari, Pune</span>
+            </figcaption>
+          </figure>
         </Reveal>
-        <Reveal className="flex flex-col justify-end lg:col-span-4 lg:col-start-9" delay={150}>
-          <p className="eyebrow text-primary">Equipment range</p>
-          <ul className="mt-4 border-t border-navy-foreground/30">
-            {EQUIP.map((e) => (
-              <li key={e} className="flex items-center justify-between border-b border-navy-foreground/20 py-3.5 font-display text-sm font-bold uppercase tracking-[0.12em]">
-                {e}
-                <span className="h-1.5 w-1.5 bg-primary" />
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-      <div className="relative border-t border-navy-foreground/20">
-        <p className="container-x eyebrow flex justify-between py-5 text-navy-foreground/75">
-          <span>Fabrication / Working facility</span>
-          <span>MIDC, Bhosari, Pune</span>
-        </p>
+        <div className="flex flex-col justify-center px-6 py-16 sm:px-10 lg:col-span-5 lg:px-14 lg:py-20">
+          <Reveal>
+            <Label>04 — Manufacturing</Label>
+            <h2 className="headline mt-7 text-4xl text-navy sm:text-5xl xl:text-6xl">
+              Where engineering becomes equipment.
+            </h2>
+            <p className="mt-7 max-w-md text-lg leading-relaxed text-muted-foreground">
+              In-house industrial fabrication capability for process equipment built around project requirements.
+            </p>
+            <div className="mt-10 flex items-center gap-3 border-y border-border py-4">
+              <span className="h-2 w-2 bg-primary" />
+              <p className="eyebrow text-steel-blue">Equipment range / MIDC, Bhosari, Pune</p>
+            </div>
+            <ul className="mt-1 grid border-t border-navy/20 sm:grid-cols-2">
+              {EQUIP.map((e, i) => (
+                <li key={e} className="flex min-h-12 items-center gap-3 border-b border-border py-3 pr-3 font-display text-xs font-bold uppercase tracking-[0.08em] text-navy sm:text-sm">
+                  <span className="font-mono text-[0.65rem] text-primary">{String(i + 1).padStart(2, "0")}</span>{e}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -431,23 +508,31 @@ const SPECS = [
 
 export function EngineeringDesign() {
   return (
-    <section className="py-24 lg:py-36">
-      <div className="container-x grid gap-14 lg:grid-cols-12">
-        <Reveal className="lg:col-span-7">
-          <img src={engineering} alt="Engineer reviewing a 3D plant piping model with engineering drawings" loading="lazy" className="aspect-[4/3] w-full object-cover" />
-        </Reveal>
-        <Reveal className="flex flex-col justify-center lg:col-span-5" delay={120}>
+    <section className="blueprint-section overflow-hidden py-24 lg:py-36">
+      <div className="container-x">
+        <Reveal>
           <Label>05 — Engineering & Design</Label>
-          <h2 className="headline mt-6 text-4xl text-navy sm:text-5xl">
-            Precision before
-            <br />
-            the first pipe is installed.
+          <h2 className="headline mt-6 max-w-5xl text-4xl text-navy sm:text-5xl lg:text-7xl">
+            Precision before the first pipe is installed.
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Technical design that connects plant intent to equipment, piping and infrastructure.
-          </p>
         </Reveal>
-        <div className="grid border-t border-navy sm:grid-cols-2 lg:col-span-12 lg:grid-cols-4">
+        <div className="relative mt-12 lg:mt-16">
+          <Reveal className="relative z-0 lg:w-[78%]">
+            <img src={engineering} alt="Engineer reviewing a 3D plant piping model with engineering drawings" loading="lazy" className="aspect-[4/3] w-full object-cover lg:aspect-[16/9]" />
+            <div aria-hidden className="blueprint-markers absolute inset-0" />
+          </Reveal>
+          <Reveal className="relative z-10 mt-[-2rem] border-l-4 border-primary bg-background p-6 shadow-[0_16px_44px_rgba(16,36,45,0.12)] sm:ml-12 sm:max-w-xl sm:p-9 lg:absolute lg:bottom-[-2rem] lg:right-0 lg:mt-0 lg:w-[38%] lg:p-10" delay={120}>
+            <p className="eyebrow text-primary">Design / Technical office</p>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Technical design that connects plant intent to equipment, piping and infrastructure.
+            </p>
+            <div className="mt-7 flex items-center justify-between border-t border-border pt-4">
+              <span className="font-mono text-xs text-steel-blue">LXS — ENG / 05</span>
+              <span className="font-mono text-xs text-steel-blue">DRAWING SET / A–D</span>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mt-16 grid border-t border-navy sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
           {SPECS.map(([t, d], i) => (
             <Reveal key={t} delay={i * 80} className="border-b border-border py-8 sm:pr-8 lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0 lg:last:border-r-0">
               <p className="font-display text-xs font-bold text-primary">E.{String(i + 1).padStart(2, "0")}</p>
