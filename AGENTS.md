@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Theme rules
+- Keep homepage theme colors in semantic CSS tokens, including SVG paint and outline colors; legacy color names are compatibility aliases to the current brand roles so color-only updates preserve layout and behavior.
+- Recolor embedded manufacturing illustration accents with a presentation-only CSS filter; preserve the original image asset and geometry.
