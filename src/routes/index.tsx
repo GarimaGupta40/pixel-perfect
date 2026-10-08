@@ -6,6 +6,7 @@ import {
   Lifecycle,
   Capabilities,
   Industries,
+  EngineeringCapability,
   Manufacturing,
   ProjectExperience,
   WhoWeServe,
@@ -48,6 +49,7 @@ function Index() {
         <Intro />
         <Capabilities />
         <Industries />
+        <EngineeringCapability />
         <Manufacturing />
         <Lifecycle />
         <ProjectExperience />

@@ -13,7 +13,7 @@ import technicians from "@/assets/technicians.jpg";
 import water from "@/assets/water.jpg";
 import manufacturings from "@/assets/manufacturings.png";
 import craneLift from "@/assets/crane-lift.jpg";
-import goldRibbonPipes from "@/assets/gold-ribbon-pipes.jpg";
+import goldRibbonPipes from "@/assets/gold-ribbon-pipes.png";
 import indPower from "@/assets/ind-power.jpg";
 import indWater from "@/assets/ind-water.jpg";
 import indEthanol from "@/assets/ind-ethanol.jpg";
@@ -689,6 +689,157 @@ export function Industries() {
   );
 }
 
+/* ---------- 05b. ENGINEERING CAPABILITY ---------- */
+const ENGINEERING_CAPABILITIES = [
+  {
+    num: "01",
+    title: "3D Plant Engineering",
+    details: "PDMS · PDS ·\nSP3D · CAD",
+    img: engineering,
+    alt: "3D Plant Engineering and 3D modeling",
+  },
+  {
+    num: "02",
+    title: "Piping Engineering",
+    details: "Layouts · Drawings\n· Isometrics",
+    img: piping,
+    alt: "Piping Engineering layouts and isometrics",
+  },
+  {
+    num: "03",
+    title: "Mechanical Engineering",
+    details: "Equipment Design\n· Fabrication Drawings",
+    img: evaporator,
+    alt: "Mechanical Engineering equipment design",
+  },
+  {
+    num: "04",
+    title: "Layout & Structural",
+    details: "Plant Layout ·\nCivil / Structural",
+    img: site,
+    alt: "Plant Layout and Civil / Structural execution",
+  },
+];
+
+export function EngineeringCapability() {
+  return (
+    <section
+      id="engineering-capability"
+      className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80"
+    >
+      {/* Background Subtle Refinery / Plant Image Blended into Upper Right */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-0 bottom-0 w-[55%] max-w-[850px] z-0 overflow-hidden select-none"
+      >
+        <img
+          src={hero}
+          alt=""
+          className="h-full w-full object-cover object-right opacity-[0.24] filter sepia-[0.35] saturate-[1.25] brightness-[1.05] [mask-image:linear-gradient(to_left,black_20%,transparent_90%),linear-gradient(to_bottom,black_65%,transparent_100%)]"
+        />
+        {/* Soft Golden Sunset Glow Highlight */}
+        <div className="absolute right-0 top-0 bottom-0 w-full bg-[radial-gradient(ellipse_70%_60%_at_80%_30%,rgba(240,208,120,0.3)_0%,rgba(212,175,55,0.12)_45%,transparent_75%)] mix-blend-screen" />
+      </div>
+
+      {/* Subtle Curved Technical Linework Inspired by Circular Lexus India Motif */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none opacity-60"
+      >
+        <svg
+          viewBox="0 0 1600 700"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <defs>
+            <linearGradient id="engCapLines" x1="0%" y1="30%" x2="100%" y2="70%">
+              <stop offset="0%" stopColor="#c59b27" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#d4af37" stopOpacity="0.22" />
+              <stop offset="85%" stopColor="#c59b27" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
+          <g stroke="url(#engCapLines)">
+            <path d="M-80 180 C280 80, 750 120, 1200 380 C1380 480, 1520 600, 1680 680" strokeWidth="1.2" />
+            <path d="M-80 220 C300 120, 780 160, 1240 410 C1410 500, 1540 610, 1680 700" strokeWidth="0.8" strokeOpacity="0.7" />
+            <path d="M-80 140 C260 50, 720 90, 1160 350 C1350 460, 1500 580, 1680 650" strokeWidth="0.6" strokeOpacity="0.5" />
+          </g>
+        </svg>
+      </div>
+
+      <div className="container-x relative z-10">
+        {/* Upper Portion: Editorial Headline + Narrative Description */}
+        <Reveal>
+          <SectionEyebrow>ENGINEERING CAPABILITY</SectionEyebrow>
+
+          <h2 className="headline mt-4 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-[-0.03em] leading-[1.02] text-foreground">
+            Industrial-Grade
+            <br />
+            <span className="text-[#7a0d11]">Design Capability.</span>
+          </h2>
+
+          <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-xl">
+            Connect engineering intent with practical plant execution through integrated layout, piping, mechanical and modelling support.
+          </p>
+        </Reveal>
+
+        {/* Lower Portion: 4 Capability Cards Grid */}
+        <Reveal className="mt-12 sm:mt-14" delay={120}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {ENGINEERING_CAPABILITIES.map((item) => (
+              <div
+                key={item.num}
+                className="group relative flex items-stretch justify-between gap-3 bg-[#FFFEFC] border border-[#EAE4D9] p-4 sm:p-5 rounded-xs shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(122,13,17,0.08)] hover:border-[#c59b27]/60 transition-all duration-300"
+              >
+                {/* Left Info */}
+                <div className="flex flex-col justify-between flex-1 min-w-0 pr-1">
+                  <div>
+                    {/* Burgundy Number Block */}
+                    <span className="inline-block bg-[#7a0d11] text-white font-display font-black text-xs px-2.5 py-1 rounded-xs tracking-wider shadow-xs">
+                      {item.num}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="font-display font-black text-sm lg:text-[0.92rem] text-foreground mt-3 leading-snug uppercase tracking-wider group-hover:text-[#7a0d11] transition-colors">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  {/* Short Details */}
+                  <p className="text-[0.72rem] lg:text-[0.75rem] text-[#64748b] font-medium mt-3 leading-relaxed whitespace-pre-line">
+                    {item.details}
+                  </p>
+                </div>
+
+                {/* Right Image Container */}
+                <div className="w-24 sm:w-26 lg:w-24 xl:w-28 flex-shrink-0 self-center overflow-hidden rounded-xs bg-slate-900 aspect-[4/3.5] border border-[#EAE4D9]/80 shadow-xs">
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-108"
+                  />
+                </div>
+
+                {/* Champagne-Gold Corner Brackets / Accents */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-px -right-px h-3.5 w-3.5 border-t-2 border-r-2 border-[#c59b27]"
+                />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -bottom-px -right-px h-3.5 w-3.5 border-b-2 border-r-2 border-[#c59b27]"
+                />
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- 06. WHERE ENGINEERING BECOMES EQUIPMENT (OUR EQUIPMENT) ---------- */
 const EQUIPMENT_BULLETS = [
   "DISTILLATION COLUMNS",
@@ -961,61 +1112,83 @@ export function WhoWeServe() {
 /* ---------- 09. PRE-FOOTER CTA (HAVE A COMPLEX PROJECT?) ---------- */
 export function FinalCta() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#FAF8F5] py-16 sm:py-20 lg:py-24">
-      {/* Subtle warm champagne ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
-      />
-
-      <div className="container-x relative z-10">
+    <section id="contact" className="relative overflow-hidden bg-[#FAF8F5] py-14 sm:py-18 lg:py-20">
+      <div className="container-x">
         <Reveal>
-          <div className="relative overflow-hidden rounded-xs border border-[#EAE4D9] bg-[#FDFCF9] shadow-md">
-            <div className="grid lg:grid-cols-12 min-h-[360px] items-stretch">
-              {/* Left Content Area */}
-              <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative z-10">
-                {/* Gold Vertical Left Accent Bar */}
-                <div className="flex items-start gap-3.5">
-                  <div className="w-1.5 self-stretch bg-[#c59b27] rounded-xs" />
-                  <div>
-                    <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-[2.4rem] leading-[1.08] tracking-tight uppercase">
-                      <span className="text-foreground block">HAVE A COMPLEX PROJECT?</span>
-                      <span className="text-[#7a0d11] block mt-1">LET'S ENGINEER IT.</span>
-                    </h2>
-                  </div>
-                </div>
+          <div
+            className="relative overflow-hidden rounded-xs shadow-2xl border border-[#d4af37]/35 min-h-[380px] lg:min-h-[420px]"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 90% at 88% 35%, rgba(240, 185, 75, 0.45) 0%, rgba(185, 85, 25, 0.35) 45%, transparent 75%), linear-gradient(100deg, #2b0205 0%, #3e0509 22%, #560a10 40%, #721217 56%, #91221b 68%, #b23e24 78%, #cf6932 88%, #e08e45 96%, #e8a252 100%)",
+            }}
+          >
+            {/* Background Engineering Line-Art (Bottom Left) */}
+            <div aria-hidden="true" className="pointer-events-none absolute left-0 bottom-0 z-0 select-none opacity-30">
+              <svg width="480" height="280" viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#d4af37" strokeWidth="0.8">
+                  <path d="M-40 280 C60 220, 160 180, 480 200" strokeOpacity="0.6" />
+                  <path d="M-40 280 C80 200, 200 150, 480 160" strokeOpacity="0.5" />
+                  <path d="M-40 280 C100 180, 240 120, 480 120" strokeOpacity="0.4" />
+                  <path d="M-40 280 C120 160, 280 90, 480 80" strokeOpacity="0.3" />
+                  <path d="M-40 280 C140 140, 320 60, 480 40" strokeOpacity="0.2" />
+                  <line x1="0" y1="240" x2="480" y2="240" strokeDasharray="3 4" strokeOpacity="0.3" />
+                  <line x1="0" y1="180" x2="480" y2="180" strokeDasharray="3 4" strokeOpacity="0.2" />
+                </g>
+              </svg>
+            </div>
 
-                <p className="mt-5 text-sm sm:text-base leading-relaxed text-muted-foreground font-normal max-w-lg pl-5">
-                  Partner with Lexus India Engineering Solutions for end-to-end engineering, fabrication and execution
-                  support.
-                </p>
+            {/* Midground Distillation Towers Silhouette (Center-Right) */}
+            <div className="pointer-events-none absolute right-[26%] top-0 bottom-0 w-[44%] z-0 hidden lg:block overflow-hidden select-none">
+              <img
+                src={hero}
+                alt=""
+                className="h-full w-full object-cover object-center filter contrast-125 brightness-110 sepia-[0.5] saturate-150 mix-blend-luminosity opacity-40 [mask-image:linear-gradient(to_right,transparent_0%,black_35%,black_75%,transparent_100%)]"
+              />
+            </div>
 
-                {/* Buttons */}
-                <div className="mt-8 flex flex-wrap items-center gap-4 pl-5">
-                  <a
-                    href="#footer"
-                    className="group inline-flex items-center gap-2 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200"
-                  >
-                    <span>Start A Project</span>
-                    <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </a>
+            {/* Right Visual: Gold Ribbon & Process Piping (Transparent Alpha PNG) */}
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-full lg:w-[50%] z-0 overflow-hidden select-none flex items-center justify-end">
+              <img
+                src={goldRibbonPipes}
+                alt="Process plant piping with golden ribbon frame"
+                className="h-full w-full object-cover object-left-top scale-[1.04]"
+              />
+              {/* Subtle top-right golden atmospheric glow */}
+              <div className="absolute top-0 right-0 h-[220px] w-[280px] bg-[radial-gradient(circle_at_100%_0%,rgba(255,230,150,0.45)_0%,transparent_70%)] mix-blend-screen" />
+            </div>
 
-                  <a
-                    href="#capabilities"
-                    className="inline-flex items-center gap-2 border border-foreground/30 hover:border-[#c59b27] text-foreground px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 hover:text-[#7a0d11]"
-                  >
-                    <span>Discuss A Solution</span>
-                  </a>
-                </div>
-              </div>
+            {/* Left Content Area */}
+            <div className="relative z-10 p-8 sm:p-12 lg:p-16 max-w-xl lg:max-w-2xl flex flex-col justify-center min-h-[380px] lg:min-h-[420px]">
+              <p className="eyebrow flex items-center gap-2.5 text-[#d4af37]">
+                <span className="h-px w-5 sm:w-6 bg-[#d4af37]" />
+                HAVE A COMPLEX PROJECT?
+              </p>
 
-              {/* Right Image: Golden Swirl & Piping */}
-              <div className="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden bg-slate-100">
-                <img
-                  src={goldRibbonPipes}
-                  alt="Golden engineered ribbon and industrial process piping"
-                  className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
-                />
+              <h2 className="headline mt-4 text-3xl sm:text-4xl lg:text-[3.25rem] font-black tracking-tight uppercase leading-[0.96] text-white">
+                LET'S <span className="text-[#d4af37]">ENGINEER IT.</span>
+              </h2>
+
+              <p className="mt-5 text-sm sm:text-base leading-relaxed text-white/85 font-normal max-w-md">
+                Partner with Lexus India Engineering Solutions for end-to-end engineering, fabrication and execution
+                support.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="#contact"
+                  className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-[#e5be58] via-[#d4af37] to-[#c59b27] hover:from-[#f0d078] hover:via-[#dfb845] hover:to-[#d4af37] text-[#1a0507] border border-[#f5de8e]/60 px-6 py-3.5 font-display text-xs font-black uppercase tracking-[0.16em] rounded-xs shadow-[0_0_16px_rgba(212,175,55,0.35),0_3px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_0_24px_rgba(212,175,55,0.55),0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-200 active:scale-[0.98]"
+                >
+                  <span>Start A Project</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-[#1a0507] transition-transform duration-200 group-hover:translate-x-0.5" />
+                </a>
+
+                <a
+                  href="#capabilities"
+                  className="inline-flex items-center gap-2 bg-[#2b0407]/40 hover:bg-[#3d070b]/80 border border-[#d4af37]/60 hover:border-[#f0d078] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs shadow-xs transition-all duration-200"
+                >
+                  <span>Talk To A Solution</span>
+                </a>
               </div>
             </div>
           </div>
