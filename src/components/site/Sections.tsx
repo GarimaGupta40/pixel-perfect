@@ -1,5 +1,24 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Check, Linkedin, Twitter, Youtube } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Check,
+  Linkedin,
+  Twitter,
+  Youtube,
+  MessageSquareText,
+  HardHat,
+  Compass,
+  Factory,
+  Cog,
+  ClipboardCheck,
+  Headset,
+  Users,
+  Building2,
+  Globe,
+  Layers,
+} from "lucide-react";
 
 import logo from "@/assets/logo 1.png";
 import heroVideo from "@/assets/hero-video.mp4";
@@ -8,6 +27,7 @@ import fabrication from "@/assets/fabrication.jpg";
 import piping from "@/assets/piping.jpg";
 import engineering from "@/assets/engineering.jpg";
 import site from "@/assets/site.jpg";
+import structural from "@/assets/structural.jpg";
 import evaporator from "@/assets/evaporator.jpg";
 import technicians from "@/assets/technicians.jpg";
 import water from "@/assets/water.jpg";
@@ -299,94 +319,209 @@ export function Intro() {
 
 /* ---------- 03. PROJECT LIFECYCLE ---------- */
 const LIFECYCLE_STAGES = [
-  { num: "01", label: "UNDERSTAND" },
-  { num: "02", label: "ENGINEER" },
-  { num: "03", label: "DESIGN" },
-  { num: "04", label: "BUILD" },
-  { num: "05", label: "EXECUTE" },
-  { num: "06", label: "COMMISSION" },
-  { num: "07", label: "SUPPORT" },
+  {
+    num: "01",
+    title: "UNDERSTAND",
+    desc: "Analyse needs, goals and project scope.",
+    icon: MessageSquareText,
+  },
+  {
+    num: "02",
+    title: "ENGINEER",
+    desc: "Develop detailed engineering solutions.",
+    icon: HardHat,
+  },
+  {
+    num: "03",
+    title: "DESIGN",
+    desc: "Create optimal, safe and cost-effective designs.",
+    icon: Compass,
+  },
+  {
+    num: "04",
+    title: "BUILD",
+    desc: "Procure, fabricate and construct.",
+    icon: Factory,
+  },
+  {
+    num: "05",
+    title: "EXECUTE",
+    desc: "Test, integrate and ensure performance.",
+    icon: Cog,
+  },
+  {
+    num: "06",
+    title: "COMMISSION",
+    desc: "Start operations with full validation.",
+    icon: ClipboardCheck,
+  },
+  {
+    num: "07",
+    title: "SUPPORT",
+    desc: "Ongoing service for long-term success.",
+    icon: Headset,
+  },
 ];
 
 export function Lifecycle() {
-  const [active, setActive] = useState(3); // Default to 04 BUILD like reference
+  const [hovered, setHovered] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const activeIndex = hovered !== null ? hovered : selected;
 
   return (
-    <section className="relative overflow-hidden border-b border-[#EAE4D9]/80 bg-[#FAF8F5] py-20 lg:py-28">
-      {/* Subtle champagne radial lighting */}
+    <section id="lifecycle" className="relative overflow-hidden border-b border-[#EAE4D9]/80 bg-[#FAF8F5] py-20 lg:py-28">
+      {/* Subtle Warm Champagne Ambient Radial Lighting */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_100%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_50%_at_50%_15%,rgba(212,175,55,0.06)_0%,transparent_75%)]"
       />
 
-      <div className="container-x relative z-10">
-        <Reveal>
-          <SectionEyebrow>PROJECT LIFECYCLE</SectionEyebrow>
+      {/* Elegant Curved Technical Linework Inspired by Circular Lexus India Motif */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none opacity-60"
+      >
+        <svg
+          viewBox="0 0 1600 700"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <defs>
+            <linearGradient id="lcGoldArcsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#c59b27" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#d4af37" stopOpacity="0.22" />
+              <stop offset="85%" stopColor="#c59b27" stopOpacity="0.08" />
+              <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
+          <g stroke="url(#lcGoldArcsGrad)">
+            <circle cx="800" cy="-120" r="520" strokeWidth="1.2" strokeDasharray="6 4" strokeOpacity="0.55" />
+            <circle cx="800" cy="-120" r="680" strokeWidth="1" strokeOpacity="0.4" />
+            <circle cx="800" cy="-120" r="840" strokeWidth="0.8" strokeOpacity="0.25" />
+            <path d="M-80 480 C360 380, 800 420, 1680 320" strokeWidth="1.2" strokeOpacity="0.45" />
+          </g>
+        </svg>
+      </div>
 
-          <h2 className="headline mt-5 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-foreground">
-            FROM REQUIREMENT
-            <br />
-            TO <span className="text-[#7a0d11]">COMMISSIONING.</span>
-          </h2>
+      <div className="container-x relative z-10">
+        {/* Upper Portion: Editorial Headline + Narrative Description */}
+        <Reveal>
+          <div className="max-w-2xl">
+            <SectionEyebrow>PROJECT LIFECYCLE</SectionEyebrow>
+
+            <h2 className="headline mt-4 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-[-0.03em] leading-[1.02] text-foreground">
+              FROM REQUIREMENT TO
+              <br />
+              <span className="text-[#7a0d11]">COMMISSIONING.</span>
+            </h2>
+
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-xl">
+              We follow a structured project lifecycle to ensure efficiency, quality and successful delivery — from concept to commissioning.
+            </p>
+          </div>
         </Reveal>
 
-        {/* 7-Stage Horizontal Connected Timeline */}
-        <Reveal className="relative mt-16 pt-6 sm:mt-20 sm:pt-8" delay={150}>
-          <div className="relative">
-            {/* The Horizontal Rail Line */}
-            <div className="absolute top-[17px] left-[7.14%] right-[7.14%] h-[2px] bg-[#EAE4D9] z-0">
-              <div
-                className="h-full bg-[#7a0d11] transition-all duration-300 ease-out"
-                style={{ width: `${(active / (LIFECYCLE_STAGES.length - 1)) * 100}%` }}
-              />
-            </div>
-
-            {/* 7 Interactive Stage Nodes */}
-            <div className="relative z-10 flex justify-between gap-2 overflow-x-auto pb-4 sm:overflow-visible scrollbar-none">
-              {LIFECYCLE_STAGES.map((s, i) => {
-                const isActive = active === i;
-                const isPast = active > i;
+        {/* 7-Step Interactive Lifecycle Connected Pipeline */}
+        <Reveal className="mt-16 sm:mt-20 pt-4" delay={120}>
+          <div
+            className="overflow-x-auto pb-6 scrollbar-none"
+            onMouseLeave={() => setHovered(null)}
+          >
+            <div className="flex items-start justify-between min-w-[860px] lg:min-w-full">
+              {LIFECYCLE_STAGES.map((stage, idx) => {
+                const IconComponent = stage.icon;
+                const isLast = idx === LIFECYCLE_STAGES.length - 1;
+                const isActive = activeIndex === idx;
+                const isPassed = activeIndex !== null && idx < activeIndex;
 
                 return (
-                  <button
-                    key={s.num}
-                    type="button"
-                    onMouseEnter={() => setActive(i)}
-                    onClick={() => setActive(i)}
-                    className="group relative flex flex-1 min-w-[85px] flex-col items-center text-center cursor-pointer transition-transform duration-200"
-                  >
-                    {/* Circle Node Indicator */}
-                    <div className="relative flex h-9 w-9 items-center justify-center">
-                      {isActive ? (
-                        <div className="relative flex items-center justify-center">
-                          <span className="absolute h-8 w-8 rounded-full bg-[#7a0d11]/20 ring-1 ring-[#7a0d11]/40 animate-pulse-subtle" />
-                          <span className="relative h-3.5 w-3.5 rounded-full bg-[#7a0d11] shadow-sm" />
+                  <div key={stage.num} className="flex items-center flex-1 last:flex-initial">
+                    {/* Stage Interactive Button Node */}
+                    <button
+                      type="button"
+                      onMouseEnter={() => setHovered(idx)}
+                      onClick={() => setSelected(selected === idx ? null : idx)}
+                      aria-pressed={selected === idx}
+                      className="flex flex-col items-center text-center group flex-1 max-w-[155px] px-1 cursor-pointer select-none transition-transform duration-300 focus:outline-none"
+                    >
+                      {/* Medallion Icon Circle with Smooth Glow and Color Transition */}
+                      <div className="relative flex items-center justify-center h-20 sm:h-24">
+                        <div
+                          className={`relative flex items-center justify-center rounded-full transition-all duration-400 ease-out ${
+                            isActive
+                              ? "h-16 w-16 sm:h-20 sm:w-20 bg-[#7a0d11] border-2 border-[#f0d078] shadow-[0_0_24px_rgba(122,13,17,0.38),0_4px_16px_rgba(212,175,55,0.32)] ring-4 ring-[#7a0d11]/25 scale-108"
+                              : "h-14 w-14 sm:h-16 sm:w-16 bg-white border-2 border-[#d4af37] shadow-[0_4px_14px_rgba(212,175,55,0.18)] group-hover:border-[#c59b27] group-hover:shadow-[0_6px_18px_rgba(212,175,55,0.28)] group-hover:scale-105"
+                          }`}
+                        >
+                          <IconComponent
+                            className={`transition-all duration-300 stroke-[1.8] ${
+                              isActive
+                                ? "h-7 w-7 sm:h-8 sm:w-8 text-white scale-105"
+                                : "h-6 w-6 sm:h-7 sm:w-7 text-[#7a0d11] group-hover:scale-105"
+                            }`}
+                          />
                         </div>
-                      ) : isPast ? (
-                        <span className="h-3 w-3 rounded-full border-2 border-[#7a0d11] bg-[#FDFCF9] transition-all duration-300 group-hover:scale-110" />
-                      ) : (
-                        <span className="h-3 w-3 rounded-full border-2 border-[#D9D2C5] bg-[#FDFCF9] transition-all duration-300 group-hover:border-slate-500 group-hover:scale-110" />
-                      )}
-                    </div>
+                      </div>
 
-                    {/* Stage Number & Stage Label */}
-                    <div className="mt-3 flex flex-col items-center">
+                      {/* Gold / Burgundy Number */}
                       <span
-                        className={`font-display text-lg sm:text-xl font-black transition-colors duration-300 ${
-                          isActive ? "text-[#7a0d11]" : "text-slate-400 group-hover:text-slate-600"
+                        className={`font-display font-black text-base sm:text-lg leading-none mt-2 transition-all duration-300 ${
+                          isActive
+                            ? "text-[#7a0d11] scale-110 drop-shadow-[0_1px_4px_rgba(122,13,17,0.2)]"
+                            : "text-[#c59b27] group-hover:text-[#b0871d]"
                         }`}
                       >
-                        {s.num}
+                        {stage.num}
                       </span>
-                      <span
-                        className={`font-display text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider transition-colors duration-300 mt-1 ${
-                          isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+
+                      {/* Title */}
+                      <h3
+                        className={`font-display font-black text-xs sm:text-sm uppercase tracking-wider mt-1.5 leading-tight transition-colors duration-300 ${
+                          isActive ? "text-[#7a0d11]" : "text-foreground group-hover:text-[#7a0d11]"
                         }`}
                       >
-                        {s.label}
-                      </span>
-                    </div>
-                  </button>
+                        {stage.title}
+                      </h3>
+
+                      {/* Small Description */}
+                      <p className="text-[0.68rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1.5 max-w-[130px]">
+                        {stage.desc}
+                      </p>
+                    </button>
+
+                    {/* Connector Line with Progress Effect and Burgundy Arrow Badge */}
+                    {!isLast && (
+                      <div className="flex items-center justify-center flex-1 max-w-[60px] sm:max-w-[80px] -mt-16 sm:-mt-20 px-1">
+                        <div className="relative w-full flex items-center justify-center">
+                          {/* Background Inactive Gold Line with Subtle Continuous Pulse */}
+                          <div className="h-0.5 w-full bg-[#d4af37]/45" />
+
+                          {/* Active / Passed Animated Progress Line */}
+                          <div
+                            className={`absolute inset-y-0 left-0 h-0.5 transition-all duration-500 ease-out bg-gradient-to-r from-[#c59b27] via-[#7a0d11] to-[#c59b27] ${
+                              isPassed || (isActive && idx === 0)
+                                ? "w-full opacity-100 shadow-[0_0_8px_rgba(212,175,55,0.4)]"
+                                : "w-0 opacity-0"
+                            }`}
+                          />
+
+                          {/* Small Circular Burgundy Arrow Badge */}
+                          <div
+                            className={`relative h-4 w-4 sm:h-5 sm:w-5 rounded-full text-white flex items-center justify-center transition-all duration-300 shadow-xs ${
+                              isPassed || isActive
+                                ? "bg-[#7a0d11] ring-2 ring-[#f0d078]/90 scale-110 shadow-[0_0_10px_rgba(122,13,17,0.35)]"
+                                : "bg-[#7a0d11]"
+                            }`}
+                          >
+                            <ChevronRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 stroke-[3]" />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
@@ -688,36 +823,39 @@ export function Industries() {
     </section>
   );
 }
-
 /* ---------- 05b. ENGINEERING CAPABILITY ---------- */
-const ENGINEERING_CAPABILITIES = [
+const CAPABILITY_PILLS = [
   {
     num: "01",
     title: "3D Plant Engineering",
-    details: "PDMS · PDS ·\nSP3D · CAD",
+    desc: "PDMS · PDS · SP3D · CAD",
+    icon: Layers,
     img: engineering,
-    alt: "3D Plant Engineering and 3D modeling",
+    imgAlt: "3D Plant Engineering scale model and CAD layout",
   },
   {
     num: "02",
     title: "Piping Engineering",
-    details: "Layouts · Drawings\n· Isometrics",
+    desc: "Layouts · Drawings · Isometrics",
+    icon: Compass,
     img: piping,
-    alt: "Piping Engineering layouts and isometrics",
+    imgAlt: "Piping Engineering isometric spools and heat exchanger piping",
   },
   {
     num: "03",
     title: "Mechanical Engineering",
-    details: "Equipment Design\n· Fabrication Drawings",
-    img: evaporator,
-    alt: "Mechanical Engineering equipment design",
+    desc: "Equipment Design · Fabrication Drawings",
+    icon: Cog,
+    img: fabrication,
+    imgAlt: "Mechanical Engineering vessel equipment design and fabrication",
   },
   {
     num: "04",
     title: "Layout & Structural",
-    details: "Plant Layout ·\nCivil / Structural",
-    img: site,
-    alt: "Plant Layout and Civil / Structural execution",
+    desc: "Plant Layout · Civil / Structural",
+    icon: Building2,
+    img: structural,
+    imgAlt: "Industrial structural steel construction and layout",
   },
 ];
 
@@ -725,114 +863,212 @@ export function EngineeringCapability() {
   return (
     <section
       id="engineering-capability"
-      className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80"
+      className="relative overflow-hidden bg-[#FAF8F5] pt-6 sm:pt-8 lg:pt-10 pb-16 sm:pb-20 lg:pb-24 border-b border-[#EAE4D9]/80"
     >
-      {/* Background Subtle Refinery / Plant Image Blended into Upper Right */}
+      {/* Top Transition: Subtle Gold & Maroon Flowing Architecture Connecting from Industries Section Above */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 bottom-0 w-[55%] max-w-[850px] z-0 overflow-hidden select-none"
-      >
-        <img
-          src={hero}
-          alt=""
-          className="h-full w-full object-cover object-right opacity-[0.24] filter sepia-[0.35] saturate-[1.25] brightness-[1.05] [mask-image:linear-gradient(to_left,black_20%,transparent_90%),linear-gradient(to_bottom,black_65%,transparent_100%)]"
-        />
-        {/* Soft Golden Sunset Glow Highlight */}
-        <div className="absolute right-0 top-0 bottom-0 w-full bg-[radial-gradient(ellipse_70%_60%_at_80%_30%,rgba(240,208,120,0.3)_0%,rgba(212,175,55,0.12)_45%,transparent_75%)] mix-blend-screen" />
-      </div>
-
-      {/* Subtle Curved Technical Linework Inspired by Circular Lexus India Motif */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none opacity-60"
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 z-0 overflow-hidden select-none"
       >
         <svg
-          viewBox="0 0 1600 700"
+          viewBox="0 0 1600 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="h-full w-full"
+          className="h-full w-full opacity-70"
         >
           <defs>
-            <linearGradient id="engCapLines" x1="0%" y1="30%" x2="100%" y2="70%">
-              <stop offset="0%" stopColor="#c59b27" stopOpacity="0.4" />
-              <stop offset="50%" stopColor="#d4af37" stopOpacity="0.22" />
-              <stop offset="85%" stopColor="#c59b27" stopOpacity="0.1" />
+            <linearGradient id="capTopConnectorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#7a0d11" stopOpacity="0.25" />
+              <stop offset="35%" stopColor="#d4af37" stopOpacity="0.4" />
+              <stop offset="70%" stopColor="#c59b27" stopOpacity="0.2" />
               <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
             </linearGradient>
+            <linearGradient id="capTopFill" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stopColor="#0c121e" stopOpacity="0.04" />
+              <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0" />
+            </linearGradient>
           </defs>
-          <g stroke="url(#engCapLines)">
-            <path d="M-80 180 C280 80, 750 120, 1200 380 C1380 480, 1520 600, 1680 680" strokeWidth="1.2" />
-            <path d="M-80 220 C300 120, 780 160, 1240 410 C1410 500, 1540 610, 1680 700" strokeWidth="0.8" strokeOpacity="0.7" />
-            <path d="M-80 140 C260 50, 720 90, 1160 350 C1350 460, 1500 580, 1680 650" strokeWidth="0.6" strokeOpacity="0.5" />
-          </g>
+          <path d="M 0 0 L 1600 0 L 1600 40 C 1250 80, 850 15, 450 65 C 200 95, 80 50, 0 40 Z" fill="url(#capTopFill)" />
+          <path
+            d="M 0 0 C 220 50, 480 75, 820 40 C 1160 5, 1420 45, 1600 15"
+            stroke="url(#capTopConnectorGrad)"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M 120 0 C 340 55, 600 80, 940 45 C 1280 10, 1480 35, 1600 25"
+            stroke="url(#capTopConnectorGrad)"
+            strokeWidth="0.8"
+            strokeDasharray="4 4"
+          />
         </svg>
       </div>
 
+      {/* Ambient Warm Champagne Glow Behind the Composition */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_65%_55%_at_68%_28%,rgba(212,175,55,0.07)_0%,transparent_75%)]"
+      />
+
       <div className="container-x relative z-10">
-        {/* Upper Portion: Editorial Headline + Narrative Description */}
-        <Reveal>
-          <SectionEyebrow>ENGINEERING CAPABILITY</SectionEyebrow>
+        {/* Top Portion: Integrated Editorial Header & Softly Blended Hero Industrial Visual */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Top Left: Heading & Narrative */}
+          <Reveal className="lg:col-span-5 xl:col-span-5">
+            {/* Eyebrow with gold dash */}
+            <div className="flex items-center gap-3">
+              <span className="font-display text-xs font-black uppercase tracking-[0.22em] text-[#c59b27]">
+                OUR CAPABILITIES
+              </span>
+              <div className="h-0.5 w-8 bg-[#c59b27]/60" />
+            </div>
 
-          <h2 className="headline mt-4 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-[-0.03em] leading-[1.02] text-foreground">
-            Industrial-Grade
-            <br />
-            <span className="text-[#7a0d11]">Design Capability.</span>
-          </h2>
+            {/* Main Headline */}
+            <h2 className="headline mt-4 text-3xl sm:text-5xl lg:text-[3.35rem] font-black tracking-[-0.03em] leading-[1.04] text-foreground">
+              Engineering
+              <br />
+              Excellence Across
+              <br />
+              <span className="text-[#7a0d11]">Industries</span>
+            </h2>
 
-          <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-xl">
-            Connect engineering intent with practical plant execution through integrated layout, piping, mechanical and modelling support.
-          </p>
-        </Reveal>
+            {/* Paragraph Description */}
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-md">
+              From concept to execution, we turn ideas into reliable and efficient industrial solutions.
+            </p>
 
-        {/* Lower Portion: 4 Capability Cards Grid */}
-        <Reveal className="mt-12 sm:mt-14" delay={120}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {ENGINEERING_CAPABILITIES.map((item) => (
-              <div
-                key={item.num}
-                className="group relative flex items-stretch justify-between gap-3 bg-[#FFFEFC] border border-[#EAE4D9] p-4 sm:p-5 rounded-xs shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(122,13,17,0.08)] hover:border-[#c59b27]/60 transition-all duration-300"
+            {/* Explore Capabilities Pill CTA */}
+            <div className="mt-8">
+              <a
+                href="#capabilities"
+                className="group inline-flex items-center gap-3 bg-[#7a0d11] hover:bg-[#5e090c] text-white pl-6 pr-2.5 py-2.5 font-display text-xs font-bold uppercase tracking-[0.14em] rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                {/* Left Info */}
-                <div className="flex flex-col justify-between flex-1 min-w-0 pr-1">
-                  <div>
-                    {/* Burgundy Number Block */}
-                    <span className="inline-block bg-[#7a0d11] text-white font-display font-black text-xs px-2.5 py-1 rounded-xs tracking-wider shadow-xs">
-                      {item.num}
-                    </span>
+                <span>Explore Capabilities</span>
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#7a0d11] transition-transform duration-300 group-hover:translate-x-1 shadow-xs">
+                  <ArrowRight className="h-3.5 w-3.5 stroke-[2.5]" />
+                </div>
+              </a>
+            </div>
+          </Reveal>
 
-                    {/* Title */}
-                    <h3 className="font-display font-black text-sm lg:text-[0.92rem] text-foreground mt-3 leading-snug uppercase tracking-wider group-hover:text-[#7a0d11] transition-colors">
-                      {item.title}
-                    </h3>
+          {/* Top Right: Seamlessly Integrated Industrial Hero Composition with Soft Edge Blending */}
+          <Reveal className="relative lg:col-span-7 xl:col-span-7" delay={120}>
+            <div className="relative w-full aspect-[16/9.8] sm:aspect-[16/9.2] lg:aspect-[16/8.6] select-none flex items-center justify-end">
+              {/* Fluid Decorative Accent Arcs Framing the Integrated Image */}
+              <svg className="absolute inset-0 h-full w-full pointer-events-none z-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="capGoldGradEditorial" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#f0d078" stopOpacity="0.8" />
+                    <stop offset="45%" stopColor="#d4af37" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#c59b27" stopOpacity="0.5" />
+                  </linearGradient>
+                </defs>
+
+                {/* Soft Outer Golden Line Guide */}
+                <path
+                  d="M 12 0 C 4 18, -4 40, 2 64 C 7 84, 18 96, 32 100"
+                  stroke="#c59b27"
+                  strokeWidth="0.6"
+                  strokeOpacity="0.35"
+                  fill="none"
+                />
+
+                {/* Inner Highlight Gold Border along the composition edge */}
+                <path
+                  d="M 16 0 C 8 18, 0 40, 6 64 C 11 84, 22 96, 36 100"
+                  stroke="url(#capGoldGradEditorial)"
+                  strokeWidth="1.1"
+                  fill="none"
+                  style={{ filter: "drop-shadow(-2px 0 6px rgba(212,175,55,0.3))" }}
+                />
+              </svg>
+
+              {/* Burgundy Accent Medallion Marker */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[7%] top-[14%] w-3 h-3 rounded-full bg-[#7a0d11] ring-2 ring-[#FAF8F5] shadow-sm z-30 hidden sm:block"
+              />
+
+              {/* Softly Blended Hero Industrial Photo with Feathered Edges onto Cream Canvas */}
+              <div
+                className="relative h-full w-full overflow-hidden rounded-2xl lg:rounded-r-3xl"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 95% 90% at 75% 50%, black 60%, rgba(0,0,0,0.7) 82%, transparent 100%), linear-gradient(to right, transparent 0%, black 14%, black 100%)",
+                  maskImage:
+                    "radial-gradient(ellipse 95% 90% at 75% 50%, black 60%, rgba(0,0,0,0.7) 82%, transparent 100%), linear-gradient(to right, transparent 0%, black 14%, black 100%)",
+                }}
+              >
+                <img
+                  src={hero}
+                  alt="Industrial process plant towers illuminated at dusk"
+                  className="h-full w-full object-cover object-center filter saturate-[1.1] contrast-[1.04] brightness-[1.02] transition-transform duration-700 hover:scale-[1.02]"
+                />
+                {/* Natural Warm Cream & Dark Tone Gradients Integrating into the Section Palette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5]/30 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/25 via-transparent to-transparent pointer-events-none" />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Bottom Portion: 2×2 Dynamic Timeline-Connected Capability Cards */}
+        <Reveal className="relative mt-14 sm:mt-18 pt-2" delay={160}>
+          {/* Central Structural Anchor Connecting Top Hero & Cards (Desktop) */}
+          <div className="hidden lg:flex absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-[#EAE4D9] flex-col justify-around items-center pointer-events-none z-10">
+            <div className="h-3.5 w-3.5 rounded-full bg-[#7a0d11] ring-4 ring-[#FAF8F5] shadow-xs" />
+            <div className="h-3.5 w-3.5 rounded-full bg-[#7a0d11] ring-4 ring-[#FAF8F5] shadow-xs" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8">
+            {CAPABILITY_PILLS.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={item.num}
+                  className="group relative flex items-center bg-white border border-[#EAE4D9] hover:border-[#c59b27]/70 rounded-full p-2.5 sm:p-3.5 shadow-[0_6px_22px_rgba(0,0,0,0.04)] hover:shadow-[0_14px_34px_rgba(122,13,17,0.1)] transition-all duration-300 gap-4 sm:gap-5"
+                >
+                  {/* Large Hero Industrial Image Frame (Main Visual Focus) */}
+                  <div className="relative w-[145px] sm:w-[200px] lg:w-[225px] h-[98px] sm:h-[114px] lg:h-[120px] rounded-l-full rounded-r-3xl overflow-hidden bg-slate-900 flex-shrink-0 shadow-inner">
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -left-1 -top-1 -bottom-1 w-5 border-l-4 border-[#7a0d11] rounded-l-full z-10"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-1 -bottom-1 w-12 h-6 border-b-2 border-[#c59b27] rounded-bl-full z-10"
+                    />
+                    <img
+                      src={item.img}
+                      alt={item.imgAlt}
+                      className="w-full h-full object-cover object-center filter saturate-[1.15] contrast-[1.05] brightness-[1.02] group-hover:scale-108 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Short Details */}
-                  <p className="text-[0.72rem] lg:text-[0.75rem] text-[#64748b] font-medium mt-3 leading-relaxed whitespace-pre-line">
-                    {item.details}
-                  </p>
-                </div>
+                  {/* Matching Circular Icon Medallion */}
+                  <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#7a0d11] text-white flex-shrink-0 shadow-xs group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="h-5 w-5 stroke-[1.8]" />
+                  </div>
 
-                {/* Right Image Container */}
-                <div className="w-24 sm:w-26 lg:w-24 xl:w-28 flex-shrink-0 self-center overflow-hidden rounded-xs bg-slate-900 aspect-[4/3.5] border border-[#EAE4D9]/80 shadow-xs">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-108"
-                  />
+                  {/* Content: Number + Title + Description */}
+                  <div className="flex-1 min-w-0 pr-3 sm:pr-6">
+                    <div className="flex items-center gap-2">
+                      <span className="font-display font-black text-xs sm:text-sm text-[#c59b27] tracking-wider leading-none">
+                        {item.num}
+                      </span>
+                      <div className="h-px w-3 bg-[#c59b27]/40" />
+                    </div>
+                    <h3 className="font-display font-black text-sm sm:text-base lg:text-[1.02rem] text-foreground uppercase tracking-wide group-hover:text-[#7a0d11] transition-colors leading-snug mt-1 truncate">
+                      {item.title}
+                    </h3>
+                    <p className="text-[0.68rem] sm:text-xs text-[#64748b] font-medium mt-0.5 truncate">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Champagne-Gold Corner Brackets / Accents */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -top-px -right-px h-3.5 w-3.5 border-t-2 border-r-2 border-[#c59b27]"
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -bottom-px -right-px h-3.5 w-3.5 border-b-2 border-r-2 border-[#c59b27]"
-                />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </Reveal>
       </div>
@@ -947,51 +1183,177 @@ export function Manufacturing() {
 /* ---------- 07. PROVEN WHEN CONDITIONS GET TOUGH (25+ YEARS EXPERIENCE) ---------- */
 export function ProjectExperience() {
   return (
-    <section id="projects" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
-      {/* Subtle warm champagne ambient glow */}
+    <section
+      id="projects"
+      className="relative overflow-hidden bg-[#FAF8F5] py-16 sm:py-20 lg:py-24 border-b border-[#EAE4D9]/80 flex items-center min-h-[520px] lg:min-h-[580px]"
+    >
+      {/* Background Subtle Golden Ribbon / Wire Curves */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_50%,rgba(212,175,55,0.035)_0%,transparent_65%)]"
-      />
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none opacity-45"
+      >
+        <svg
+          viewBox="0 0 1600 700"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <defs>
+            <linearGradient id="projExpEchoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f0d078" stopOpacity="0.4" />
+              <stop offset="45%" stopColor="#d4af37" stopOpacity="0.25" />
+              <stop offset="85%" stopColor="#c59b27" stopOpacity="0.08" />
+              <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 520 0 C 440 140, 370 280, 420 440 C 460 560, 560 650, 720 700"
+            stroke="url(#projExpEchoGrad)"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M 480 0 C 400 140, 330 280, 380 440 C 420 560, 520 650, 680 700"
+            stroke="url(#projExpEchoGrad)"
+            strokeWidth="0.8"
+            strokeDasharray="4 4"
+          />
+        </svg>
+      </div>
 
-      <div className="container-x relative z-10">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: 25+ Experience Banner & Headline */}
-          <Reveal className="lg:col-span-5">
-            {/* 25+ Years with Vertical Gold Bar */}
-            <div className="flex items-start gap-4">
-              <div className="w-1.5 self-stretch bg-[#c59b27] rounded-xs" />
-              <div>
-                <div className="font-display text-5xl sm:text-6xl lg:text-[4.75rem] font-black tracking-tight text-[#c59b27] leading-none">
-                  25+
-                </div>
-                <div className="font-display text-xs font-black uppercase tracking-[0.2em] text-foreground/80 mt-2">
-                  YEARS OF EXPERIENCE
-                </div>
-              </div>
-            </div>
+      {/* Right Column Full-Height Curved Organic Photo Composition */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-0 bottom-0 w-full lg:w-[58%] xl:w-[60%] z-10 overflow-hidden hidden lg:block select-none"
+      >
+        {/* SVG Defs for Curved Mask and Dual Gold Border Overlay */}
+        <svg className="absolute inset-0 h-full w-full pointer-events-none z-20" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <clipPath id="craneCurveClip" clipPathUnits="objectBoundingBox">
+              <path d="M 0.22 0 C 0.13 0.12, 0.01 0.26, 0.02 0.44 C 0.03 0.65, 0.14 0.85, 0.28 1 L 1 1 L 1 0 Z" />
+            </clipPath>
+            <linearGradient id="curveGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#f0d078" />
+              <stop offset="50%" stopColor="#d4af37" />
+              <stop offset="100%" stopColor="#c59b27" />
+            </linearGradient>
+          </defs>
 
-            <h2 className="headline mt-8 text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight leading-[1.02] text-foreground">
+          {/* Outer Parallel Champagne Line */}
+          <path
+            d="M 18.5 0 C 9.5 12, -2.5 26, -1.5 44 C -0.5 65, 10.5 85, 24.5 100"
+            stroke="#c59b27"
+            strokeWidth="0.6"
+            strokeOpacity="0.55"
+            fill="none"
+          />
+
+          {/* Inner Highlight Gold Border along image contour */}
+          <path
+            d="M 22 0 C 13 12, 1 26, 2 44 C 3 65, 14 85, 28 100"
+            stroke="url(#curveGoldGrad)"
+            strokeWidth="1.2"
+            fill="none"
+            style={{ filter: "drop-shadow(-2px 0 6px rgba(212,175,55,0.35))" }}
+          />
+        </svg>
+
+        {/* Clipped Industrial Photograph */}
+        <div
+          className="relative h-full w-full bg-slate-900 shadow-2xl"
+          style={{ clipPath: "url(#craneCurveClip)" }}
+        >
+          <img
+            src={craneLift}
+            alt="Heavy crane lifting huge process pressure vessel into steel structure"
+            className="h-full w-full object-cover object-center filter contrast-[1.03] brightness-[1.01]"
+          />
+          {/* Subtle warm sunlight overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-transparent to-transparent pointer-events-none" />
+        </div>
+      </div>
+
+      <div className="container-x relative z-20 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column Content Area */}
+          <Reveal className="lg:col-span-6 xl:col-span-5">
+            {/* Eyebrow with gold accent */}
+            <SectionEyebrow>PROJECT EXPERIENCE</SectionEyebrow>
+
+            {/* Main Headline */}
+            <h2 className="headline mt-4 sm:mt-5 text-3xl sm:text-5xl lg:text-[3.25rem] font-black tracking-[-0.03em] leading-[1.02] text-foreground">
               PROVEN WHEN
               <br />
               CONDITIONS
               <br />
-              GET TOUGH.
+              <span className="text-[#7a0d11]">GET TOUGH.</span>
             </h2>
 
-            <p className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground font-normal max-w-md">
-              Trusted for our technical depth, execution excellence and ability to deliver in complex and challenging
-              environments across industries.
+            {/* Supporting Description */}
+            <p className="mt-5 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-md">
+              Trusted for our technical depth, execution excellence and ability to deliver in complex and challenging environments across industries.
             </p>
+
+            {/* 3 Key Metrics Row with Golden Icons & Vertical Dividers */}
+            <div className="mt-9 sm:mt-11 flex items-start gap-5 sm:gap-7 pt-2">
+              {/* Stat 1: 25+ Years of Experience */}
+              <div className="flex flex-col">
+                <HardHat className="h-6 w-6 text-[#c59b27] stroke-[1.8]" />
+                <span className="font-display font-black text-2xl sm:text-3xl lg:text-[2rem] text-[#7a0d11] leading-none mt-2.5">
+                  25+
+                </span>
+                <span className="font-display font-bold text-[0.62rem] sm:text-[0.68rem] text-[#64748b] tracking-[0.14em] uppercase mt-1.5 leading-tight">
+                  YEARS OF
+                  <br />
+                  EXPERIENCE
+                </span>
+              </div>
+
+              {/* Vertical Divider 1 */}
+              <div className="h-14 w-px bg-[#EAE4D9] self-center" />
+
+              {/* Stat 2: 500+ Projects Delivered */}
+              <div className="flex flex-col">
+                <Cog className="h-6 w-6 text-[#c59b27] stroke-[1.8]" />
+                <span className="font-display font-black text-2xl sm:text-3xl lg:text-[2rem] text-[#7a0d11] leading-none mt-2.5">
+                  500+
+                </span>
+                <span className="font-display font-bold text-[0.62rem] sm:text-[0.68rem] text-[#64748b] tracking-[0.14em] uppercase mt-1.5 leading-tight">
+                  PROJECTS
+                  <br />
+                  DELIVERED
+                </span>
+              </div>
+
+              {/* Vertical Divider 2 */}
+              <div className="h-14 w-px bg-[#EAE4D9] self-center" />
+
+              {/* Stat 3: 100+ Trusted Clients */}
+              <div className="flex flex-col">
+                <Users className="h-6 w-6 text-[#c59b27] stroke-[1.8]" />
+                <span className="font-display font-black text-2xl sm:text-3xl lg:text-[2rem] text-[#7a0d11] leading-none mt-2.5">
+                  100+
+                </span>
+                <span className="font-display font-bold text-[0.62rem] sm:text-[0.68rem] text-[#64748b] tracking-[0.14em] uppercase mt-1.5 leading-tight">
+                  TRUSTED
+                  <br />
+                  CLIENTS
+                </span>
+              </div>
+            </div>
           </Reveal>
 
-          {/* Right Column: Industrial Crane Lifting Huge Vessel Photo */}
-          <Reveal className="relative lg:col-span-7" delay={150}>
-            <div className="relative overflow-hidden rounded-xs shadow-xl border border-[#EAE4D9]/80 bg-slate-900">
+          {/* Mobile / Tablet Image View */}
+          <Reveal className="lg:hidden mt-8" delay={120}>
+            <div className="relative overflow-hidden rounded-xs shadow-lg border border-[#c59b27]/60 bg-slate-900">
               <img
                 src={craneLift}
                 alt="Heavy crane lifting large process pressure vessel into steel structure"
-                className="w-full aspect-[16/10] object-cover transition-transform duration-700 hover:scale-[1.02]"
+                className="w-full aspect-[16/10] object-cover"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-px -right-px z-20 h-10 w-10 bg-[#7a0d11] [clip-path:polygon(100%_0,100%_100%,0_100%)]"
               />
             </div>
           </Reveal>
@@ -1001,108 +1363,455 @@ export function ProjectExperience() {
   );
 }
 
-/* ---------- 08. SUPPORTING THE TEAMS BEHIND INDUSTRIAL PROJECTS ---------- */
-const STAKEHOLDERS = [
+/* ---------- 08. SUPPORTING THE TEAMS BEHIND INDUSTRIAL PROJECTS (OUR STAKEHOLDERS) ---------- */
+const STAKEHOLDER_NODES = [
   {
+    num: "01",
     title: "PLANT OWNERS",
     desc: "Secure, efficient and reliable process plants tailored to your business needs.",
+    icon: Factory,
   },
   {
+    num: "02",
     title: "EPC CONTRACTORS",
     desc: "A trusted partner with engineering and execution expertise at every stage.",
+    icon: HardHat,
   },
   {
+    num: "03",
     title: "ENGINEERING COMPANIES",
     desc: "Collaborative execution with technical depth and manufacturing capability.",
+    icon: Users,
   },
   {
+    num: "04",
     title: "OEMS",
     desc: "Fabrication and equipment manufacturing support.",
+    icon: Cog,
   },
   {
+    num: "05",
     title: "INDUSTRIAL PROJECT TEAMS",
     desc: "Responsive and dependable support to keep projects on track.",
+    icon: Users,
   },
 ];
 
 export function WhoWeServe() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
-    <section className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
-      {/* Subtle warm champagne ambient glow */}
+    <section id="about" className="relative overflow-hidden bg-[#FAF8F5] py-12 sm:py-14 lg:py-16 border-b border-[#EAE4D9]/80">
+      {/* Subtle Warm Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(212,175,55,0.04)_0%,transparent_70%)]"
       />
 
-      <div className="container-x relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
-        {/* Left Column: Heading & Narrative */}
-        <Reveal className="lg:col-span-4">
-          <h2 className="headline text-3xl sm:text-4xl lg:text-[2.65rem] font-black tracking-tight leading-[1.04] text-foreground">
-            <span className="text-[#7a0d11]">SUPPORTING</span>
-            <br />
-            THE TEAMS
-            <br />
-            BEHIND
-            <br />
-            INDUSTRIAL
-            <br />
-            PROJECTS.
-          </h2>
+      {/* Very Faint Background Refinery Silhouettes on Far Edges */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 bottom-0 h-[260px] w-[28%] max-w-[340px] z-0 overflow-hidden select-none opacity-15 hidden xl:block"
+      >
+        <img
+          src={hero}
+          alt=""
+          className="h-full w-full object-cover object-right-bottom filter sepia-[0.3] brightness-110 [mask-image:linear-gradient(to_left,black_20%,transparent_90%)]"
+        />
+      </div>
 
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground font-normal max-w-sm">
-            We work with all key stakeholders across the project lifecycle, ensuring seamless collaboration and
-            successful delivery from concept to commissioning and beyond.
-          </p>
-        </Reveal>
+      <div className="container-x relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 xl:gap-14 items-center">
+          {/* Left Column: Heading & Narrative Description */}
+          <Reveal className="lg:col-span-4 xl:col-span-4">
+            <SectionEyebrow>OUR STAKEHOLDERS</SectionEyebrow>
 
-        {/* Right Stakeholder Cards Grid with Circular Gold Icons */}
-        <div className="lg:col-span-8 flex flex-col gap-4">
-          {/* Top Row: 3 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {STAKEHOLDERS.slice(0, 3).map((item, i) => (
-              <Reveal
-                key={item.title}
-                delay={i * 80}
-                className="group border border-[#EAE4D9] bg-[#FDFCF9] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[190px]"
+            <h2 className="headline mt-5 text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-[-0.03em] leading-[1.02] text-foreground">
+              <span className="text-[#7a0d11]">SUPPORTING</span>
+              <br />
+              THE TEAMS
+              <br />
+              BEHIND
+              <br />
+              INDUSTRIAL
+              <br />
+              PROJECTS<span className="text-[#7a0d11]">.</span>
+            </h2>
+
+            <p className="mt-6 text-sm sm:text-base leading-relaxed text-[#556070] font-normal max-w-sm">
+              We work with all key stakeholders across the project lifecycle, ensuring seamless collaboration and
+              successful delivery from concept to commissioning and beyond.
+            </p>
+          </Reveal>
+
+          {/* Right Column: Semicircular Arc Visualization with Zero Overlaps */}
+          <Reveal className="lg:col-span-8 xl:col-span-8" delay={120}>
+            {/* Desktop View: Precision Coordinate-Driven Radial System */}
+            <div
+              className="hidden lg:block relative w-full max-w-[820px] mx-auto aspect-[820/490] select-none"
+              onMouseLeave={() => setHoveredIdx(null)}
+            >
+              {/* Central Semicircular Arch Window (cx=410, cy=430, R=220, width=440, height=220) */}
+              <div
+                className="absolute left-[190px] top-[210px] w-[440px] h-[220px] rounded-t-full overflow-hidden border-2 border-[#c59b27] shadow-xl bg-slate-900 z-10 transition-transform duration-500 hover:scale-[1.01]"
               >
-                <div>
-                  {/* Gold/Bronze Circular Icon */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5EFE3] border border-[#c59b27]/35 text-[#c59b27] font-display font-black text-sm mb-4">
-                    {item.title[0]}
-                  </div>
+                <img
+                  src={hero}
+                  alt="Process plant distillation towers and piping structure at golden sunset"
+                  className="w-full h-full object-cover object-center filter saturate-[1.15] contrast-[1.02] brightness-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-                  <h3 className="font-display font-black text-sm uppercase tracking-wider text-foreground group-hover:text-[#7a0d11] transition-colors">
-                    {item.title}
-                  </h3>
-                </div>
+              {/* Bottom Flat Gold Horizon Base Line */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[60px] right-[60px] top-[430px] h-px bg-gradient-to-r from-transparent via-[#c59b27]/60 to-transparent z-10"
+              />
 
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground font-normal">{item.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Bottom Row: 2 Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {STAKEHOLDERS.slice(3, 5).map((item, i) => (
-              <Reveal
-                key={item.title}
-                delay={240 + i * 80}
-                className="group border border-[#EAE4D9] bg-[#FDFCF9] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[180px]"
+              {/* Bottom Center Pivot Hinge Medallion */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[410px] top-[430px] -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-2 border-[#c59b27] bg-[#FAF8F5] flex items-center justify-center z-20 shadow-xs"
               >
-                <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5EFE3] border border-[#c59b27]/35 text-[#c59b27] font-display font-black text-sm mb-4">
-                    {item.title[0]}
-                  </div>
+                <div className="w-2 h-2 rounded-full bg-[#7a0d11]" />
+              </div>
 
-                  <h3 className="font-display font-black text-sm uppercase tracking-wider text-foreground group-hover:text-[#7a0d11] transition-colors">
-                    {item.title}
-                  </h3>
-                </div>
+              {/* SVG Connector Arc and Leader Lines */}
+              <svg
+                viewBox="0 0 820 490"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute inset-0 w-full h-full pointer-events-none z-10"
+              >
+                <defs>
+                  <linearGradient id="stakeholderArcGrad" x1="0%" y1="100%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#c59b27" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#d4af37" stopOpacity="0.85" />
+                    <stop offset="100%" stopColor="#c59b27" stopOpacity="0.4" />
+                  </linearGradient>
+                  <linearGradient id="activeArcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#c59b27" />
+                    <stop offset="50%" stopColor="#7a0d11" />
+                    <stop offset="100%" stopColor="#c59b27" />
+                  </linearGradient>
+                </defs>
 
-                <p className="mt-3 text-xs leading-relaxed text-muted-foreground font-normal">{item.desc}</p>
-              </Reveal>
-            ))}
-          </div>
+                {/* Outer Concentric Guide Arc */}
+                <path
+                  d="M 120 430 A 290 290 0 0 1 700 430"
+                  stroke="#c59b27"
+                  strokeWidth="0.8"
+                  strokeDasharray="4 4"
+                  strokeOpacity="0.3"
+                />
+
+                {/* Main Continuous Semicircular Connecting Arc (R=270, from 180° to 0°) */}
+                <path
+                  d="M 140 430 A 270 270 0 0 1 680 430"
+                  stroke="url(#stakeholderArcGrad)"
+                  strokeWidth="1.8"
+                />
+
+                {/* Smooth Animated Active Glow Arc when a node is hovered */}
+                <path
+                  d="M 140 430 A 270 270 0 0 1 680 430"
+                  stroke="url(#activeArcGrad)"
+                  strokeWidth="2.5"
+                  className={`transition-opacity duration-500 ease-out ${
+                    hoveredIdx !== null ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{
+                    filter: "drop-shadow(0 0 6px rgba(122,13,17,0.5))",
+                  }}
+                />
+
+                {/* Thin Elegant Leader Lines Connecting Nodes to Text Blocks */}
+                {/* Node 01 (150, 356) -> Text Block 01 (105, 356) */}
+                <line
+                  x1="150"
+                  y1="356"
+                  x2="110"
+                  y2="356"
+                  stroke={hoveredIdx === 0 ? "#7a0d11" : "#c59b27"}
+                  strokeWidth={hoveredIdx === 0 ? "1.5" : "1"}
+                  strokeDasharray={hoveredIdx === 0 ? "none" : "3 2"}
+                  className="transition-colors duration-300"
+                />
+
+                {/* Node 02 (248, 214) -> Text Block 02 (200, 145) */}
+                <path
+                  d="M 248 214 L 210 145 L 185 145"
+                  stroke={hoveredIdx === 1 ? "#7a0d11" : "#c59b27"}
+                  strokeWidth={hoveredIdx === 1 ? "1.5" : "1"}
+                  strokeDasharray={hoveredIdx === 1 ? "none" : "3 2"}
+                  fill="none"
+                  className="transition-colors duration-300"
+                />
+
+                {/* Node 03 (410, 160) -> Text Block 03 (410, 100) */}
+                <line
+                  x1="410"
+                  y1="160"
+                  x2="410"
+                  y2="100"
+                  stroke={hoveredIdx === 2 ? "#7a0d11" : "#c59b27"}
+                  strokeWidth={hoveredIdx === 2 ? "1.5" : "1"}
+                  strokeDasharray={hoveredIdx === 2 ? "none" : "3 2"}
+                  className="transition-colors duration-300"
+                />
+
+                {/* Node 04 (572, 214) -> Text Block 04 (620, 145) */}
+                <path
+                  d="M 572 214 L 610 145 L 635 145"
+                  stroke={hoveredIdx === 3 ? "#7a0d11" : "#c59b27"}
+                  strokeWidth={hoveredIdx === 3 ? "1.5" : "1"}
+                  strokeDasharray={hoveredIdx === 3 ? "none" : "3 2"}
+                  fill="none"
+                  className="transition-colors duration-300"
+                />
+
+                {/* Node 05 (670, 356) -> Text Block 05 (715, 356) */}
+                <line
+                  x1="670"
+                  y1="356"
+                  x2="710"
+                  y2="356"
+                  stroke={hoveredIdx === 4 ? "#7a0d11" : "#c59b27"}
+                  strokeWidth={hoveredIdx === 4 ? "1.5" : "1"}
+                  strokeDasharray={hoveredIdx === 4 ? "none" : "3 2"}
+                  className="transition-colors duration-300"
+                />
+              </svg>
+
+              {/* 5 Equidistant Numbered Interactive Nodes on the Arc */}
+              {STAKEHOLDER_NODES.map((item, idx) => {
+                const IconComp = item.icon;
+                const isHovered = hoveredIdx === idx;
+
+                // Exact trigonometric coordinates for the 5 points along R=270 arc (cx=410, cy=430)
+                const positions = [
+                  { left: "150px", top: "356px" }, // 01 Plant Owners (164°)
+                  { left: "248px", top: "214px" }, // 02 EPC Contractors (127°)
+                  { left: "410px", top: "160px" }, // 03 Engineering Companies (90° Apex)
+                  { left: "572px", top: "214px" }, // 04 OEMs (53°)
+                  { left: "670px", top: "356px" }, // 05 Industrial Project Teams (16°)
+                ];
+
+                const pos = positions[idx]!;
+
+                return (
+                  <button
+                    key={item.num}
+                    type="button"
+                    onMouseEnter={() => setHoveredIdx(idx)}
+                    onFocus={() => setHoveredIdx(idx)}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer focus:outline-none group"
+                    style={{ left: pos.left, top: pos.top }}
+                    aria-label={`${item.num} ${item.title}`}
+                  >
+                    <div
+                      className={`flex items-center justify-center rounded-full transition-all duration-300 ease-out ${
+                        isHovered
+                          ? "h-12 w-12 bg-[#7a0d11] border-2 border-[#f0d078] shadow-[0_0_22px_rgba(122,13,17,0.42),0_4px_14px_rgba(212,175,55,0.35)] scale-110"
+                          : "h-10 w-10 bg-white border-2 border-[#d4af37] shadow-[0_2px_8px_rgba(0,0,0,0.08)] group-hover:scale-105 group-hover:border-[#c59b27]"
+                      }`}
+                    >
+                      <IconComp
+                        className={`transition-all duration-300 stroke-[1.8] ${
+                          isHovered
+                            ? "h-5 w-5 text-white scale-105"
+                            : "h-4.5 w-4.5 text-[#7a0d11]"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                );
+              })}
+
+              {/* 5 Well-Spaced Text Blocks with Zero Collisions */}
+              {/* Text Block 01: Left Lateral Base (Positioned away from circle) */}
+              <div
+                onMouseEnter={() => setHoveredIdx(0)}
+                className="absolute -left-7 sm:-left-9 lg:-left-10 top-[290px] w-[138px] flex flex-col text-right z-20 cursor-pointer group transition-transform duration-200 hover:-translate-x-0.5"
+              >
+                <span
+                  className={`font-display font-black text-xs sm:text-sm transition-colors duration-300 ${
+                    hoveredIdx === 0 ? "text-[#7a0d11]" : "text-[#c59b27]"
+                  }`}
+                >
+                  01
+                </span>
+                <h3
+                  className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-tight transition-colors duration-300 ${
+                    hoveredIdx === 0 ? "text-[#7a0d11]" : "text-foreground"
+                  }`}
+                >
+                  {STAKEHOLDER_NODES[0]?.title}
+                </h3>
+                <p className="text-[0.7rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1">
+                  {STAKEHOLDER_NODES[0]?.desc}
+                </p>
+              </div>
+
+              {/* Text Block 02: Upper Left */}
+              <div
+                onMouseEnter={() => setHoveredIdx(1)}
+                className="absolute left-[15px] top-[65px] w-[180px] flex flex-col text-left z-20 cursor-pointer group transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <span
+                  className={`font-display font-black text-xs sm:text-sm transition-colors duration-300 ${
+                    hoveredIdx === 1 ? "text-[#7a0d11]" : "text-[#c59b27]"
+                  }`}
+                >
+                  02
+                </span>
+                <h3
+                  className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-tight transition-colors duration-300 ${
+                    hoveredIdx === 1 ? "text-[#7a0d11]" : "text-foreground"
+                  }`}
+                >
+                  {STAKEHOLDER_NODES[1]?.title}
+                </h3>
+                <p className="text-[0.7rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1">
+                  {STAKEHOLDER_NODES[1]?.desc}
+                </p>
+              </div>
+
+              {/* Text Block 03: Top Apex Center */}
+              <div
+                onMouseEnter={() => setHoveredIdx(2)}
+                className="absolute left-[295px] top-[5px] w-[230px] flex flex-col items-center text-center z-20 cursor-pointer group transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <span
+                  className={`font-display font-black text-xs sm:text-sm transition-colors duration-300 ${
+                    hoveredIdx === 2 ? "text-[#7a0d11]" : "text-[#c59b27]"
+                  }`}
+                >
+                  03
+                </span>
+                <h3
+                  className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-tight transition-colors duration-300 ${
+                    hoveredIdx === 2 ? "text-[#7a0d11]" : "text-foreground"
+                  }`}
+                >
+                  {STAKEHOLDER_NODES[2]?.title}
+                </h3>
+                <p className="text-[0.7rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1 max-w-[200px]">
+                  {STAKEHOLDER_NODES[2]?.desc}
+                </p>
+              </div>
+
+              {/* Text Block 04: Upper Right */}
+              <div
+                onMouseEnter={() => setHoveredIdx(3)}
+                className="absolute right-[15px] top-[65px] w-[180px] flex flex-col text-right z-20 cursor-pointer group transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <span
+                  className={`font-display font-black text-xs sm:text-sm transition-colors duration-300 ${
+                    hoveredIdx === 3 ? "text-[#7a0d11]" : "text-[#c59b27]"
+                  }`}
+                >
+                  04
+                </span>
+                <h3
+                  className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-tight transition-colors duration-300 ${
+                    hoveredIdx === 3 ? "text-[#7a0d11]" : "text-foreground"
+                  }`}
+                >
+                  {STAKEHOLDER_NODES[3]?.title}
+                </h3>
+                <p className="text-[0.7rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1">
+                  {STAKEHOLDER_NODES[3]?.desc}
+                </p>
+              </div>
+
+              {/* Text Block 05: Right Lateral Base (Positioned away from circle) */}
+              <div
+                onMouseEnter={() => setHoveredIdx(4)}
+                className="absolute -right-7 sm:-right-9 lg:-right-10 top-[290px] w-[138px] flex flex-col text-left z-20 cursor-pointer group transition-transform duration-200 hover:translate-x-0.5"
+              >
+                <span
+                  className={`font-display font-black text-xs sm:text-sm transition-colors duration-300 ${
+                    hoveredIdx === 4 ? "text-[#7a0d11]" : "text-[#c59b27]"
+                  }`}
+                >
+                  05
+                </span>
+                <h3
+                  className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-tight transition-colors duration-300 ${
+                    hoveredIdx === 4 ? "text-[#7a0d11]" : "text-foreground"
+                  }`}
+                >
+                  {STAKEHOLDER_NODES[4]?.title}
+                </h3>
+                <p className="text-[0.7rem] sm:text-[0.74rem] text-[#64748b] font-medium leading-snug mt-1">
+                  {STAKEHOLDER_NODES[4]?.desc}
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile / Tablet View: Semi-Circular Arch Window + Responsive Stakeholder Grid */}
+            <div className="lg:hidden mt-8 flex flex-col gap-8">
+              {/* Semi-Circular Arch Image */}
+              <div className="relative w-full max-w-[440px] aspect-[2/1] mx-auto rounded-t-full overflow-hidden border-2 border-[#c59b27] shadow-lg bg-slate-900">
+                <img
+                  src={hero}
+                  alt="Process plant distillation towers at golden sunset"
+                  className="w-full h-full object-cover object-center filter saturate-110"
+                />
+              </div>
+
+              {/* 5 Stakeholder Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {STAKEHOLDER_NODES.map((item, idx) => {
+                  const IconComp = item.icon;
+                  const isHovered = hoveredIdx === idx;
+                  return (
+                    <div
+                      key={item.num}
+                      onMouseEnter={() => setHoveredIdx(idx)}
+                      onMouseLeave={() => setHoveredIdx(null)}
+                      className={`group border p-4 rounded-xs flex items-start gap-3 shadow-xs transition-all duration-300 ${
+                        isHovered
+                          ? "bg-white border-[#7a0d11] shadow-[0_4px_16px_rgba(122,13,17,0.12)] -translate-y-0.5"
+                          : "bg-white/90 border-[#EAE4D9] hover:border-[#c59b27]/60"
+                      }`}
+                    >
+                      <div
+                        className={`h-11 w-11 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                          isHovered
+                            ? "bg-[#7a0d11] text-white ring-2 ring-[#f0d078] scale-105"
+                            : "bg-[#FAF8F5] border-2 border-[#d4af37] text-[#7a0d11]"
+                        }`}
+                      >
+                        <IconComp className="h-5 w-5 stroke-[1.8]" />
+                      </div>
+                      <div>
+                        <span
+                          className={`font-display font-black text-xs sm:text-sm block transition-colors ${
+                            isHovered ? "text-[#7a0d11]" : "text-[#c59b27]"
+                          }`}
+                        >
+                          {item.num}
+                        </span>
+                        <h3
+                          className={`font-display font-black text-[0.82rem] sm:text-[0.9rem] uppercase tracking-wider mt-0.5 leading-snug transition-colors ${
+                            isHovered ? "text-[#7a0d11]" : "text-foreground"
+                          }`}
+                        >
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-[#64748b] font-medium leading-relaxed mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
