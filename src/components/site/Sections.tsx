@@ -48,7 +48,7 @@ function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; 
 function Label({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
     <p className={`eyebrow flex items-center gap-3 ${light ? "text-navy-foreground/80" : "text-steel-blue"}`}>
-      <span className="h-px w-8 bg-primary" />
+      <span className="h-px w-8 bg-gold" />
       {children}
     </p>
   );
@@ -86,7 +86,7 @@ export function Navbar() {
         </nav>
         <a
           href="#contact"
-          className="inline-flex items-center rounded-[2px] bg-[#0052cc] px-4 py-3 font-display text-[0.7rem] font-bold uppercase tracking-[0.16em] text-white shadow-sm transition-all duration-200 hover:bg-[#0043a8] active:scale-[0.99]"
+          className="inline-flex items-center rounded-[2px] bg-primary px-4 py-3 font-display text-[0.7rem] font-bold uppercase tracking-[0.16em] text-navy-foreground shadow-sm transition-all duration-200 hover:bg-primary-hover active:scale-[0.99]"
         >
           Start a project
         </a>
@@ -121,14 +121,14 @@ export function Hero() {
           <Label light>Lexus India Engineering Solutions</Label>
 
           {/* Compact 2-line Headline */}
-          <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] tracking-tight uppercase text-white mt-5 sm:mt-6">
+          <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] tracking-tight uppercase text-navy-foreground mt-5 sm:mt-6">
             ENGINEERING COMPLEXITY.
             <br />
-            <span className="text-white/80">BUILT FOR EXECUTION.</span>
+            <span className="text-navy-foreground/80">BUILT FOR EXECUTION.</span>
           </h1>
 
           {/* Short Supporting Line */}
-          <p className="mt-5 max-w-lg text-sm sm:text-base leading-relaxed text-white/85 font-medium">
+          <p className="mt-5 max-w-lg text-sm sm:text-base leading-relaxed text-navy-foreground/85 font-medium">
             Integrated engineering, fabrication and execution for process plants.
           </p>
 
@@ -136,7 +136,7 @@ export function Hero() {
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#capabilities"
-              className="inline-flex items-center gap-2.5 rounded-[2px] border border-white/40 bg-white/5 px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-xs transition-all duration-200 hover:bg-white hover:text-navy active:scale-[0.99]"
+              className="inline-flex items-center gap-2.5 rounded-[2px] border border-navy-foreground/40 bg-paper/5 px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.14em] text-navy-foreground backdrop-blur-xs transition-all duration-200 hover:bg-paper hover:text-navy active:scale-[0.99]"
             >
               Explore capabilities
             </a>
@@ -145,14 +145,14 @@ export function Hero() {
       </div>
 
       {/* Bottom Capabilities Bar */}
-      <div className="relative border-t border-white/15 bg-navy/60 backdrop-blur-sm">
+      <div className="relative border-t border-navy-foreground/15 bg-navy/60 backdrop-blur-sm">
         <ul className="container-x grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {["Engineering", "Fabrication", "EPC", "Site Execution", "Plant Support"].map((t, i) => (
             <li
               key={t}
-              className="eyebrow flex items-center gap-3 border-white/15 py-4 text-white/85 lg:border-l lg:pl-6 lg:first:border-l-0 lg:first:pl-0"
+              className="eyebrow flex items-center gap-3 border-navy-foreground/15 py-4 text-navy-foreground/85 lg:border-l lg:pl-6 lg:first:border-l-0 lg:first:pl-0"
             >
-              <span className="text-primary">{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-gold">{String(i + 1).padStart(2, "0")}</span>
               {t}
             </li>
           ))}
@@ -165,14 +165,14 @@ export function Hero() {
 /* ---------- intro ---------- */
 export function Intro() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FBFBF9] py-20 lg:py-28 border-b border-border">
+    <section id="about" className="relative overflow-hidden bg-background py-20 lg:py-28 border-b border-border">
       <div className="container-x">
         {/* Main Headline + Asymmetric Image Composition */}
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Typography & Narrative */}
           <Reveal className="lg:col-span-5 lg:pt-4">
             <div className="flex items-center gap-3">
-              <span className="h-[2px] w-6 bg-primary" />
+              <span className="h-[2px] w-6 bg-gold" />
               <span className="eyebrow text-xs font-bold tracking-[0.24em] text-steel-blue uppercase">
                 01 — WHO WE ARE
               </span>
@@ -203,7 +203,7 @@ export function Intro() {
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -right-3 -top-10 select-none font-display text-[10rem] font-black leading-none text-navy/[0.035] sm:text-[13rem] lg:-right-6 lg:-top-14 lg:text-[16rem]"
-              style={{ WebkitTextStroke: "1.5px oklch(0.25 0.035 225 / 0.12)" }}
+              style={{ WebkitTextStroke: "1.5px var(--outline-ink)" }}
             >
               01
             </span>
@@ -213,7 +213,7 @@ export function Intro() {
               {/* Subtle Industrial Orange Top-Left Corner Accent */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -left-3 -top-3 z-10 h-16 w-16 border-l-2 border-t-2 border-primary sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
+                className="pointer-events-none absolute -left-3 -top-3 z-10 h-16 w-16 border-l-2 border-t-2 border-gold sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
               />
 
               {/* Main Primary Fabrication Image */}
@@ -230,22 +230,22 @@ export function Intro() {
 
               {/* Overlapping Dark Navy Information Panel */}
               <div className="absolute -top-3 right-0 z-20 bg-navy p-4 text-navy-foreground shadow-xl sm:-top-5 sm:right-0 sm:p-6 lg:-top-5 lg:-right-4 lg:p-6 max-w-[230px] sm:max-w-[260px]">
-                <span className="block h-[2px] w-7 bg-primary mb-3" />
-                <p className="font-display text-xs sm:text-[0.82rem] font-bold tracking-widest uppercase text-white leading-tight">
+                <span className="block h-[2px] w-7 bg-gold mb-3" />
+                <p className="font-display text-xs sm:text-[0.82rem] font-bold tracking-widest uppercase text-navy-foreground leading-tight">
                   FABRICATION /
                   <br />
                   WORKING FACILITY
                 </p>
-                <p className="eyebrow mt-3 text-[0.65rem] tracking-[0.2em] text-steel-blue">
+                <p className="eyebrow mt-3 text-[0.65rem] tracking-[0.2em] text-gold-light">
                   MIDC, BHOSARI, PUNE
                 </p>
               </div>
 
               {/* Secondary Overlapping Process-Plant Image */}
-              <div className="absolute -bottom-6 left-[-10px] z-20 w-[46%] max-w-[240px] sm:-bottom-8 sm:left-[-24px] sm:w-[42%] sm:max-w-[280px] lg:-bottom-10 lg:left-[-36px] overflow-hidden border-4 border-[#FBFBF9] bg-navy shadow-xl">
+              <div className="absolute -bottom-6 left-[-10px] z-20 w-[46%] max-w-[240px] sm:-bottom-8 sm:left-[-24px] sm:w-[42%] sm:max-w-[280px] lg:-bottom-10 lg:left-[-36px] overflow-hidden border-4 border-background bg-navy shadow-xl">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-0 top-0 z-10 h-6 w-6 border-l border-t border-primary"
+                  className="pointer-events-none absolute left-0 top-0 z-10 h-6 w-6 border-l border-t border-gold"
                 />
                 <img
                   src={piping}
@@ -260,7 +260,7 @@ export function Intro() {
               {/* Orange connecting step accent line */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -bottom-6 left-[40%] h-[2px] w-12 bg-primary/75 hidden sm:block"
+                className="pointer-events-none absolute -bottom-6 left-[40%] h-[2px] w-12 bg-gold/75 hidden sm:block"
               />
             </div>
           </Reveal>
@@ -328,13 +328,13 @@ export function Lifecycle() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative overflow-hidden border-y border-border bg-[#FBFBF9] py-20 lg:py-28">
+    <section className="relative overflow-hidden border-y border-border bg-background py-20 lg:py-28">
       {/* Background Blueprint Illustration */}
       <LifecycleBlueprint className="absolute right-0 top-0 h-full w-[380px] sm:w-[480px] lg:w-[600px] text-steel-blue/30 opacity-70" />
 
       {/* Top Right Orange Technical Registration Marker */}
       <div className="absolute right-6 top-6 hidden sm:block">
-        <span className="inline-block h-2 w-2 border border-primary bg-primary/20" />
+        <span className="inline-block h-2 w-2 border border-gold bg-gold/20" />
       </div>
 
       <div className="container-x relative z-10">
@@ -343,7 +343,7 @@ export function Lifecycle() {
           <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <div className="flex items-center gap-3">
-                <span className="h-[2px] w-6 bg-primary" />
+                <span className="h-[2px] w-6 bg-gold" />
                 <span className="eyebrow text-xs font-bold tracking-[0.24em] text-steel-blue uppercase">
                   PROJECT LIFECYCLE
                 </span>
@@ -351,7 +351,7 @@ export function Lifecycle() {
               <h2 className="headline mt-5 text-3xl sm:text-5xl lg:text-[3.8rem] font-black tracking-tight leading-[0.96] text-navy">
                 FROM REQUIREMENT
                 <br />
-                TO COMMISSIONING<span className="text-primary">.</span>
+                TO COMMISSIONING<span className="text-gold">.</span>
               </h2>
             </div>
 
@@ -359,7 +359,7 @@ export function Lifecycle() {
             <div className="flex items-center gap-5 sm:self-end">
               <div className="h-10 w-px bg-border hidden sm:block" />
               <div className="flex flex-col">
-                <span className="font-display text-4xl sm:text-5xl font-light text-steel-blue/35 leading-none">
+                <span className="font-display text-4xl sm:text-5xl font-light text-gold/60 leading-none">
                   07
                 </span>
                 <span className="eyebrow text-[0.62rem] font-bold tracking-[0.26em] text-steel-blue mt-1">
@@ -377,7 +377,7 @@ export function Lifecycle() {
             <div className="absolute top-[17px] left-[7.14%] right-[7.14%] h-[2px] bg-steel/80 z-0">
               {/* Active Red Progress Line */}
               <div
-                className="h-full bg-[#dc2626] transition-all duration-300 ease-out"
+                className="h-full bg-primary transition-all duration-300 ease-out"
                 style={{ width: `${(active / (LIFECYCLE_STAGES.length - 1)) * 100}%` }}
               />
             </div>
@@ -397,19 +397,19 @@ export function Lifecycle() {
                     onClick={() => setActive(i)}
                     aria-pressed={isActive}
                     aria-label={`Stage ${s.num}: ${s.label}`}
-                    className="group relative flex flex-1 min-w-[85px] flex-col items-center text-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#dc2626] transition-transform duration-200"
+                    className="group relative flex flex-1 min-w-[85px] flex-col items-center text-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-transform duration-200"
                   >
                     {/* Top Node Indicator on Rail */}
                     <div className="relative flex h-9 w-9 items-center justify-center">
                       {isActive ? (
                         <div className="relative flex items-center justify-center">
-                          <span className="absolute h-7 w-7 rounded-full bg-[#dc2626]/20 ring-1 ring-[#dc2626]/40 animate-pulse" />
-                          <span className="relative h-3 w-3 rounded-full bg-[#dc2626] shadow-sm" />
+                          <span className="absolute h-7 w-7 rounded-full bg-primary/20 ring-1 ring-primary/40 animate-pulse" />
+                          <span className="relative h-3 w-3 rounded-full bg-primary shadow-sm" />
                         </div>
                       ) : isPast ? (
-                        <span className="h-3.5 w-3.5 rounded-full border-2 border-[#dc2626] bg-[#FBFBF9] transition-all duration-300 group-hover:scale-110" />
+                        <span className="h-3.5 w-3.5 rounded-full border-2 border-primary bg-background transition-all duration-300 group-hover:scale-110" />
                       ) : (
-                        <span className="h-3.5 w-3.5 rounded-full border-2 border-steel-blue/40 bg-[#FBFBF9] transition-all duration-300 group-hover:border-steel-blue group-hover:scale-110" />
+                        <span className="h-3.5 w-3.5 rounded-full border-2 border-steel-blue/40 bg-background transition-all duration-300 group-hover:border-steel-blue group-hover:scale-110" />
                       )}
                     </div>
 
@@ -418,8 +418,8 @@ export function Lifecycle() {
                       <span
                         className={`font-display text-xl sm:text-2xl font-black transition-colors duration-300 ${
                           isActive
-                            ? "text-[#dc2626]"
-                            : "text-steel-blue/50 group-hover:text-steel-blue"
+                            ? "text-primary"
+                            : "text-gold/65 group-hover:text-gold"
                         }`}
                       >
                         {s.num}
@@ -559,13 +559,13 @@ export function Capabilities() {
   };
 
   return (
-    <section id="capabilities" className="relative overflow-hidden bg-[#FBFBF9] py-20 lg:py-28 border-b border-border">
+    <section id="capabilities" className="relative overflow-hidden bg-background py-20 lg:py-28 border-b border-border">
       {/* Background CAD Blueprint Graphic */}
       <CapabilitiesCadBlueprint className="absolute right-0 bottom-6 h-64 w-80 sm:w-96 text-steel-blue/20 opacity-80" />
 
       {/* Orange Technical Registration Marker */}
       <div className="absolute right-[22%] bottom-[90px] hidden lg:block z-0 pointer-events-none">
-        <span className="inline-block h-2 w-2 border border-primary bg-primary" />
+        <span className="inline-block h-2 w-2 border border-gold bg-gold" />
       </div>
 
       <div className="container-x relative z-10">
@@ -574,7 +574,7 @@ export function Capabilities() {
           {/* Left Column: Heading & Lead */}
           <Reveal className="lg:col-span-4 lg:pt-4">
             <div className="flex items-center gap-3">
-              <span className="h-[2px] w-6 bg-primary" />
+              <span className="h-[2px] w-6 bg-gold" />
               <span className="eyebrow text-xs font-bold tracking-[0.24em] text-steel-blue uppercase">
                 02 — CAPABILITIES
               </span>
@@ -589,7 +589,7 @@ export function Capabilities() {
             </h2>
 
             <div className="mt-8">
-              <span className="block h-[2px] w-6 bg-primary mb-4" />
+              <span className="block h-[2px] w-6 bg-gold mb-4" />
               <p className="max-w-xs text-base sm:text-[1.05rem] leading-relaxed text-muted-foreground font-normal">
                 Integrated capability for demanding process-industry projects.
               </p>
@@ -604,7 +604,7 @@ export function Capabilities() {
                 {/* Subtle Industrial Orange Top-Left Corner Accent */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -left-3 -top-3 z-10 h-16 w-16 border-l-2 border-t-2 border-primary sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
+                  className="pointer-events-none absolute -left-3 -top-3 z-10 h-16 w-16 border-l-2 border-t-2 border-gold sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
                 />
 
                 {/* Primary Large Image */}
@@ -623,10 +623,10 @@ export function Capabilities() {
                 </div>
 
                 {/* Secondary Overlapping Vertical Process-Plant Image */}
-                <div className="absolute -bottom-4 left-[-12px] z-20 w-[42%] max-w-[200px] sm:-bottom-6 sm:left-[-24px] sm:w-[38%] sm:max-w-[240px] lg:-bottom-6 lg:left-[-36px] overflow-hidden border-4 border-[#FBFBF9] bg-navy shadow-2xl">
+                <div className="absolute -bottom-4 left-[-12px] z-20 w-[42%] max-w-[200px] sm:-bottom-6 sm:left-[-24px] sm:w-[38%] sm:max-w-[240px] lg:-bottom-6 lg:left-[-36px] overflow-hidden border-4 border-background bg-navy shadow-2xl">
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-0 top-0 z-10 h-6 w-6 border-l border-t border-primary"
+                    className="pointer-events-none absolute left-0 top-0 z-10 h-6 w-6 border-l border-t border-gold"
                   />
                   <div className="relative aspect-[3/4] w-full">
                     {CAPABILITIES_DATA.map((c, i) => (
@@ -646,32 +646,32 @@ export function Capabilities() {
                 {/* Orange connecting step accent line */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -bottom-4 left-[38%] h-[2px] w-10 bg-primary/75 hidden sm:block"
+                  className="pointer-events-none absolute -bottom-4 left-[38%] h-[2px] w-10 bg-gold/75 hidden sm:block"
                 />
               </div>
 
               {/* Right Overlapping Dark Navy Active Capability Panel (Compact Height) */}
-              <div className="relative z-30 w-full lg:w-[35%] lg:-ml-12 lg:-mt-4 bg-navy p-5 sm:p-6 text-white shadow-2xl overflow-hidden flex flex-col justify-start">
+              <div className="relative z-30 w-full lg:w-[35%] lg:-ml-12 lg:-mt-4 bg-navy p-5 sm:p-6 text-navy-foreground shadow-2xl overflow-hidden flex flex-col justify-start">
                 {/* Large Background Outlined Number */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute top-1 right-3 font-display text-7xl sm:text-8xl font-black leading-none select-none text-white/[0.04]"
-                  style={{ WebkitTextStroke: "1px rgba(255,255,255,0.12)" }}
+                  className="pointer-events-none absolute top-1 right-3 font-display text-7xl sm:text-8xl font-black leading-none select-none text-navy-foreground/[0.04]"
+                  style={{ WebkitTextStroke: "1px var(--outline-light)" }}
                 >
                   {activeCap.num}
                 </span>
 
                 <div className="relative z-10">
                   {/* Top Orange Accent Line */}
-                  <span className="block h-[2px] w-7 bg-primary mb-3" />
+                  <span className="block h-[2px] w-7 bg-gold mb-3" />
 
                   {/* Active Capability Title */}
-                  <h3 className="font-display text-base sm:text-lg font-black uppercase text-white tracking-tight leading-snug">
+                  <h3 className="font-display text-base sm:text-lg font-black uppercase text-navy-foreground tracking-tight leading-snug">
                     {activeCap.t}
                   </h3>
 
                   {/* Active Capability Short Description */}
-                  <p className="mt-3 text-xs sm:text-[0.8rem] leading-relaxed text-white/75 font-normal">
+                  <p className="mt-3 text-xs sm:text-[0.8rem] leading-relaxed text-navy-foreground/75 font-normal">
                     {activeCap.d}
                   </p>
                 </div>
@@ -682,7 +682,7 @@ export function Capabilities() {
                     type="button"
                     onClick={handlePrev}
                     aria-label="Previous capability"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#dc2626]"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-paper/10 text-navy-foreground transition-all hover:bg-paper/20 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
@@ -690,7 +690,7 @@ export function Capabilities() {
                     type="button"
                     onClick={handleNext}
                     aria-label="Next capability"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#dc2626] text-white shadow-lg transition-all hover:bg-[#b91c1c] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-navy-foreground shadow-lg transition-all hover:bg-primary-hover active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-foreground"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
@@ -718,6 +718,7 @@ export function Capabilities() {
                   const y0 = ys[i];
                   const x1 = xs[i + 1];
                   const y1 = ys[i + 1];
+                  if (x0 === undefined || x1 === undefined || y0 === undefined || y1 === undefined) continue;
                   if (y0 === y1) {
                     fullPathD += ` L ${x1} ${y1}`;
                   } else {
@@ -733,6 +734,7 @@ export function Capabilities() {
                   const y0 = ys[i];
                   const x1 = xs[i + 1];
                   const y1 = ys[i + 1];
+                  if (x0 === undefined || x1 === undefined || y0 === undefined || y1 === undefined) continue;
                   if (y0 === y1) {
                     activePathD += ` L ${x1} ${y1}`;
                   } else {
@@ -751,7 +753,7 @@ export function Capabilities() {
                     <path
                       d={fullPathD}
                       fill="none"
-                      stroke="#cbd5e1"
+                      stroke="var(--steel)"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       className="transition-all duration-500 ease-out"
@@ -762,7 +764,7 @@ export function Capabilities() {
                       <path
                         d={activePathD}
                         fill="none"
-                        stroke="#dc2626"
+                        stroke="var(--primary)"
                         strokeWidth="2"
                         strokeLinecap="round"
                         className="transition-all duration-500 ease-out"
@@ -789,7 +791,7 @@ export function Capabilities() {
                     onClick={() => setActive(i)}
                     aria-pressed={isActive}
                     aria-label={`Capability ${c.num}: ${c.t}`}
-                    className="group relative flex flex-1 min-w-[110px] flex-col items-center text-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#dc2626] transition-transform duration-200"
+                    className="group relative flex flex-1 min-w-[110px] flex-col items-center text-center cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-transform duration-200"
                   >
                     {/* Node Indicator sitting on the path */}
                     <div className="relative h-[46px] w-full flex items-center justify-center">
@@ -799,13 +801,13 @@ export function Capabilities() {
                       >
                         {isActive ? (
                           <div className="relative flex items-center justify-center">
-                            <span className="absolute h-9 w-9 rounded-full bg-[#dc2626]/20 ring-1 ring-[#dc2626]/40 animate-pulse" />
-                            <span className="relative h-4 w-4 rounded-full bg-[#dc2626] shadow-sm" />
+                            <span className="absolute h-9 w-9 rounded-full bg-primary/20 ring-1 ring-primary/40 animate-pulse" />
+                            <span className="relative h-4 w-4 rounded-full bg-primary shadow-sm" />
                           </div>
                         ) : isPast ? (
-                          <span className="h-4 w-4 rounded-full border-2 border-[#dc2626]/80 bg-[#FBFBF9] transition-all duration-300 group-hover:scale-110" />
+                          <span className="h-4 w-4 rounded-full border-2 border-primary/80 bg-background transition-all duration-300 group-hover:scale-110" />
                         ) : (
-                          <span className="h-4 w-4 rounded-full border border-slate-300 bg-[#FBFBF9] transition-all duration-300 group-hover:border-slate-500 group-hover:scale-110" />
+                          <span className="h-4 w-4 rounded-full border border-steel bg-background transition-all duration-300 group-hover:border-gold group-hover:scale-110" />
                         )}
                       </div>
                     </div>
@@ -815,8 +817,8 @@ export function Capabilities() {
                       <span
                         className={`font-display font-black transition-colors duration-300 ${
                           isActive
-                            ? "text-3xl text-[#dc2626]"
-                            : "text-xl text-slate-400 group-hover:text-slate-600"
+                            ? "text-3xl text-primary"
+                            : "text-xl text-gold/65 group-hover:text-gold"
                         }`}
                       >
                         {c.num}
@@ -825,7 +827,7 @@ export function Capabilities() {
                         className={`font-display uppercase tracking-wider transition-colors duration-300 mt-1 max-w-[130px] leading-snug ${
                           isActive
                             ? "text-xs font-black text-navy"
-                            : "text-[0.68rem] sm:text-xs font-bold text-slate-500 group-hover:text-navy"
+                            : "text-[0.68rem] sm:text-xs font-bold text-steel-blue group-hover:text-navy"
                         }`}
                       >
                         {c.t}
@@ -1027,18 +1029,18 @@ export function Industries() {
         {/* Top Header */}
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="h-[2px] w-6 bg-primary" />
-            <span className="eyebrow text-xs font-bold tracking-[0.24em] text-steel-blue uppercase">
+            <span className="h-[2px] w-6 bg-gold" />
+            <span className="eyebrow text-xs font-bold tracking-[0.24em] text-gold uppercase">
               03 — INDUSTRIES
             </span>
           </div>
 
-          <h2 className="headline mt-5 max-w-4xl text-3xl sm:text-5xl lg:text-[3.8rem] font-black tracking-tight leading-[0.96] text-white">
+          <h2 className="headline mt-5 max-w-4xl text-3xl sm:text-5xl lg:text-[3.8rem] font-black tracking-tight leading-[0.96] text-navy-foreground">
             ENGINEERING FOR
             <br />
             PROCESS-INTENSIVE
             <br />
-            <span className="text-primary">INDUSTRIES.</span>
+            <span className="text-gold">INDUSTRIES.</span>
           </h2>
         </Reveal>
 
@@ -1049,13 +1051,13 @@ export function Industries() {
             {/* Subtle Industrial Orange Corner Bracket */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-3 -top-3 z-20 h-16 w-16 border-l-2 border-t-2 border-primary sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
+              className="pointer-events-none absolute -left-3 -top-3 z-20 h-16 w-16 border-l-2 border-t-2 border-gold sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
             />
 
             {/* Left Orange Border Accent on Featured Image */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-[14px] top-6 bottom-6 w-[2px] bg-primary hidden sm:block z-20"
+              className="pointer-events-none absolute -left-[14px] top-6 bottom-6 w-[2px] bg-gold hidden sm:block z-20"
             />
 
             {/* 3-Image Showcase Container */}
@@ -1114,7 +1116,7 @@ export function Industries() {
               <div className="flex items-center gap-4">
                 {/* Counter */}
                 <p className="font-mono text-sm tracking-widest text-navy-foreground/50">
-                  <span className="font-bold text-primary">{current.num}</span> / 06
+                  <span className="font-bold text-gold">{current.num}</span> / 06
                 </p>
 
                 <span className="h-4 w-px bg-navy-foreground/20" />
@@ -1122,8 +1124,8 @@ export function Industries() {
                 {/* Active Title & Short Subtitle */}
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="h-[2px] w-4 bg-primary" />
-                    <h3 className="font-display text-sm sm:text-base font-black uppercase text-white tracking-wider">
+                    <span className="h-[2px] w-4 bg-gold" />
+                    <h3 className="font-display text-sm sm:text-base font-black uppercase text-navy-foreground tracking-wider">
                       {current.t}
                     </h3>
                   </div>
@@ -1134,13 +1136,13 @@ export function Industries() {
               {/* Navigation Controls */}
               <div className="flex items-center gap-3">
                 {/* Orange registration dot */}
-                <span className="inline-block h-1.5 w-1.5 bg-primary mr-1 hidden sm:inline-block" />
+                <span className="inline-block h-1.5 w-1.5 bg-gold mr-1 hidden sm:inline-block" />
 
                 <button
                   type="button"
                   onClick={handlePrev}
                   aria-label="Previous industry"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-paper/10 text-navy-foreground transition-all hover:bg-paper/20 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
                 >
                   <ChevronLeft className="h-4 w-4" />
                 </button>
@@ -1148,7 +1150,7 @@ export function Industries() {
                   type="button"
                   onClick={handleNext}
                   aria-label="Next industry"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-all hover:bg-primary/90 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-navy-foreground shadow-lg transition-all hover:bg-primary-hover active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-foreground"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -1164,7 +1166,7 @@ export function Industries() {
 
               {/* Vertical Orange Active Segment */}
               <div
-                className="absolute left-[7px] sm:left-[9px] w-px bg-primary transition-all duration-300 z-0"
+                className="absolute left-[7px] sm:left-[9px] w-px bg-gold transition-all duration-300 z-0"
                 style={{
                   top: `${(active / (INDUSTRIES_DATA.length - 1)) * 75 + 12}%`,
                   height: "28px",
@@ -1186,14 +1188,14 @@ export function Industries() {
                         onClick={() => setActive(i)}
                         aria-pressed={isActive}
                         className={`group relative flex w-full items-center justify-between gap-4 py-4 sm:py-4.5 text-left border-b border-navy-foreground/10 transition-colors duration-200 cursor-pointer ${
-                          isActive ? "border-primary/40" : "hover:border-navy-foreground/20"
+                          isActive ? "border-gold/40" : "hover:border-navy-foreground/20"
                         }`}
                       >
                         {/* Node Indicator on Rail */}
                         <span
                           className={`absolute left-[-24px] sm:left-[-30px] flex items-center justify-center transition-all duration-300 ${
                             isActive
-                              ? "h-4 w-4 rounded-full border-2 border-primary bg-navy ring-2 ring-primary/30"
+                              ? "h-4 w-4 rounded-full border-2 border-primary bg-primary ring-2 ring-gold/30"
                               : "h-3 w-3 rounded-full border border-navy-foreground/30 bg-navy group-hover:border-navy-foreground/60"
                           }`}
                         />
@@ -1202,7 +1204,7 @@ export function Industries() {
                         <div className="flex items-baseline gap-4 sm:gap-5">
                           <span
                             className={`font-display text-sm sm:text-base font-bold transition-colors duration-300 ${
-                              isActive ? "text-primary" : "text-navy-foreground/40 group-hover:text-navy-foreground/70"
+                              isActive ? "text-gold" : "text-navy-foreground/40 group-hover:text-gold"
                             }`}
                           >
                             {ind.num}
@@ -1211,12 +1213,12 @@ export function Industries() {
                           <div>
                             <span
                               className={`block font-display text-sm sm:text-[0.98rem] font-black uppercase tracking-wider transition-colors duration-300 ${
-                                isActive ? "text-white" : "text-navy-foreground/75 group-hover:text-white"
+                                isActive ? "text-navy-foreground" : "text-navy-foreground/75 group-hover:text-navy-foreground"
                               }`}
                             >
                               {ind.t}
                             </span>
-                            <span className="mt-0.5 block text-xs text-navy-foreground/50 transition-colors group-hover:text-navy-foreground/70">
+                            <span className="mt-0.5 block text-xs text-navy-foreground/50 transition-colors group-hover:text-gold">
                               {ind.d}
                             </span>
                           </div>
@@ -1226,7 +1228,7 @@ export function Industries() {
                         <div className="shrink-0 pl-2">
                           <Icon
                             className={`h-7 w-7 transition-colors duration-300 ${
-                              isActive ? "text-primary" : "text-navy-foreground/30 group-hover:text-navy-foreground/60"
+                              isActive ? "text-gold" : "text-navy-foreground/30 group-hover:text-gold"
                             }`}
                           />
                         </div>
@@ -1263,7 +1265,7 @@ export function Manufacturing() {
           <Reveal className="lg:col-span-5 xl:col-span-4">
             {/* 04 — MANUFACTURING */}
             <div className="flex items-center gap-3">
-              <span className="h-[2px] w-6 bg-primary" />
+              <span className="h-[2px] w-6 bg-gold" />
               <span className="font-display text-[11px] sm:text-xs font-bold tracking-[0.22em] text-steel-blue uppercase">
                 04 — MANUFACTURING
               </span>
@@ -1273,7 +1275,7 @@ export function Manufacturing() {
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.25rem] leading-[0.98] tracking-tight text-navy uppercase mt-6 sm:mt-8">
               WHERE ENGINEERING
               <br />
-              BECOMES EQUIPMENT<span className="text-primary">.</span>
+              BECOMES EQUIPMENT<span className="text-gold">.</span>
             </h2>
 
             {/* Narrative Description */}
@@ -1286,12 +1288,12 @@ export function Manufacturing() {
               {MANUFACTURING_EQUIP.map((item) => (
                 <li
                   key={item.num}
-                  className="group flex items-center gap-4 border-b border-border/70 py-3 sm:py-3.5 transition-all duration-200 hover:bg-black/[0.02]"
+                  className="group flex items-center gap-4 border-b border-border/70 py-3 sm:py-3.5 transition-all duration-200 hover:bg-foreground/[0.02]"
                 >
-                  <span className="font-display text-xs sm:text-sm font-black text-primary">
+                  <span className="font-display text-xs sm:text-sm font-black text-gold">
                     {item.num}
                   </span>
-                  <span className="font-display text-xs sm:text-[0.82rem] font-extrabold uppercase tracking-wider text-navy transition-colors group-hover:text-primary">
+                  <span className="font-display text-xs sm:text-[0.82rem] font-extrabold uppercase tracking-wider text-navy transition-colors group-hover:text-gold">
                     {item.name}
                   </span>
                 </li>
@@ -1306,7 +1308,7 @@ export function Manufacturing() {
                 src={manufacturing}
                 alt="Process equipment manufacturing and fabrication diagram with equipment callouts"
                 loading="lazy"
-                className="w-full h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-[1.02]"
+                className="manufacturing-theme w-full h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
           </Reveal>
@@ -1344,7 +1346,7 @@ export function Why() {
         <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4">
           {WHY.map(([l, t, d], i) => (
             <Reveal key={l} delay={i * 100} className="border-t border-navy-foreground/20 py-10 sm:pr-8 lg:border-l lg:border-t-0 lg:px-8 lg:py-0 lg:first:border-l-0 lg:first:pl-0">
-              <span className="font-display text-8xl font-extrabold leading-none text-primary">{l}</span>
+              <span className="font-display text-8xl font-extrabold leading-none text-gold">{l}</span>
               <h3 className="mt-8 font-display text-xl font-extrabold uppercase tracking-tight">{t}</h3>
               <p className="mt-3 text-navy-foreground/70">{d}</p>
             </Reveal>
@@ -1400,15 +1402,15 @@ export function ProjectExperience() {
         <Reveal className="max-w-xl">
           {/* 06 — PROJECT EXPERIENCE */}
           <div className="flex items-center gap-3">
-            <span className="h-[2px] w-6 bg-primary" />
+            <span className="h-[2px] w-6 bg-gold" />
             <span className="font-display text-[11px] sm:text-xs font-bold tracking-[0.22em] text-steel-blue uppercase">
               06 — PROJECT EXPERIENCE
             </span>
           </div>
 
           {/* 25+ PERSONNEL ONSITE with single thin orange accent line */}
-          <div className="mt-8 sm:mt-10 border-l-[3px] border-primary pl-4 sm:pl-5">
-            <div className="font-display text-6xl sm:text-7xl lg:text-[5.75rem] font-black tracking-tight text-primary leading-none">
+          <div className="mt-8 sm:mt-10 border-l-[3px] border-gold pl-4 sm:pl-5">
+            <div className="font-display text-6xl sm:text-7xl lg:text-[5.75rem] font-black tracking-tight text-gold leading-none">
               25+
             </div>
             <div className="font-display text-xs sm:text-sm font-extrabold tracking-[0.22em] text-navy uppercase mt-2.5">
@@ -1424,7 +1426,7 @@ export function ProjectExperience() {
             <br />
             CONDITIONS
             <br />
-            GET TOUGH<span className="text-primary">.</span>
+            GET TOUGH<span className="text-gold">.</span>
           </h2>
 
           {/* Project description */}
@@ -1474,7 +1476,7 @@ export function WhoWeServe() {
         {/* Left Column */}
         <Reveal className="lg:col-span-4">
           <div className="flex items-center gap-3">
-            <span className="h-[2px] w-6 bg-primary" />
+            <span className="h-[2px] w-6 bg-gold" />
             <span className="font-display text-[11px] sm:text-xs font-bold tracking-[0.22em] text-steel-blue uppercase">
               07 — WHO WE SERVE
             </span>
@@ -1487,10 +1489,10 @@ export function WhoWeServe() {
             <br />
             BEHIND INDUSTRIAL
             <br />
-            PROJECTS<span className="text-primary">.</span>
+            PROJECTS<span className="text-gold">.</span>
           </h2>
 
-          <div className="w-8 h-[2px] bg-primary mt-6 mb-6" />
+          <div className="w-8 h-[2px] bg-gold mt-6 mb-6" />
 
           <p className="text-sm sm:text-base leading-relaxed text-steel-blue font-medium max-w-sm">
             We work with key stakeholders across the industrial ecosystem, delivering engineered solutions that help
@@ -1506,13 +1508,13 @@ export function WhoWeServe() {
               <Reveal
                 key={card.num}
                 delay={i * 70}
-                className="group border border-border/80 bg-white/60 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-primary/60 hover:bg-white min-h-[220px]"
+                className="group border border-border/80 bg-paper/60 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-gold/60 hover:bg-paper min-h-[220px]"
               >
                 <div>
                   <div className="flex items-start gap-3.5">
-                    <div className="w-[3px] h-10 bg-primary flex-shrink-0 mt-0.5" />
+                    <div className="w-[3px] h-10 bg-gold flex-shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-display text-xs font-bold text-primary tracking-wider block">
+                      <span className="font-display text-xs font-bold text-gold tracking-wider block">
                         {card.num}
                       </span>
                       <h3 className="font-display font-extrabold text-lg sm:text-xl text-navy uppercase leading-snug mt-1.5">
@@ -1534,13 +1536,13 @@ export function WhoWeServe() {
               <Reveal
                 key={card.num}
                 delay={210 + i * 70}
-                className="group border border-border/80 bg-white/60 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-primary/60 hover:bg-white min-h-[200px]"
+                className="group border border-border/80 bg-paper/60 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-gold/60 hover:bg-paper min-h-[200px]"
               >
                 <div>
                   <div className="flex items-start gap-3.5">
-                    <div className="w-[3px] h-10 bg-primary flex-shrink-0 mt-0.5" />
+                    <div className="w-[3px] h-10 bg-gold flex-shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-display text-xs font-bold text-primary tracking-wider block">
+                      <span className="font-display text-xs font-bold text-gold tracking-wider block">
                         {card.num}
                       </span>
                       <h3 className="font-display font-extrabold text-lg sm:text-xl text-navy uppercase leading-snug mt-1.5">
@@ -1567,13 +1569,13 @@ export function FinalCta() {
     <section id="contact" className="bg-paper py-16 sm:py-20 lg:py-24">
       <div className="container-x">
         <Reveal>
-          <div className="relative overflow-hidden rounded-xl border border-border/80 bg-white shadow-xs">
+          <div className="relative overflow-hidden rounded-xl border border-border/80 bg-paper shadow-xs">
             <div className="grid lg:grid-cols-12 min-h-[360px] sm:min-h-[400px] lg:min-h-[420px] items-stretch">
               {/* Left Content Area */}
-              <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative z-10 bg-white">
+              <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative z-10 bg-paper">
                 {/* 08 — START A PROJECT */}
                 <div className="flex items-center gap-3">
-                  <span className="h-[2px] w-6 bg-primary" />
+                  <span className="h-[2px] w-6 bg-gold" />
                   <span className="font-display text-[11px] sm:text-xs font-bold tracking-[0.22em] text-steel-blue uppercase">
                     08 — START A PROJECT
                   </span>
@@ -1595,13 +1597,13 @@ export function FinalCta() {
                 <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
                   <a
                     href="#footer"
-                    className="bg-primary text-white font-display text-xs font-extrabold uppercase tracking-[0.14em] px-6 py-3.5 hover:bg-primary/90 transition-all duration-200 inline-flex items-center justify-center text-center"
+                    className="bg-primary text-navy-foreground font-display text-xs font-extrabold uppercase tracking-[0.14em] px-6 py-3.5 hover:bg-primary-hover transition-all duration-200 inline-flex items-center justify-center text-center"
                   >
                     CONTACT OUR TEAM
                   </a>
                   <a
                     href="#capabilities"
-                    className="border border-navy text-navy font-display text-xs font-extrabold uppercase tracking-[0.14em] px-6 py-3.5 hover:bg-navy hover:text-white transition-all duration-200 bg-transparent inline-flex items-center justify-center text-center"
+                    className="border border-navy text-navy font-display text-xs font-extrabold uppercase tracking-[0.14em] px-6 py-3.5 hover:bg-navy hover:text-navy-foreground transition-all duration-200 bg-transparent inline-flex items-center justify-center text-center"
                   >
                     EXPLORE CAPABILITIES
                   </a>
@@ -1609,7 +1611,7 @@ export function FinalCta() {
               </div>
 
               {/* Right Image with Diagonal Accent Cut */}
-              <div className="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden bg-slate-100">
+              <div className="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden bg-muted">
                 <img
                   src={piping}
                   alt="Industrial plant piping and process structure"
@@ -1628,11 +1630,11 @@ export function FinalCta() {
                     className="absolute inset-0 h-full w-full"
                   >
                     {/* Left white cutout to produce exact angle */}
-                    <polygon points="0,0 20,0 0,100" fill="#ffffff" />
+                    <polygon points="0,0 20,0 0,100" fill="var(--paper)" />
                     {/* Orange accent shard */}
-                    <polygon points="17,45 28,45 16,74 5,74" fill="hsl(var(--primary))" opacity="0.9" />
+                    <polygon points="17,45 28,45 16,74 5,74" fill="var(--gold)" opacity="0.9" />
                     {/* Orange angled thin line */}
-                    <line x1="16" y1="34" x2="28" y2="52" stroke="hsl(var(--primary))" strokeWidth="0.8" />
+                    <line x1="16" y1="34" x2="28" y2="52" stroke="var(--gold)" strokeWidth="0.8" />
                   </svg>
                 </div>
               </div>
@@ -1655,14 +1657,14 @@ export function Footer() {
             alt="Lexus India Engineering Solutions"
             className="h-10 sm:h-12 w-auto object-contain brightness-0 invert opacity-95 mb-5"
           />
-          <p className="font-display text-xl font-extrabold uppercase leading-tight tracking-tight text-white">
+          <p className="font-display text-xl font-extrabold uppercase leading-tight tracking-tight text-navy-foreground">
             Lexus India Engineering Solutions
           </p>
           <p className="mt-3 text-navy-foreground/70 text-sm">Engineering & Technology Solutions</p>
           <p className="eyebrow mt-4 text-navy-foreground/50 text-xs">Also referred to as 3A-Engg. Solution</p>
         </div>
         <nav aria-label="Footer" className="lg:col-span-3">
-          <p className="eyebrow text-primary">Navigate</p>
+          <p className="eyebrow text-gold">Navigate</p>
           <ul className="mt-5 space-y-3">
             {NAV.map((n) => (
               <li key={n.href}>
@@ -1674,7 +1676,7 @@ export function Footer() {
           </ul>
         </nav>
         <address className="not-italic lg:col-span-4">
-          <p className="eyebrow text-primary">Locations</p>
+          <p className="eyebrow text-gold">Locations</p>
           <div className="mt-5 border-t border-navy-foreground/20 py-4">
             <p className="eyebrow text-navy-foreground/50">Registered Office</p>
             <p className="mt-2">Shivaji Nagar, Pune, Maharashtra</p>
