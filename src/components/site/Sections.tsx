@@ -16,6 +16,12 @@ import craneLift from "@/assets/crane-lift.jpg";
 import goldRibbonPipes from "@/assets/gold-ribbon-pipes.jpg";
 import indPower from "@/assets/ind-power.jpg";
 import indWater from "@/assets/ind-water.jpg";
+import indEthanol from "@/assets/ind-ethanol.jpg";
+import indChemical from "@/assets/ind-chemical.jpg";
+import indOilGas from "@/assets/ind-oilgas.jpg";
+import indWaterTreat from "@/assets/ind-water-treat.jpg";
+import indFood from "@/assets/ind-food.jpg";
+import indEvaporation from "@/assets/ind-evaporation.jpg";
 
 const NAV = [
   { label: "Capabilities", href: "#capabilities" },
@@ -422,13 +428,11 @@ export function Capabilities() {
             <SectionEyebrow>OUR EXPERTISE</SectionEyebrow>
 
             <h2 className="headline mt-5 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-[-0.03em] leading-[0.96] text-foreground">
-              FROM
+              FROM ENGINEERING
               <br />
-              ENGINEERING
+              DRAWINGS
               <br />
-              TO INDUSTRIAL
-              <br />
-              <span className="text-[#7a0d11]">EXECUTION.</span>
+              TO <span className="text-[#7a0d11]">PLANT EXECUTION.</span>
             </h2>
 
             <p className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground font-normal max-w-md">
@@ -536,28 +540,28 @@ export function Capabilities() {
 /* ---------- 05. INDUSTRIES WE SERVE ---------- */
 const INDUSTRIES_CARDS = [
   {
-    title: "CHEMICALS & PETROCHEMICALS",
-    img: piping,
+    title: "Ethanol & Distillery",
+    img: indEthanol,
   },
   {
-    title: "OIL & GAS",
-    img: hero,
+    title: "Chemical & Process Plants",
+    img: indChemical,
   },
   {
-    title: "PHARMACEUTICALS",
-    img: engineering,
+    title: "Oil & Gas",
+    img: indOilGas,
   },
   {
-    title: "FOOD & BEVERAGES",
-    img: evaporator,
+    title: "Water & Wastewater",
+    img: indWaterTreat,
   },
   {
-    title: "POWER & UTILITIES",
-    img: indPower,
+    title: "Food & Allied Industries",
+    img: indFood,
   },
   {
-    title: "WATER & WASTEWATER",
-    img: indWater,
+    title: "Evaporation & Drying",
+    img: indEvaporation,
   },
 ];
 
@@ -631,7 +635,7 @@ export function Industries() {
           <SectionEyebrow light>INDUSTRIES WE SERVE</SectionEyebrow>
 
           <h2 className="headline mt-5 max-w-3xl text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-primary-foreground">
-            ENGINEERING FOR
+            BUILT FOR
             <br />
             PROCESS-INTENSIVE
             <br />

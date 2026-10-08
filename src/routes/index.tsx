@@ -46,10 +46,10 @@ function Index() {
       <main>
         <Hero />
         <Intro />
-        <Lifecycle />
         <Capabilities />
         <Industries />
         <Manufacturing />
+        <Lifecycle />
         <ProjectExperience />
         <WhoWeServe />
         <FinalCta />
