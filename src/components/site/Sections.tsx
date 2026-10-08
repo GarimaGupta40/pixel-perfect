@@ -718,6 +718,7 @@ export function Capabilities() {
                   const y0 = ys[i];
                   const x1 = xs[i + 1];
                   const y1 = ys[i + 1];
+                  if (x0 === undefined || x1 === undefined || y0 === undefined || y1 === undefined) continue;
                   if (y0 === y1) {
                     fullPathD += ` L ${x1} ${y1}`;
                   } else {
@@ -733,6 +734,7 @@ export function Capabilities() {
                   const y0 = ys[i];
                   const x1 = xs[i + 1];
                   const y1 = ys[i + 1];
+                  if (x0 === undefined || x1 === undefined || y0 === undefined || y1 === undefined) continue;
                   if (y0 === y1) {
                     activePathD += ` L ${x1} ${y1}`;
                   } else {
