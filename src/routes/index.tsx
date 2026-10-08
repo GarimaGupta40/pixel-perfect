@@ -7,7 +7,6 @@ import {
   Capabilities,
   Industries,
   Manufacturing,
-  Why,
   ProjectExperience,
   WhoWeServe,
   FinalCta,
@@ -23,10 +22,6 @@ const jsonLd = {
   "@type": "Organization",
   name: "Lexus India Engineering Solutions",
   alternateName: "3A-Engg. Solution",
-  address: [
-    { "@type": "PostalAddress", streetAddress: "Shivaji Nagar", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
-    { "@type": "PostalAddress", streetAddress: "MIDC, Bhosari", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
-  ],
 };
 
 export const Route = createFileRoute("/")({
@@ -55,7 +50,6 @@ function Index() {
         <Capabilities />
         <Industries />
         <Manufacturing />
-        <Why />
         <ProjectExperience />
         <WhoWeServe />
         <FinalCta />
