@@ -7,7 +7,6 @@ import {
   Capabilities,
   Industries,
   Manufacturing,
-  EngineeringDesign,
   Why,
   ProjectExperience,
   WhoWeServe,
@@ -56,7 +55,6 @@ function Index() {
         <Capabilities />
         <Industries />
         <Manufacturing />
-        <EngineeringDesign />
         <Why />
         <ProjectExperience />
         <WhoWeServe />
