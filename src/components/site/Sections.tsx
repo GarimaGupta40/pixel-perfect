@@ -183,7 +183,7 @@ export function Intro() {
               <br />
               CAPABILITY.
               <br />
-              <span className="text-gold">EXECUTION</span>
+              <span className="text-primary">EXECUTION</span>
               <br />
               THAT CONNECTS IT.
             </h2>
@@ -585,7 +585,7 @@ export function Capabilities() {
               <br />
               TO INDUSTRIAL
               <br />
-              <span className="text-gold">EXECUTION.</span>
+              <span className="text-primary">EXECUTION.</span>
             </h2>
 
             <div className="mt-8">
@@ -1582,7 +1582,7 @@ export function FinalCta() {
                 {/* Headline */}
                 <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-[2.65rem] leading-[1.08] tracking-tight uppercase mt-6 sm:mt-8">
                   <span className="text-navy block">HAVE A COMPLEX PROJECT?</span>
-                  <span className="text-gold block mt-1">LET'S ENGINEER IT.</span>
+                  <span className="text-primary block mt-1">LET'S ENGINEER IT.</span>
                 </h2>
 
                 {/* Supporting Text */}
