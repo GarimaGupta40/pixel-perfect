@@ -19,6 +19,10 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-navy-dark: var(--navy-dark);
   --color-royal-blue: var(--royal-blue);
   --color-orange: var(--orange);
   --color-orange-foreground: var(--orange-foreground);
@@ -44,35 +48,41 @@
 
 :root {
   --radius: 2px;
-  --background: #f8fafc;                       /* Clean light grey / off-white */
-  --paper: #ffffff;                            /* Pure white */
-  --foreground: #0c1a30;                       /* Deep Navy */
-  --card: #ffffff;
-  --card-foreground: #0c1a30;
-  --popover: #ffffff;
-  --popover-foreground: #0c1a30;
-  --navy: #091428;                             /* Lexus Deep Navy */
-  --navy-foreground: #f8fafc;
-  --primary: #0052cc;                          /* Lexus Royal Blue */
-  --primary-foreground: #ffffff;
-  --royal-blue: #0052cc;                       /* Brand Royal Blue */
-  --orange: #ea580c;                           /* Lexus CTA Orange */
-  --orange-foreground: #ffffff;
-  --red-accent: #dc2626;                       /* Logo Red Accent */
-  --secondary: #e2e8f0;
-  --secondary-foreground: #0c1a30;
-  --steel: #cbd5e1;
-  --steel-blue: #475569;                       /* Lexus Slate / Steel */
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #ea580c;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #0052cc;
-  --overlay: #091428;
+  --background: #F6F3EC;
+  --paper: #FFFCF6;
+  --foreground: #262225;
+  --card: #FFFCF6;
+  --card-foreground: #262225;
+  --popover: #FFFCF6;
+  --popover-foreground: #262225;
+  --navy: #211B1D;
+  --navy-dark: #181416;
+  --navy-foreground: #FFFCF6;
+  --primary: #701C32;
+  --primary-hover: #571426;
+  --primary-foreground: #FFFCF6;
+  --royal-blue: var(--primary);
+  --orange: var(--primary);
+  --orange-foreground: var(--primary-foreground);
+  --red-accent: var(--primary);
+  --gold: #95702D;
+  --gold-light: #C5A15B;
+  --secondary: #E9E2D6;
+  --secondary-foreground: #262225;
+  --steel: #D8D0C5;
+  --steel-blue: #625A58;
+  --muted: #EFEAE1;
+  --muted-foreground: #68605D;
+  --accent: var(--gold);
+  --accent-foreground: #FFFCF6;
+  --destructive: #8C2739;
+  --destructive-foreground: #FFFCF6;
+  --border: #DED6CA;
+  --input: #DED6CA;
+  --ring: var(--primary);
+  --overlay: var(--navy);
+  --outline-ink: color-mix(in srgb, var(--foreground) 12%, transparent);
+  --outline-light: color-mix(in srgb, var(--navy-foreground) 12%, transparent);
 }
 
 @layer base {
@@ -115,7 +125,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--orange);
+  background: var(--primary);
   color: var(--orange-foreground);
   padding: 1rem 1.6rem;
   font-size: 0.78rem;
@@ -124,7 +134,7 @@
   text-transform: uppercase;
   border-radius: var(--radius);
   transition: background 0.25s, transform 0.25s;
-  &:hover { background: color-mix(in srgb, var(--orange) 85%, black); }
+  &:hover { background: var(--primary-hover); }
 }
 
 @utility btn-royal {
@@ -132,7 +142,7 @@
   align-items: center;
   gap: 0.75rem;
   background: var(--royal-blue);
-  color: #ffffff;
+  color: var(--primary-foreground);
   padding: 1rem 1.6rem;
   font-size: 0.78rem;
   font-weight: 700;
@@ -140,7 +150,7 @@
   text-transform: uppercase;
   border-radius: var(--radius);
   transition: background 0.25s, transform 0.25s;
-  &:hover { background: color-mix(in srgb, var(--royal-blue) 85%, black); }
+  &:hover { background: var(--primary-hover); }
 }
 
 @utility btn-outline {
@@ -159,7 +169,7 @@
 }
 
 @utility link-underline {
-  background-image: linear-gradient(var(--royal-blue), var(--royal-blue));
+  background-image: linear-gradient(var(--gold), var(--gold));
   background-size: 0% 2px;
   background-position: 0 100%;
   background-repeat: no-repeat;
@@ -260,14 +270,22 @@
 .blueprint-markers {
   pointer-events: none;
   background:
-    linear-gradient(var(--primary), var(--primary)) left 22px top 22px / 1px 34px no-repeat,
-    linear-gradient(var(--primary), var(--primary)) left 22px top 22px / 34px 1px no-repeat,
-    linear-gradient(var(--primary), var(--primary)) right 22px bottom 22px / 1px 34px no-repeat,
-    linear-gradient(var(--primary), var(--primary)) right 22px bottom 22px / 34px 1px no-repeat;
+    linear-gradient(var(--gold), var(--gold)) left 22px top 22px / 1px 34px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) left 22px top 22px / 34px 1px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) right 22px bottom 22px / 1px 34px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) right 22px bottom 22px / 34px 1px no-repeat;
   opacity: .8;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .lifecycle-progress { transition-duration: 0ms; }
   .capability-image { transition: none !important; transform: none !important; }
+}
+
+/* Logo-aligned colors only; inherited roles retain the existing geometry and motion. */
+#industries, #footer, section.bg-navy, .bg-navy.text-navy-foreground {
+  --gold: var(--gold-light);
+}
+.manufacturing-theme {
+  filter: grayscale(1) sepia(.28);
 }
