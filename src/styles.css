@@ -49,13 +49,13 @@
 
 :root {
   --radius: 2px;
-  --background: #fbfbfc;                       /* Clean off-white */
-  --paper: #ffffff;                            /* Pure white */
-  --foreground: #111827;                       /* Crisp dark */
-  --card: #ffffff;
-  --card-foreground: #111827;
-  --popover: #ffffff;
-  --popover-foreground: #111827;
+  --background: #FAF8F5;                       /* Warm Ivory / Cream */
+  --paper: #FDFCF9;                            /* Soft Elevated Ivory Surface */
+  --foreground: #181b22;                       /* Deep Charcoal / Navy */
+  --card: #FDFCF9;
+  --card-foreground: #181b22;
+  --popover: #FDFCF9;
+  --popover-foreground: #181b22;
   
   /* Brand Master Colors */
   --primary: #7a0d11;                          /* Signature Deep Crimson Red */
@@ -74,18 +74,18 @@
   --navy-dark: #0a0103;
   --navy-foreground: #f8fafc;
   
-  --secondary: #f1f5f9;
-  --secondary-foreground: #111827;
+  --secondary: #F4F0E8;
+  --secondary-foreground: #181b22;
   --steel: #cbd5e1;
   --steel-blue: #4b5563;                       /* Slate Gray */
-  --muted: #f3f4f6;
-  --muted-foreground: #4b5563;
+  --muted: #F4F0E8;
+  --muted-foreground: #4e5564;
   --accent: #c59b27;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
+  --border: #EAE4D9;                           /* Warm Champagne / Ivory Border */
+  --input: #EAE4D9;
   --ring: #7a0d11;
   --overlay: #120305;
   --outline-ink: color-mix(in srgb, var(--foreground) 12%, transparent);
@@ -238,40 +238,51 @@
   filter: grayscale(1) sepia(.28);
 }
 
-/* Industries-only atmosphere; brand roles elsewhere remain unchanged. */
+/* Industries-only atmosphere: Burgundy to warm cream gradient */
 #industries {
-  --industries-crimson: oklch(0.46 0.18 25);
-  --industries-red: oklch(0.55 0.21 27);
-  --industries-deep: oklch(0.35 0.14 24);
-  --industries-warm: oklch(0.79 0.13 73);
-  --industries-gold: oklch(0.84 0.16 88);
-  --industries-ink: oklch(0.15 0.015 25);
-  --gold: var(--industries-gold);
-  color: var(--primary-foreground);
+  --industries-burgundy-deep: #3c0407;
+  --industries-burgundy: #52080e;
+  --industries-burgundy-rich: #6e1017;
+  --industries-warm-amber: #b24e2b;
+  --industries-warm-gold: #d68f4e;
+  --industries-champagne: #e8c996;
+  --industries-cream: #FAF8F5;
+  --industries-gold: #d4af37;
+  color: #ffffff;
   background:
-    radial-gradient(ellipse 75% 85% at 100% 0%, color-mix(in oklab, var(--industries-warm) 72%, transparent), transparent 74%),
-    linear-gradient(120deg, var(--industries-deep), var(--industries-crimson) 48%, var(--industries-red));
+    radial-gradient(ellipse 75% 85% at 88% 28%, rgba(250, 205, 120, 0.45) 0%, rgba(210, 130, 50, 0.22) 42%, transparent 74%),
+    linear-gradient(100deg, #380306 0%, #4a060b 24%, #630c12 42%, #7e171b 56%, #9d3322 68%, #bf6335 78%, #dc9d5c 88%, #eed3a6 95%, #FAF8F5 100%);
 }
+
 .industries-plant-silhouette {
   position: absolute;
   top: 0;
   right: 0;
-  width: 58%;
-  height: 58%;
+  bottom: 0;
+  width: 62%;
+  height: 100%;
   object-fit: cover;
-  object-position: center 58%;
-  filter: grayscale(1) contrast(1.5);
-  mix-blend-mode: multiply;
-  opacity: .23;
-  mask-image: linear-gradient(to right, transparent, var(--industries-ink) 45%), linear-gradient(to bottom, var(--industries-ink) 55%, transparent);
+  object-position: center 30%;
+  filter: contrast(1.18) brightness(1.08) sepia(0.45) saturate(1.35);
+  mix-blend-mode: luminosity;
+  opacity: 0.38;
+  mask-image: 
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.95) 60%, rgba(0,0,0,0.9) 85%, transparent 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.95) 75%, transparent 100%);
   mask-composite: intersect;
 }
-.industries-highlight { color: var(--industries-gold); }
+
+.industries-highlight { color: #d4af37; }
+
 .industries-card {
-  background: var(--industries-ink);
-  border-color: color-mix(in oklab, var(--industries-gold) 75%, var(--industries-crimson));
+  background: #120305;
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
-.industries-card:hover { border-color: var(--industries-gold); }
+.industries-card:hover {
+  border-color: #f0d078;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(212, 175, 55, 0.35);
+}
 .industries-card-shade {
-  background: linear-gradient(to top, color-mix(in oklab, var(--industries-ink) 96%, transparent), color-mix(in oklab, var(--industries-ink) 12%, transparent) 42%, transparent 75%);
+  background: linear-gradient(to top, rgba(10, 12, 16, 0.95) 0%, rgba(10, 12, 16, 0.48) 44%, transparent 75%);
 }

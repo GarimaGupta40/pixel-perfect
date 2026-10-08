@@ -78,7 +78,9 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-border/80" : "bg-white"
+        scrolled
+          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-xs border-b border-[#EAE4D9]/90"
+          : "bg-[#FAF8F5]/90 backdrop-blur-xs border-b border-[#EAE4D9]/40"
       }`}
     >
       <div className="container-x flex h-18 sm:h-20 items-center justify-between gap-6">
@@ -129,14 +131,14 @@ export function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-[#0c0d11] text-white pt-20">
-      {/* Background Industrial Plant Video / Image */}
+      {/* Background Industrial Plant Video */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster={hero}
+          preload="auto"
           className="h-full w-full object-cover object-center scale-[1.02] contrast-[1.06] brightness-[0.95]"
         >
           <source src={heroVideo} type="video/mp4" />
@@ -154,7 +156,7 @@ export function Hero() {
 
       {/* Main Text Content */}
       <div className="container-x relative z-10 flex flex-1 flex-col justify-center py-20 lg:py-28">
-        <Reveal className="max-w-2xl">
+        <div className="max-w-2xl">
           <SectionEyebrow light>ENGINEERING SOLUTIONS FOR A BETTER TOMORROW</SectionEyebrow>
 
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-[3.8rem] leading-[1.04] tracking-tight uppercase text-white mt-6 sm:mt-7">
@@ -178,7 +180,7 @@ export function Hero() {
               <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </div>
-        </Reveal>
+        </div>
       </div>
 
       {/* Bottom 5-Column Strip */}
@@ -204,8 +206,14 @@ export function Hero() {
 /* ---------- 02. WHO WE ARE ---------- */
 export function Intro() {
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-border/80">
-      <div className="container-x">
+    <section id="about" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(212,175,55,0.035)_0%,transparent_70%)]"
+      />
+
+      <div className="container-x relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Typography & Narrative */}
           <Reveal className="lg:col-span-5">
@@ -274,7 +282,7 @@ export function Intro() {
               </div>
 
               {/* Secondary Overlapping Piping Image on Bottom Left */}
-              <div className="absolute -bottom-6 left-[-10px] sm:-bottom-8 sm:left-[-24px] z-20 w-[44%] max-w-[240px] sm:max-w-[280px] overflow-hidden border-4 border-white bg-slate-900 shadow-2xl rounded-xs">
+              <div className="absolute -bottom-6 left-[-10px] sm:-bottom-8 sm:left-[-24px] z-20 w-[44%] max-w-[240px] sm:max-w-[280px] overflow-hidden border-4 border-[#FAF8F5] bg-slate-900 shadow-2xl rounded-xs">
                 <img
                   src={piping}
                   alt="Industrial plant piping and process structure"
@@ -304,7 +312,13 @@ export function Lifecycle() {
   const [active, setActive] = useState(3); // Default to 04 BUILD like reference
 
   return (
-    <section className="relative overflow-hidden border-b border-border/80 bg-[#fbfbfc] py-20 lg:py-28">
+    <section className="relative overflow-hidden border-b border-[#EAE4D9]/80 bg-[#FAF8F5] py-20 lg:py-28">
+      {/* Subtle champagne radial lighting */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_100%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+      />
+
       <div className="container-x relative z-10">
         <Reveal>
           <SectionEyebrow>PROJECT LIFECYCLE</SectionEyebrow>
@@ -320,7 +334,7 @@ export function Lifecycle() {
         <Reveal className="relative mt-16 pt-6 sm:mt-20 sm:pt-8" delay={150}>
           <div className="relative">
             {/* The Horizontal Rail Line */}
-            <div className="absolute top-[17px] left-[7.14%] right-[7.14%] h-[2px] bg-slate-200 z-0">
+            <div className="absolute top-[17px] left-[7.14%] right-[7.14%] h-[2px] bg-[#EAE4D9] z-0">
               <div
                 className="h-full bg-[#7a0d11] transition-all duration-300 ease-out"
                 style={{ width: `${(active / (LIFECYCLE_STAGES.length - 1)) * 100}%` }}
@@ -349,9 +363,9 @@ export function Lifecycle() {
                           <span className="relative h-3.5 w-3.5 rounded-full bg-[#7a0d11] shadow-sm" />
                         </div>
                       ) : isPast ? (
-                        <span className="h-3 w-3 rounded-full border-2 border-[#7a0d11] bg-white transition-all duration-300 group-hover:scale-110" />
+                        <span className="h-3 w-3 rounded-full border-2 border-[#7a0d11] bg-[#FDFCF9] transition-all duration-300 group-hover:scale-110" />
                       ) : (
-                        <span className="h-3 w-3 rounded-full border-2 border-slate-300 bg-white transition-all duration-300 group-hover:border-slate-500 group-hover:scale-110" />
+                        <span className="h-3 w-3 rounded-full border-2 border-[#D9D2C5] bg-[#FDFCF9] transition-all duration-300 group-hover:border-slate-500 group-hover:scale-110" />
                       )}
                     </div>
 
@@ -420,8 +434,14 @@ export function Capabilities() {
   };
 
   return (
-    <section id="capabilities" className="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-border/80">
-      <div className="container-x">
+    <section id="capabilities" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_30%,rgba(212,175,55,0.035)_0%,transparent_65%)]"
+      />
+
+      <div className="container-x relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Heading & Narrative */}
           <Reveal className="lg:col-span-5">
@@ -569,52 +589,46 @@ const INDUSTRIES_CARDS = [
 function IndustriesAestheticBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden select-none z-0">
+      {/* Golden industrial plant silhouette on right */}
       <img src={hero} alt="" className="industries-plant-silhouette" />
 
-      {/* SVG Fine Flowing Waves & Technical Drafting Lines */}
+      {/* Subtle warm golden ambient sunlight glow over right plant towers */}
+      <div className="absolute right-0 top-0 bottom-0 w-[55%] bg-[radial-gradient(circle_at_80%_25%,rgba(255,220,130,0.38)_0%,rgba(225,145,55,0.18)_42%,transparent_75%)] mix-blend-screen" />
+
+      {/* Flowing Golden Ribbon Curves matching reference aesthetic */}
       <svg
-        viewBox="0 0 1600 900"
+        viewBox="0 0 1600 700"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        className="h-full w-full opacity-90"
+        preserveAspectRatio="none"
+        className="h-full w-full opacity-85"
       >
         <defs>
-          <linearGradient id="indGoldFlow" x1="0%" y1="100%" x2="50%" y2="0%">
-            <stop offset="0%" stopColor="var(--industries-gold)" stopOpacity="0.45" />
-            <stop offset="40%" stopColor="var(--industries-gold)" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="var(--industries-crimson)" stopOpacity="0.0" />
+          <linearGradient id="indGoldWaveGrad" x1="0%" y1="100%" x2="100%" y2="20%">
+            <stop offset="0%" stopColor="#f0d078" stopOpacity="0.85" />
+            <stop offset="25%" stopColor="#d4af37" stopOpacity="0.65" />
+            <stop offset="55%" stopColor="#c59b27" stopOpacity="0.35" />
+            <stop offset="85%" stopColor="#b24e2b" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
           </linearGradient>
-          <linearGradient id="indCrimsonFlow" x1="100%" y1="0%" x2="20%" y2="80%">
-            <stop offset="0%" stopColor="var(--industries-gold)" stopOpacity="0.35" />
-            <stop offset="35%" stopColor="var(--industries-gold)" stopOpacity="0.18" />
-            <stop offset="100%" stopColor="var(--industries-crimson)" stopOpacity="0.0" />
+          <linearGradient id="indGoldWaveGlow" x1="0%" y1="100%" x2="80%" y2="40%">
+            <stop offset="0%" stopColor="#d4af37" stopOpacity="0.14" />
+            <stop offset="45%" stopColor="#d4af37" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#FAF8F5" stopOpacity="0.0" />
           </linearGradient>
         </defs>
 
-        {/* Sweeping Top-Right Diagonal Curve Strands */}
-        <g stroke="url(#indCrimsonFlow)" strokeWidth="1.2">
-          <path d="M1000 -60 C1180 160, 1380 320, 1660 480" />
-          <path d="M1060 -60 C1230 140, 1430 300, 1660 430" />
-          <path d="M1120 -60 C1280 120, 1480 270, 1680 380" strokeOpacity="0.8" />
-          <path d="M940 -60 C1120 180, 1320 350, 1620 530" strokeOpacity="0.6" />
-          <path d="M1200 -60 C1350 100, 1530 230, 1700 320" strokeOpacity="0.4" />
-        </g>
+        {/* Soft Gold Ribbon Underlay */}
+        <path
+          d="M-40 460 C120 380, 240 480, 460 560 C700 640, 1000 610, 1640 430 L1640 750 L-40 750 Z"
+          fill="url(#indGoldWaveGlow)"
+        />
 
-        {/* Flowing Bottom-Left Gold Ribbon Curves */}
-        <g stroke="url(#indGoldFlow)" strokeWidth="1.2">
-          <path d="M-80 920 C180 840, 280 720, 240 540 C200 380, 80 320, 20 160" />
-          <path d="M-100 860 C150 790, 240 680, 200 510 C160 350, 50 300, 0 140" strokeOpacity="0.75" />
-          <path d="M-60 970 C220 880, 320 750, 270 570 C220 400, 100 340, 40 180" strokeOpacity="0.5" />
-          <path d="M-120 800 C110 740, 190 640, 160 480 C130 320, 30 270, -10 120" strokeOpacity="0.35" />
-        </g>
-
-        {/* Fine Architectural & Drafting Coordinate Elements */}
-        <g stroke="var(--primary-foreground)" strokeOpacity="0.04" strokeWidth="0.75">
-          <line x1="0" y1="140" x2="1600" y2="140" strokeDasharray="4 6" />
-          <line x1="0" y1="760" x2="1600" y2="760" strokeDasharray="4 6" />
-          <circle cx="1380" cy="140" r="180" strokeDasharray="4 4" />
-          <circle cx="1380" cy="140" r="320" strokeDasharray="6 8" />
+        {/* Dynamic Sweeping Curve Light Strands */}
+        <g stroke="url(#indGoldWaveGrad)">
+          <path d="M-50 360 C110 300, 230 420, 460 520 C690 620, 990 600, 1640 400" strokeWidth="1.8" />
+          <path d="M-50 400 C120 340, 250 450, 490 540 C730 630, 1030 610, 1640 420" strokeWidth="1.2" strokeOpacity="0.75" />
+          <path d="M-50 330 C90 270, 210 390, 430 500 C650 600, 950 580, 1640 380" strokeWidth="0.9" strokeOpacity="0.45" />
         </g>
       </svg>
     </div>
@@ -625,7 +639,7 @@ export function Industries() {
   return (
     <section
       id="industries"
-      className="relative overflow-hidden py-20 lg:py-28 text-primary-foreground"
+      className="relative overflow-hidden py-20 lg:py-28 text-white"
     >
       {/* Subtle Premium Background Effect */}
       <IndustriesAestheticBackground />
@@ -634,7 +648,7 @@ export function Industries() {
         <Reveal>
           <SectionEyebrow light>INDUSTRIES WE SERVE</SectionEyebrow>
 
-          <h2 className="headline mt-5 max-w-3xl text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-primary-foreground">
+          <h2 className="headline mt-5 max-w-3xl text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-white">
             BUILT FOR
             <br />
             PROCESS-INTENSIVE
@@ -662,7 +676,7 @@ export function Industries() {
 
                 {/* Card Title at Bottom */}
                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                  <h3 className="font-display text-[0.72rem] sm:text-xs font-extrabold uppercase tracking-wider text-primary-foreground leading-tight">
+                  <h3 className="font-display text-[0.72rem] sm:text-xs font-extrabold uppercase tracking-wider text-white leading-tight">
                     {item.title}
                   </h3>
                 </div>
@@ -688,7 +702,12 @@ const EQUIPMENT_BULLETS = [
 
 export function Manufacturing() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-border/80">
+    <section className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_0%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+      />
       {/* Background Industrial Plant Silhouette on Right */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-[45%] max-w-[600px] z-0 overflow-hidden hidden lg:block select-none">
         <img
@@ -764,7 +783,7 @@ export function Manufacturing() {
               <img
                 src={manufacturings}
                 alt="Process equipment infographic showing distillation columns, evaporators, storage tanks, distillery columns, condensers, pressure/jacketed vessels, and dryers around a central heat exchanger"
-                className="w-full h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-[1.015]"
+                className="w-full h-auto object-contain transition-transform duration-700 hover:scale-[1.015]"
               />
             </div>
           </Reveal>
@@ -777,8 +796,14 @@ export function Manufacturing() {
 /* ---------- 07. PROVEN WHEN CONDITIONS GET TOUGH (25+ YEARS EXPERIENCE) ---------- */
 export function ProjectExperience() {
   return (
-    <section id="projects" className="relative overflow-hidden bg-[#fbfbfc] py-20 lg:py-28 border-b border-border/80">
-      <div className="container-x">
+    <section id="projects" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_50%,rgba(212,175,55,0.035)_0%,transparent_65%)]"
+      />
+
+      <div className="container-x relative z-10">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: 25+ Experience Banner & Headline */}
           <Reveal className="lg:col-span-5">
@@ -811,7 +836,7 @@ export function ProjectExperience() {
 
           {/* Right Column: Industrial Crane Lifting Huge Vessel Photo */}
           <Reveal className="relative lg:col-span-7" delay={150}>
-            <div className="relative overflow-hidden rounded-xs shadow-xl border border-border/80 bg-slate-900">
+            <div className="relative overflow-hidden rounded-xs shadow-xl border border-[#EAE4D9]/80 bg-slate-900">
               <img
                 src={craneLift}
                 alt="Heavy crane lifting large process pressure vessel into steel structure"
@@ -851,8 +876,14 @@ const STAKEHOLDERS = [
 
 export function WhoWeServe() {
   return (
-    <section className="bg-white py-20 lg:py-28 border-b border-border/80">
-      <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
+    <section className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+      />
+
+      <div className="container-x relative z-10 grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
         {/* Left Column: Heading & Narrative */}
         <Reveal className="lg:col-span-4">
           <h2 className="headline text-3xl sm:text-4xl lg:text-[2.65rem] font-black tracking-tight leading-[1.04] text-foreground">
@@ -881,11 +912,11 @@ export function WhoWeServe() {
               <Reveal
                 key={item.title}
                 delay={i * 80}
-                className="group border border-border/80 bg-[#fbfbfc] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[190px]"
+                className="group border border-[#EAE4D9] bg-[#FDFCF9] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[190px]"
               >
                 <div>
                   {/* Gold/Bronze Circular Icon */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f6edd9] border border-[#c59b27]/40 text-[#c59b27] font-display font-black text-sm mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5EFE3] border border-[#c59b27]/35 text-[#c59b27] font-display font-black text-sm mb-4">
                     {item.title[0]}
                   </div>
 
@@ -905,10 +936,10 @@ export function WhoWeServe() {
               <Reveal
                 key={item.title}
                 delay={240 + i * 80}
-                className="group border border-border/80 bg-[#fbfbfc] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[180px]"
+                className="group border border-[#EAE4D9] bg-[#FDFCF9] p-6 flex flex-col justify-between rounded-xs transition-all duration-300 hover:border-[#c59b27]/60 hover:bg-white shadow-xs hover:shadow-md min-h-[180px]"
               >
                 <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f6edd9] border border-[#c59b27]/40 text-[#c59b27] font-display font-black text-sm mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5EFE3] border border-[#c59b27]/35 text-[#c59b27] font-display font-black text-sm mb-4">
                     {item.title[0]}
                   </div>
 
@@ -930,10 +961,16 @@ export function WhoWeServe() {
 /* ---------- 09. PRE-FOOTER CTA (HAVE A COMPLEX PROJECT?) ---------- */
 export function FinalCta() {
   return (
-    <section id="contact" className="bg-[#fbfbfc] py-16 sm:py-20 lg:py-24">
-      <div className="container-x">
+    <section id="contact" className="relative overflow-hidden bg-[#FAF8F5] py-16 sm:py-20 lg:py-24">
+      {/* Subtle warm champagne ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(212,175,55,0.03)_0%,transparent_70%)]"
+      />
+
+      <div className="container-x relative z-10">
         <Reveal>
-          <div className="relative overflow-hidden rounded-xs border border-border/80 bg-white shadow-md">
+          <div className="relative overflow-hidden rounded-xs border border-[#EAE4D9] bg-[#FDFCF9] shadow-md">
             <div className="grid lg:grid-cols-12 min-h-[360px] items-stretch">
               {/* Left Content Area */}
               <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center relative z-10">
@@ -991,7 +1028,7 @@ export function FinalCta() {
 /* ---------- 10. FOOTER ---------- */
 export function Footer() {
   return (
-    <footer id="footer" className="relative overflow-hidden bg-[#faf9f6] text-foreground border-t border-border/70">
+    <footer id="footer" className="relative overflow-hidden bg-[#FAF8F5] text-foreground border-t border-[#EAE4D9]/80">
       {/* Background Industrial Plant Silhouette on Right */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-[45%] max-w-[550px] z-0 overflow-hidden hidden md:block">
         <img
@@ -1059,7 +1096,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="lg:col-span-3 lg:border-l lg:border-slate-200/80 lg:pl-10">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-10">
             <h3 className="font-display text-xs sm:text-[0.82rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
               QUICK LINKS
             </h3>
@@ -1079,7 +1116,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Follow Us */}
-          <div className="lg:col-span-4 lg:border-l lg:border-slate-200/80 lg:pl-10">
+          <div className="lg:col-span-4 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-10">
             <h3 className="font-display text-xs sm:text-[0.82rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
               FOLLOW US
             </h3>
@@ -1090,7 +1127,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-white text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
               >
                 <Linkedin className="h-4 w-4 stroke-[1.8]" />
               </a>
@@ -1099,7 +1136,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-white text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
               >
                 <Twitter className="h-4 w-4 stroke-[1.8]" />
               </a>
@@ -1108,7 +1145,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-white text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
               >
                 <Youtube className="h-4 w-4 stroke-[1.8]" />
               </a>
