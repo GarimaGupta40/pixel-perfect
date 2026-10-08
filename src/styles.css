@@ -237,3 +237,41 @@
 .manufacturing-theme {
   filter: grayscale(1) sepia(.28);
 }
+
+/* Industries-only atmosphere; brand roles elsewhere remain unchanged. */
+#industries {
+  --industries-crimson: oklch(0.46 0.18 25);
+  --industries-red: oklch(0.55 0.21 27);
+  --industries-deep: oklch(0.35 0.14 24);
+  --industries-warm: oklch(0.79 0.13 73);
+  --industries-gold: oklch(0.84 0.16 88);
+  --industries-ink: oklch(0.15 0.015 25);
+  --gold: var(--industries-gold);
+  color: var(--primary-foreground);
+  background:
+    radial-gradient(ellipse 75% 85% at 100% 0%, color-mix(in oklab, var(--industries-warm) 72%, transparent), transparent 74%),
+    linear-gradient(120deg, var(--industries-deep), var(--industries-crimson) 48%, var(--industries-red));
+}
+.industries-plant-silhouette {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 58%;
+  object-fit: cover;
+  object-position: center 58%;
+  filter: grayscale(1) contrast(1.5);
+  mix-blend-mode: multiply;
+  opacity: .23;
+  mask-image: linear-gradient(to right, transparent, var(--industries-ink) 45%), linear-gradient(to bottom, var(--industries-ink) 55%, transparent);
+  mask-composite: intersect;
+}
+.industries-highlight { color: var(--industries-gold); }
+.industries-card {
+  background: var(--industries-ink);
+  border-color: color-mix(in oklab, var(--industries-gold) 75%, var(--industries-crimson));
+}
+.industries-card:hover { border-color: var(--industries-gold); }
+.industries-card-shade {
+  background: linear-gradient(to top, color-mix(in oklab, var(--industries-ink) 96%, transparent), color-mix(in oklab, var(--industries-ink) 12%, transparent) 42%, transparent 75%);
+}

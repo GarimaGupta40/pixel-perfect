@@ -565,11 +565,7 @@ const INDUSTRIES_CARDS = [
 function IndustriesAestheticBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden select-none z-0">
-      {/* Ambient Top-Right Deep Crimson & Gold Glow */}
-      <div className="absolute -top-24 right-0 h-[520px] w-[680px] rounded-full bg-[radial-gradient(circle,rgba(122,13,17,0.45)_0%,rgba(197,155,39,0.12)_40%,transparent_70%)] blur-3xl" />
-
-      {/* Ambient Bottom-Left Subtle Amber Bloom */}
-      <div className="absolute -bottom-20 -left-20 h-[420px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(197,155,39,0.18)_0%,rgba(122,13,17,0.2)_50%,transparent_70%)] blur-2xl" />
+      <img src={hero} alt="" className="industries-plant-silhouette" />
 
       {/* SVG Fine Flowing Waves & Technical Drafting Lines */}
       <svg
@@ -581,14 +577,14 @@ function IndustriesAestheticBackground() {
       >
         <defs>
           <linearGradient id="indGoldFlow" x1="0%" y1="100%" x2="50%" y2="0%">
-            <stop offset="0%" stopColor="#e5be58" stopOpacity="0.45" />
-            <stop offset="40%" stopColor="#c59b27" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#7a0d11" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="var(--industries-gold)" stopOpacity="0.45" />
+            <stop offset="40%" stopColor="var(--industries-gold)" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="var(--industries-crimson)" stopOpacity="0.0" />
           </linearGradient>
           <linearGradient id="indCrimsonFlow" x1="100%" y1="0%" x2="20%" y2="80%">
-            <stop offset="0%" stopColor="#e5be58" stopOpacity="0.35" />
-            <stop offset="35%" stopColor="#8a151b" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#140205" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="var(--industries-gold)" stopOpacity="0.35" />
+            <stop offset="35%" stopColor="var(--industries-gold)" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="var(--industries-crimson)" stopOpacity="0.0" />
           </linearGradient>
         </defs>
 
@@ -610,7 +606,7 @@ function IndustriesAestheticBackground() {
         </g>
 
         {/* Fine Architectural & Drafting Coordinate Elements */}
-        <g stroke="#ffffff" strokeOpacity="0.04" strokeWidth="0.75">
+        <g stroke="var(--primary-foreground)" strokeOpacity="0.04" strokeWidth="0.75">
           <line x1="0" y1="140" x2="1600" y2="140" strokeDasharray="4 6" />
           <line x1="0" y1="760" x2="1600" y2="760" strokeDasharray="4 6" />
           <circle cx="1380" cy="140" r="180" strokeDasharray="4 4" />
@@ -625,10 +621,7 @@ export function Industries() {
   return (
     <section
       id="industries"
-      className="relative overflow-hidden py-20 lg:py-28 text-white"
-      style={{
-        background: "radial-gradient(ellipse 110% 85% at 75% 20%, #420810 0%, #24050a 45%, #120204 100%)",
-      }}
+      className="relative overflow-hidden py-20 lg:py-28 text-primary-foreground"
     >
       {/* Subtle Premium Background Effect */}
       <IndustriesAestheticBackground />
@@ -637,12 +630,12 @@ export function Industries() {
         <Reveal>
           <SectionEyebrow light>INDUSTRIES WE SERVE</SectionEyebrow>
 
-          <h2 className="headline mt-5 max-w-3xl text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-white">
+          <h2 className="headline mt-5 max-w-3xl text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[0.96] text-primary-foreground">
             ENGINEERING FOR
             <br />
             PROCESS-INTENSIVE
             <br />
-            <span className="text-[#d4af37]">INDUSTRIES.</span>
+            <span className="industries-highlight">INDUSTRIES.</span>
           </h2>
         </Reveal>
 
@@ -652,7 +645,7 @@ export function Industries() {
             {INDUSTRIES_CARDS.map((item) => (
               <div
                 key={item.title}
-                className="group relative aspect-[3/4.2] overflow-hidden rounded-xs bg-black/40 border border-[#c59b27]/25 transition-all duration-300 hover:border-[#c59b27]/70 hover:-translate-y-1 shadow-lg"
+                className="industries-card group relative aspect-[3/4.2] overflow-hidden rounded-xs border transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 <img
                   src={item.img}
@@ -661,11 +654,11 @@ export function Industries() {
                 />
 
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                <div className="industries-card-shade absolute inset-0" />
 
                 {/* Card Title at Bottom */}
                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                  <h3 className="font-display text-[0.72rem] sm:text-xs font-extrabold uppercase tracking-wider text-white leading-tight">
+                  <h3 className="font-display text-[0.72rem] sm:text-xs font-extrabold uppercase tracking-wider text-primary-foreground leading-tight">
                     {item.title}
                   </h3>
                 </div>
