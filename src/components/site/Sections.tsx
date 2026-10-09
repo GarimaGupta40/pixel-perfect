@@ -5,8 +5,6 @@ import {
   ChevronRight,
   Check,
   Linkedin,
-  Twitter,
-  Youtube,
   MessageSquareText,
   HardHat,
   Compass,
@@ -18,6 +16,7 @@ import {
   Building2,
   Globe,
   Layers,
+  ShieldCheck,
 } from "lucide-react";
 
 import logo from "@/assets/logo 1.png";
@@ -42,13 +41,14 @@ import indOilGas from "@/assets/ind-oilgas.jpg";
 import indWaterTreat from "@/assets/ind-water-treat.jpg";
 import indFood from "@/assets/ind-food.jpg";
 import indEvaporation from "@/assets/ind-evaporation.jpg";
+import aboutHeroSunset from "@/assets/about-hero-sunset.jpg";
 
 const NAV: { label: string; href?: string }[] = [
+  { label: "About Us", href: "/about" },
   { label: "Capabilities", href: "/#capabilities" },
-  { label: "Industries", href: "/#industries" },
-  { label: "Projects", href: "/#projects" },
-  { label: "About Us" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Industries", href: "/industries" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 /* ---------- helpers ---------- */
@@ -133,7 +133,7 @@ export function Navbar() {
 
         {/* Right CTA Button */}
         <a
-          href="/#contact"
+          href="/contact"
           className="group inline-flex items-center gap-2 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-5 sm:px-6 py-2.5 sm:py-3 font-display text-[0.72rem] font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 active:scale-[0.98]"
         >
           <span>Start A Project</span>
@@ -228,94 +228,90 @@ export function Hero() {
   );
 }
 
-/* ---------- 02. WHO WE ARE ---------- */
+/* ---------- 02. WHO WE ARE / ABOUT US ---------- */
 export function Intro() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]/80">
-      {/* Subtle warm champagne ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(212,175,55,0.035)_0%,transparent_70%)]"
-      />
+    <section id="about" className="relative overflow-hidden bg-[#FAF8F5] py-20 lg:py-28 border-b border-[#EAE4D9]">
+      <div className="container-x">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Typography & Content */}
+          <div className="lg:col-span-6 xl:col-span-6">
+            <Reveal>
+              <SectionEyebrow>WHO WE ARE</SectionEyebrow>
 
-      <div className="container-x relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Typography & Narrative */}
-          <Reveal className="lg:col-span-5">
-            <SectionEyebrow>WHO WE ARE</SectionEyebrow>
+              <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] leading-[0.98] tracking-tight uppercase text-[#111827] mt-6">
+                ENGINEERING<br />
+                CAPABILITY.<br />
+                <span className="text-[#6B1116]">EXECUTION</span><br />
+                THAT CONNECTS<br />
+                IT.
+              </h2>
 
-            <h2 className="headline mt-5 text-3xl sm:text-5xl lg:text-[3.5rem] font-black tracking-[-0.03em] leading-[0.96] text-foreground">
-              ENGINEERING
-              <br />
-              CAPABILITY.
-              <br />
-              <span className="text-[#7a0d11]">EXECUTION</span>
-              <br />
-              THAT CONNECTS IT.
-            </h2>
+              <p className="mt-6 text-sm sm:text-base text-slate-700 leading-relaxed font-normal max-w-lg">
+                Lexus India Engineering Solutions delivers end-to-end engineering, fabrication and execution for process plants across industries. We combine technical expertise, operational excellence and a commitment to long-term value.
+              </p>
 
-            <p className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground font-normal max-w-md">
-              Lexus India Engineering Solutions delivers end-to-end engineering, fabrication and execution for process
-              plants across industries. We combine technical expertise, operational excellence and a commitment to
-              long-term value.
-            </p>
+              <div className="mt-8">
+                <a
+                  href="/#capabilities"
+                  className="group inline-flex items-center gap-2.5 bg-[#520609] hover:bg-[#3d0407] border border-[#a87928]/80 hover:border-[#d4af37] text-white px-7 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] shadow-[0_4px_14px_rgba(82,6,9,0.25)] hover:shadow-[0_6px_20px_rgba(82,6,9,0.38)] transition-all duration-200 active:scale-[0.98]"
+                >
+                  <span>OUR CAPABILITIES</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            </Reveal>
+          </div>
 
-            <div className="mt-8">
-              <a
-                href="/#capabilities"
-                className="group inline-flex items-center gap-2.5 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200"
-              >
-                <span>Our Capabilities</span>
-                <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          </Reveal>
-
-          {/* Right Column: Framed Image Composition with Red Card */}
-          <Reveal className="relative lg:col-span-7" delay={150}>
-            <div className="relative ml-auto w-full lg:w-[94%] pb-8 sm:pb-10">
-              {/* Red Top-Left Framing Corner */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -left-3 -top-3 z-10 h-14 w-14 border-l-2 border-t-2 border-[#7a0d11] sm:-left-4 sm:-top-4 sm:h-20 sm:w-20"
-              />
-
-              {/* Red Bottom-Right Framing Corner */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-3 -bottom-3 z-10 h-14 w-14 border-r-2 border-b-2 border-[#7a0d11] sm:-right-4 sm:-bottom-4 sm:h-20 sm:w-20"
-              />
-
-              {/* Main Primary Fabrication Image */}
-              <div className="relative overflow-hidden bg-slate-900 shadow-lg rounded-xs">
-                <img
-                  src={fabrication}
-                  alt="Stainless steel vessel fabrication and welding"
-                  className="aspect-[16/10] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
+          {/* Right Column: Dual Image Composition with Framing Lines & Statement Box */}
+          <div className="lg:col-span-6 xl:col-span-6 relative">
+            <Reveal delay={120}>
+              <div className="relative pt-6 pr-6 sm:pt-8 sm:pr-8 pb-12 sm:pb-14 pl-6 sm:pl-8">
+                
+                {/* Top-Left Burgundy Accent Frame Line */}
+                <div 
+                  aria-hidden="true" 
+                  className="absolute top-0 left-0 w-32 sm:w-44 h-32 sm:h-44 border-t-2 border-l-2 border-[#7a0d11] select-none pointer-events-none"
                 />
-              </div>
 
-              {/* Overlapping Deep Crimson Card on Top Right */}
-              <div className="absolute -top-4 right-0 sm:-top-6 sm:-right-4 z-20 bg-[#7a0d11] p-4 sm:p-5 text-white shadow-xl max-w-[210px] sm:max-w-[240px] rounded-xs">
-                <p className="font-display text-[0.76rem] sm:text-xs font-black tracking-widest uppercase text-white leading-snug">
-                  INTEGRATED SOLUTIONS
-                  <br />
-                  FOR PROCESS
-                  <br />
-                  INDUSTRIES
-                </p>
-              </div>
-
-              {/* Secondary Overlapping Piping Image on Bottom Left */}
-              <div className="absolute -bottom-6 left-[-10px] sm:-bottom-8 sm:left-[-24px] z-20 w-[44%] max-w-[240px] sm:max-w-[280px] overflow-hidden border-4 border-[#FAF8F5] bg-slate-900 shadow-2xl rounded-xs">
-                <img
-                  src={piping}
-                  alt="Industrial plant piping and process structure"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                {/* Bottom-Right Burgundy Accent Frame Line */}
+                <div 
+                  aria-hidden="true" 
+                  className="absolute bottom-0 right-0 w-32 sm:w-44 h-32 sm:h-44 border-b-2 border-r-2 border-[#7a0d11] select-none pointer-events-none"
                 />
+
+                {/* Floating Top-Right Burgundy Statement Box */}
+                <div className="absolute top-0 right-0 z-30 bg-[#7a0d11] text-white py-4 px-5 sm:py-5 sm:px-6 shadow-md max-w-[195px] sm:max-w-[225px]">
+                  <p className="font-display text-[0.72rem] sm:text-[0.78rem] font-bold uppercase tracking-wider leading-snug">
+                    INTEGRATED SOLUTIONS<br />
+                    FOR PROCESS<br />
+                    INDUSTRIES
+                  </p>
+                </div>
+
+                {/* Main Large Image: Fabrication / Welder on Reactor */}
+                <div className="relative z-10 w-full overflow-hidden shadow-xl bg-[#1a0507]">
+                  <img
+                    src={fabrication}
+                    alt="Process equipment fabrication and manufacturing in workshop"
+                    className="w-full h-[320px] sm:h-[390px] lg:h-[430px] object-cover filter contrast-[1.03]"
+                  />
+                </div>
+
+                {/* Overlapping Inset Image: Process Piping Network */}
+                <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-4 z-20 w-[52%] sm:w-[48%] overflow-hidden border-4 border-[#FAF8F5] shadow-2xl bg-[#FAF8F5]">
+                  <img
+                    src={piping}
+                    alt="Industrial process plant piping and manifolds"
+                    className="w-full h-[150px] sm:h-[190px] lg:h-[210px] object-cover"
+                  />
+                </div>
+
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
+
         </div>
       </div>
     </section>
@@ -564,7 +560,17 @@ const EXPERTISE_SLIDES = [
 
 export function Capabilities() {
   const [slide, setSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const current = EXPERTISE_SLIDES[slide] ?? EXPERTISE_SLIDES[0]!;
+
+  // Auto-advance slides every 4.5 seconds (pauses on hover)
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setSlide((prev) => (prev < EXPERTISE_SLIDES.length - 1 ? prev + 1 : 0));
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused, slide]);
 
   const handlePrev = () => {
     setSlide((prev) => (prev > 0 ? prev - 1 : EXPERTISE_SLIDES.length - 1));
@@ -613,7 +619,11 @@ export function Capabilities() {
 
           {/* Right Column: 3-Image Composition with Red Corner Accents & Red Card */}
           <Reveal className="relative lg:col-span-7" delay={150}>
-            <div className="relative ml-auto w-full lg:w-[96%]">
+            <div
+              className="relative ml-auto w-full lg:w-[96%]"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               {/* Red Top-Left Corner Accent */}
               <div
                 aria-hidden="true"
@@ -630,9 +640,10 @@ export function Capabilities() {
                 {/* Left Large Vertical Image */}
                 <div className="col-span-6 overflow-hidden bg-slate-900 shadow-md rounded-xs">
                   <img
+                    key={current.colImg}
                     src={current.colImg}
                     alt="Process plant distillation columns"
-                    className="h-full w-full object-cover min-h-[340px] sm:min-h-[420px] transition-transform duration-700 hover:scale-[1.03]"
+                    className="h-full w-full object-cover min-h-[340px] sm:min-h-[420px] transition-all duration-700 animate-fadeIn hover:scale-[1.03]"
                   />
                 </div>
 
@@ -640,7 +651,7 @@ export function Capabilities() {
                 <div className="col-span-6 flex flex-col gap-3 sm:gap-4">
                   {/* Top Right Solid Red Card with Title, Text, Carousel Controls */}
                   <div className="bg-[#7a0d11] p-5 sm:p-6 text-white shadow-lg rounded-xs flex flex-col justify-between min-h-[170px]">
-                    <div>
+                    <div key={current.title} className="animate-fadeIn">
                       <h3 className="font-display text-xs sm:text-sm font-black uppercase tracking-wider text-white">
                         {current.title}
                       </h3>
@@ -650,23 +661,40 @@ export function Capabilities() {
                     </div>
 
                     {/* Left/Right Arrow Carousel Buttons */}
-                    <div className="mt-4 flex items-center justify-end gap-2.5">
-                      <button
-                        type="button"
-                        onClick={handlePrev}
-                        aria-label="Previous slide"
-                        className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-black/25 hover:bg-black/40 text-white transition-colors cursor-pointer"
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={handleNext}
-                        aria-label="Next slide"
-                        className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#c59b27] hover:bg-[#b0871d] text-white transition-colors cursor-pointer"
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                      </button>
+                    <div className="mt-4 flex items-center justify-between">
+                      {/* Slide Indicator Dots */}
+                      <div className="flex items-center gap-1.5">
+                        {EXPERTISE_SLIDES.map((_, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => setSlide(idx)}
+                            aria-label={`Go to slide ${idx + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                              slide === idx ? "w-5 bg-[#e5be58]" : "w-1.5 bg-white/40 hover:bg-white/70"
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={handlePrev}
+                          aria-label="Previous slide"
+                          className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-black/25 hover:bg-black/40 text-white transition-colors cursor-pointer active:scale-95"
+                        >
+                          <ChevronLeft className="h-4 w-4" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleNext}
+                          aria-label="Next slide"
+                          className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-[#c59b27] hover:bg-[#b0871d] text-white transition-colors cursor-pointer active:scale-95"
+                        >
+                          <ChevronRight className="h-4 w-4" />
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -674,16 +702,18 @@ export function Capabilities() {
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 flex-1">
                     <div className="overflow-hidden bg-slate-900 shadow-sm rounded-xs">
                       <img
+                        key={current.crewImg}
                         src={current.crewImg}
                         alt="Site execution engineers"
-                        className="h-full w-full object-cover aspect-[4/3] transition-transform duration-700 hover:scale-105"
+                        className="h-full w-full object-cover aspect-[4/3] transition-all duration-700 animate-fadeIn hover:scale-105"
                       />
                     </div>
                     <div className="overflow-hidden bg-slate-900 shadow-sm rounded-xs">
                       <img
+                        key={current.tankImg}
                         src={current.tankImg}
                         alt="Industrial storage vessel"
-                        className="h-full w-full object-cover aspect-[4/3] transition-transform duration-700 hover:scale-105"
+                        className="h-full w-full object-cover aspect-[4/3] transition-all duration-700 animate-fadeIn hover:scale-105"
                       />
                     </div>
                   </div>
@@ -1826,7 +1856,7 @@ export function WhoWeServe() {
 /* ---------- 09. PRE-FOOTER CTA (HAVE A COMPLEX PROJECT?) ---------- */
 export function FinalCta() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#FAF8F5] py-14 sm:py-18 lg:py-20">
+    <section id="contact" className="relative overflow-hidden bg-[#FAF8F5] py-10 sm:py-12 lg:py-14">
       <div className="container-x">
         <Reveal>
           <div
@@ -1965,30 +1995,48 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-x relative z-10 py-14 sm:py-16 lg:py-20">
-        <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 items-start">
-          {/* Column 1: Logo & Tagline */}
+      <div className="container-x relative z-10 py-8 sm:py-9 lg:py-10">
+        <div className="grid gap-7 sm:gap-8 lg:grid-cols-12 items-start">
+          {/* Column 1: Logo, Tagline & Follow Us */}
           <div className="lg:col-span-5">
             <a href="/#top" className="inline-block group">
               <img
                 src={logo}
                 alt="Lexus India Engineering Solutions"
-                className="h-[62px] sm:h-[72px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+                className="h-[60px] sm:h-[70px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </a>
-            <div className="mt-5 space-y-1 text-xs sm:text-[0.82rem] font-medium text-slate-700 leading-relaxed">
+            <div className="mt-3.5 space-y-0.5 text-xs sm:text-[0.8rem] font-medium text-slate-700 leading-relaxed">
               <p>Engineering solutions for a better tomorrow.</p>
               <p className="text-slate-600">Integrated Engineering | Fabrication | EPC | Plant Support</p>
+            </div>
+
+            {/* Follow Us */}
+            <div className="mt-4 pt-3.5 border-t border-[#EAE4D9]/70">
+              <h4 className="font-display text-[0.7rem] sm:text-[0.72rem] font-black uppercase tracking-[0.18em] text-[#7a0d11] mb-2">
+                FOLLOW US
+              </h4>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://www.linkedin.com/in/lexus-india-engineering-solutions-1a8493202/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
+                >
+                  <Linkedin className="h-3.5 w-3.5 stroke-[1.8]" />
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="lg:col-span-3 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-10">
-            <h3 className="font-display text-xs sm:text-[0.82rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
+          <div className="lg:col-span-3 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-8">
+            <h3 className="font-display text-[0.75rem] sm:text-[0.8rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
               QUICK LINKS
             </h3>
-            <span className="block h-[2px] w-7 bg-[#c59b27] mt-2 mb-4" />
-            <ul className="space-y-2.5">
+            <span className="block h-[2px] w-6 bg-[#c59b27] mt-1.5 mb-2.5" />
+            <ul className="space-y-1.5">
               {NAV.map((n) => (
                 <li key={n.label}>
                   <a
@@ -1998,7 +2046,7 @@ export function Footer() {
                         e.preventDefault();
                       }
                     }}
-                    className="text-xs sm:text-[0.82rem] font-medium text-slate-700 hover:text-[#7a0d11] transition-colors cursor-pointer"
+                    className="text-xs sm:text-[0.8rem] font-medium text-slate-700 hover:text-[#7a0d11] transition-colors cursor-pointer"
                   >
                     {n.label}
                   </a>
@@ -2007,40 +2055,33 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Follow Us */}
-          <div className="lg:col-span-4 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-10">
-            <h3 className="font-display text-xs sm:text-[0.82rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
-              FOLLOW US
-            </h3>
-            <span className="block h-[2px] w-7 bg-[#c59b27] mt-2 mb-4" />
-            <div className="flex items-center gap-3">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
-              >
-                <Linkedin className="h-4 w-4 stroke-[1.8]" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
-              >
-                <Twitter className="h-4 w-4 stroke-[1.8]" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c59b27]/80 bg-[#FDFCF9] text-slate-700 hover:border-[#7a0d11] hover:text-[#7a0d11] hover:bg-[#7a0d11]/5 shadow-xs transition-all"
-              >
-                <Youtube className="h-4 w-4 stroke-[1.8]" />
-              </a>
+          {/* Column 3: Locations & Addresses */}
+          <div className="lg:col-span-4 lg:border-l lg:border-[#EAE4D9]/80 lg:pl-8 space-y-4">
+            {/* Corporate Office Address */}
+            <div>
+              <h3 className="font-display text-[0.75rem] sm:text-[0.8rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
+                OFFICE ADDRESS
+              </h3>
+              <span className="block h-[2px] w-6 bg-[#c59b27] mt-1.5 mb-2" />
+              <address className="not-italic text-xs sm:text-[0.8rem] font-medium text-slate-700 leading-relaxed space-y-0.5">
+                <p>Office No. 3A, Bhimdeep Society,</p>
+                <p>Gokhale Nagar, Shivaji Nagar,</p>
+                <p>Pune, Maharashtra – 411016, India.</p>
+              </address>
+            </div>
+
+            {/* Office Address 2 */}
+            <div className="pt-3.5 border-t border-[#EAE4D9]/80">
+              <h3 className="font-display text-[0.75rem] sm:text-[0.8rem] font-black uppercase tracking-[0.18em] text-[#7a0d11]">
+                OFFICE ADDRESS
+              </h3>
+              <span className="block h-[2px] w-6 bg-[#c59b27] mt-1.5 mb-2" />
+              <address className="not-italic text-xs sm:text-[0.8rem] font-medium text-slate-700 leading-relaxed space-y-0.5">
+                <p>PL No. RL 161, Infront of Shahu Garden Main Gate,</p>
+                <p> 1st Floor,</p>
+                <p>G Block Haveli, Pune, Pimpri Chinchwad – 411019,</p>
+                <p>Maharashtra, India.</p>
+              </address>
             </div>
           </div>
         </div>
@@ -2048,14 +2089,14 @@ export function Footer() {
 
       {/* Deep Maroon Bottom Bar */}
       <div
-        className="relative z-10 py-4 sm:py-4.5 text-white"
+        className="relative z-10 py-2.5 sm:py-3 text-white"
         style={{
           background: "linear-gradient(90deg, #580609 0%, #750c10 50%, #4e0508 100%)",
         }}
       >
-        <div className="container-x flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-[0.78rem] text-white/90">
+        <div className="container-x flex flex-col sm:flex-row items-center justify-between gap-2 text-[0.72rem] sm:text-xs text-white/90">
           <p>© {new Date().getFullYear()} Lexus India Engineering Solutions. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-3.5 text-[0.72rem] sm:text-xs">
             <a href="/#top" className="text-white/90 hover:text-white transition-colors">
               Privacy Policy
             </a>
