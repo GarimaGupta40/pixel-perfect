@@ -17,6 +17,11 @@ import {
   Globe,
   Layers,
   ShieldCheck,
+  Menu,
+  X,
+  Phone,
+  MapPin,
+  ExternalLink,
 } from "lucide-react";
 
 import logo from "@/assets/logo 1.png";
@@ -43,7 +48,8 @@ import indFood from "@/assets/ind-food.jpg";
 import indEvaporation from "@/assets/ind-evaporation.jpg";
 import aboutHeroSunset from "@/assets/about-hero-sunset.jpg";
 
-const NAV: { label: string; href?: string }[] = [
+const NAV: { label: string; href: string }[] = [
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Industries", href: "/industries" },
@@ -88,6 +94,8 @@ function SectionEyebrow({ children, light = false }: { children: ReactNode; ligh
 /* ---------- 00. NAVBAR ---------- */
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 30);
     on();
@@ -95,50 +103,176 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", on);
   }, []);
 
+  // Close on Escape key
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Auto-close on resize to desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileMenuOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-xs border-b border-[#EAE4D9]/90"
+        scrolled || mobileMenuOpen
+          ? "bg-[#FAF8F5]/98 backdrop-blur-md shadow-md border-b border-[#EAE4D9]"
           : "bg-[#FAF8F5]/90 backdrop-blur-xs border-b border-[#EAE4D9]/40"
       }`}
     >
-      <div className="container-x flex h-18 sm:h-20 items-center justify-between gap-6">
+      <div className="container-x flex h-18 sm:h-20 items-center justify-between gap-4">
         {/* Logo */}
-        <a href="/#top" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={logo}
             alt="Lexus India Engineering Solutions"
-            className="h-[60px] sm:h-[70px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            className="h-[52px] sm:h-[65px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </a>
 
-        {/* Center Nav Links */}
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:gap-10 md:flex">
+        {/* Center Nav Links (Desktop) */}
+        <nav aria-label="Primary" className="hidden items-center gap-7 lg:gap-9 md:flex">
           {NAV.map((n) => (
             <a
               key={n.label}
-              href={n.href || "#"}
-              onClick={(e) => {
-                if (!n.href || n.href === "#") {
-                  e.preventDefault();
-                }
-              }}
-              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 hover:text-[#7a0d11] transition-colors link-underline pb-1 cursor-pointer"
+              href={n.href}
+              className="text-xs font-semibold uppercase tracking-wider text-foreground/85 hover:text-[#7a0d11] transition-colors link-underline pb-1 cursor-pointer"
             >
               {n.label}
             </a>
           ))}
         </nav>
 
-        {/* Right CTA Button */}
-        <a
-          href="/contact"
-          className="group inline-flex items-center gap-2 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-5 sm:px-6 py-2.5 sm:py-3 font-display text-[0.72rem] font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 active:scale-[0.98]"
+        {/* Right CTA Button & Hamburger */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Start A Project CTA (Desktop >= md) */}
+          <a
+            href="/contact"
+            className="hidden md:inline-flex group items-center gap-2 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-5 lg:px-6 py-2.5 sm:py-3 font-display text-[0.72rem] font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 active:scale-[0.98]"
+          >
+            <span>Start A Project</span>
+            <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
+          </a>
+
+          {/* Contact Us CTA for responsive / mobile (< md) */}
+          <a
+            href="/contact"
+            className="md:hidden inline-flex items-center gap-1.5 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] text-white px-3 sm:px-4 py-2 sm:py-2.5 font-display text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-wider rounded-xs shadow-sm active:scale-95 transition-all"
+          >
+            <span>Contact Us</span>
+            <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#e5be58]" />
+          </a>
+
+          {/* Hamburger Menu Button (Mobile/Tablet < md) */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            className="md:hidden flex h-10 w-10 items-center justify-center rounded-xs bg-[#520609] hover:bg-[#400407] text-[#e5be58] border border-[#d4af37]/80 shadow-md transition-all duration-200 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5 stroke-[2.2] transition-transform duration-200 rotate-90" />
+            ) : (
+              <Menu className="h-5 w-5 stroke-[2.2]" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Responsive Mobile Drawer Menu */}
+      <div
+        className={`md:hidden fixed inset-x-0 top-18 sm:top-20 bottom-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <div
+          className={`w-full bg-gradient-to-b from-[#180204] via-[#240306] to-[#120204] text-white border-b-2 border-[#d4af37] shadow-2xl transition-transform duration-300 ease-out flex flex-col max-h-[calc(100vh-4.5rem)] overflow-y-auto ${
+            mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+          onClick={(e) => e.stopPropagation()}
         >
-          <span>Start A Project</span>
-          <ArrowRight className="h-3.5 w-3.5 text-[#e5be58] transition-transform duration-200 group-hover:translate-x-0.5" />
-        </a>
+          {/* Menu Header / Branding line */}
+          <div className="px-6 pt-5 pb-3 flex items-center justify-between border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#e5be58] animate-pulse" />
+              <span className="font-display text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#e5be58]">
+                Navigation Menu
+              </span>
+            </div>
+            <span className="text-[0.68rem] text-slate-400 font-medium">
+              Lexus India Solutions
+            </span>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="px-5 py-4 divide-y divide-white/10">
+            {NAV.map((item, idx) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between py-3.5 px-3 rounded-xs text-sm font-semibold uppercase tracking-wider text-slate-200 hover:text-[#e5be58] hover:bg-[#3d0508]/80 transition-all duration-150 group"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-serif text-xs font-bold text-[#c59b27] group-hover:text-[#e5be58]">
+                    0{idx + 1}
+                  </span>
+                  <span>{item.label}</span>
+                </div>
+                <ChevronRight className="h-4 w-4 text-[#d4af37]/60 group-hover:text-[#e5be58] group-hover:translate-x-1 transition-transform" />
+              </a>
+            ))}
+          </nav>
+
+          {/* Bottom Action Area */}
+          <div className="p-6 bg-[#120204]/90 border-t border-white/10 mt-auto space-y-4">
+            <a
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 bg-[#d4af37] hover:bg-[#e5be58] text-[#1c0204] py-3.5 px-6 rounded-xs font-display text-xs font-bold uppercase tracking-[0.16em] shadow-lg transition-all active:scale-[0.98]"
+            >
+              <span>START A PROJECT</span>
+              <ArrowRight className="h-4 w-4 text-[#1c0204]" />
+            </a>
+
+            {/* Quick Contact Info */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-[0.72rem] text-slate-400 border-t border-white/10">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 text-[#d4af37]" />
+                <span>Pune, Maharashtra, India</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="h-3.5 w-3.5 text-[#d4af37]" />
+                <a href="tel:+917387052118" className="hover:text-white transition-colors">
+                  +91 73870 52118
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );
