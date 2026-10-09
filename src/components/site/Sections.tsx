@@ -44,11 +44,11 @@ import indFood from "@/assets/ind-food.jpg";
 import indEvaporation from "@/assets/ind-evaporation.jpg";
 
 const NAV = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Industries", href: "#industries" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Projects", href: "/#projects" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /* ---------- helpers ---------- */
@@ -105,7 +105,7 @@ export function Navbar() {
     >
       <div className="container-x flex h-18 sm:h-20 items-center justify-between gap-6">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-3 group">
+        <a href="/#top" className="flex items-center gap-3 group">
           <img
             src={logo}
             alt="Lexus India Engineering Solutions"
@@ -128,7 +128,7 @@ export function Navbar() {
 
         {/* Right CTA Button */}
         <a
-          href="#contact"
+          href="/#contact"
           className="group inline-flex items-center gap-2 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-5 sm:px-6 py-2.5 sm:py-3 font-display text-[0.72rem] font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 active:scale-[0.98]"
         >
           <span>Start A Project</span>
@@ -193,7 +193,7 @@ export function Hero() {
 
           <div className="mt-8 sm:mt-10">
             <a
-              href="#capabilities"
+              href="/#capabilities"
               className="group inline-flex items-center gap-2.5 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_12px_rgba(212,175,55,0.26),0_2px_8px_rgba(0,0,0,0.4)] hover:shadow-[0_0_20px_rgba(212,175,55,0.52),0_4px_14px_rgba(0,0,0,0.45)] text-white px-7 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200 hover:translate-x-0.5"
             >
               <span>Explore Capabilities</span>
@@ -257,7 +257,7 @@ export function Intro() {
 
             <div className="mt-8">
               <a
-                href="#capabilities"
+                href="/#capabilities"
                 className="group inline-flex items-center gap-2.5 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200"
               >
                 <span>Our Capabilities</span>
@@ -597,7 +597,7 @@ export function Capabilities() {
 
             <div className="mt-8">
               <a
-                href="#projects"
+                href="/#projects"
                 className="group inline-flex items-center gap-2.5 bg-[#520609] hover:bg-[#400407] border border-[#d4af37]/80 hover:border-[#f0d078] shadow-[0_0_10px_rgba(212,175,55,0.22),0_2px_6px_rgba(0,0,0,0.35)] hover:shadow-[0_0_18px_rgba(212,175,55,0.48),0_4px_12px_rgba(0,0,0,0.4)] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs transition-all duration-200"
               >
                 <span>Explore Projects</span>
@@ -940,7 +940,7 @@ export function EngineeringCapability() {
             {/* Explore Capabilities Pill CTA */}
             <div className="mt-8">
               <a
-                href="#capabilities"
+                href="/#capabilities"
                 className="group inline-flex items-center gap-3 bg-[#7a0d11] hover:bg-[#5e090c] text-white pl-6 pr-2.5 py-2.5 font-display text-xs font-bold uppercase tracking-[0.14em] rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <span>Explore Capabilities</span>
@@ -1885,7 +1885,7 @@ export function FinalCta() {
               {/* Action Buttons */}
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-[#e5be58] via-[#d4af37] to-[#c59b27] hover:from-[#f0d078] hover:via-[#dfb845] hover:to-[#d4af37] text-[#1a0507] border border-[#f5de8e]/60 px-6 py-3.5 font-display text-xs font-black uppercase tracking-[0.16em] rounded-xs shadow-[0_0_16px_rgba(212,175,55,0.35),0_3px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_0_24px_rgba(212,175,55,0.55),0_4px_12px_rgba(0,0,0,0.35)] transition-all duration-200 active:scale-[0.98]"
                 >
                   <span>Start A Project</span>
@@ -1893,7 +1893,7 @@ export function FinalCta() {
                 </a>
 
                 <a
-                  href="#capabilities"
+                  href="/#capabilities"
                   className="inline-flex items-center gap-2 bg-[#2b0407]/40 hover:bg-[#3d070b]/80 border border-[#d4af37]/60 hover:border-[#f0d078] text-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.16em] rounded-xs shadow-xs transition-all duration-200"
                 >
                   <span>Talk To A Solution</span>
@@ -1964,7 +1964,7 @@ export function Footer() {
         <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 items-start">
           {/* Column 1: Logo & Tagline */}
           <div className="lg:col-span-5">
-            <a href="#top" className="inline-block group">
+            <a href="/#top" className="inline-block group">
               <img
                 src={logo}
                 alt="Lexus India Engineering Solutions"
@@ -2046,11 +2046,11 @@ export function Footer() {
         <div className="container-x flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-[0.78rem] text-white/90">
           <p>© {new Date().getFullYear()} Lexus India Engineering Solutions. All rights reserved.</p>
           <div className="flex items-center gap-4 text-xs">
-            <a href="#top" className="text-white/90 hover:text-white transition-colors">
+            <a href="/#top" className="text-white/90 hover:text-white transition-colors">
               Privacy Policy
             </a>
             <span className="text-white/40">|</span>
-            <a href="#top" className="text-white/90 hover:text-white transition-colors">
+            <a href="/#top" className="text-white/90 hover:text-white transition-colors">
               Terms & Conditions
             </a>
           </div>
