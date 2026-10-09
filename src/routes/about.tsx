@@ -702,76 +702,7 @@ export function AboutPage() {
         </section>
 
         {/* ===================================================================
-            SECTION 4: OUR CORE VALUES (5 Foundational Pillars)
-            =================================================================== */}
-        <section
-          id="values"
-          className="relative overflow-hidden bg-[#FAF8F5] py-16 sm:py-20 lg:py-24 border-b border-[#EAE4D9]/80"
-        >
-          <div className="container-x">
-            {/* Section Header */}
-            <div className="text-center max-w-3xl mx-auto">
-              <Reveal>
-                <div className="flex justify-center">
-                  <SectionEyebrow>03 — Guiding Principles</SectionEyebrow>
-                </div>
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-black uppercase tracking-tight text-foreground mt-3">
-                  Our Core Values
-                </h2>
-                <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-                  Our culture and operating standards are built on five fundamental pillars that define how we design, fabricate, and deliver every project.
-                </p>
-              </Reveal>
-            </div>
-
-            {/* 5 Value Cards in a Responsive Grid */}
-            <div className="mt-12 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 items-stretch">
-              {coreValues.map((val, idx) => {
-                const Icon = val.icon;
-                return (
-                  <Reveal key={val.name} delay={idx * 60}>
-                    <div className="group relative flex flex-col justify-between rounded-xs border border-[#EAE4D9] bg-white p-6 transition-all duration-300 hover:border-[#c59b27] hover:shadow-[0_10px_28px_rgba(82,6,9,0.08)] hover:-translate-y-1 h-full">
-                      <div>
-                        {/* Top Bar with Icon & Number */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-xs bg-[#520609]/10 border border-[#c59b27]/40 text-[#7a0d11] transition-all duration-300 group-hover:bg-[#520609] group-hover:text-[#e5be58]">
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <span className="font-display text-lg font-black text-slate-300 group-hover:text-[#c59b27] transition-colors">
-                            {val.num}
-                          </span>
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="font-display text-lg font-black uppercase tracking-tight text-foreground mt-4 group-hover:text-[#7a0d11] transition-colors">
-                          {val.name}
-                        </h3>
-
-                        {/* Tagline */}
-                        <div className="mt-1 inline-block font-display text-[0.68rem] font-bold uppercase tracking-wider text-[#c59b27] border-b border-[#c59b27]/30 pb-0.5">
-                          {val.tagline}
-                        </div>
-
-                        {/* Description */}
-                        <p className="mt-3 text-xs text-slate-600 leading-relaxed font-normal">
-                          {val.desc}
-                        </p>
-                      </div>
-
-                      <div className="mt-5 pt-3 border-t border-[#EAE4D9]/80 flex items-center justify-between text-[0.68rem] text-[#7a0d11] font-bold">
-                        <span>Pillar 0{idx + 1}</span>
-                        <Sparkles className="h-3.5 w-3.5 text-[#c59b27]" />
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            SECTION 5: OUR PROGRESS — COMMITMENT IN ACTION
+            SECTION 4: OUR PROGRESS — COMMITMENT IN ACTION
             =================================================================== */}
         <section
           id="iraq-experience"
@@ -874,6 +805,75 @@ export function AboutPage() {
                 </Reveal>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 5: OUR CORE VALUES (5 Foundational Pillars)
+            =================================================================== */}
+        <section
+          id="values"
+          className="relative overflow-hidden bg-[#FAF8F5] py-16 sm:py-20 lg:py-24 border-b border-[#EAE4D9]/80"
+        >
+          <div className="container-x">
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto">
+              <Reveal>
+                <div className="flex justify-center">
+                  <SectionEyebrow>03 — Guiding Principles</SectionEyebrow>
+                </div>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-black uppercase tracking-tight text-foreground mt-3">
+                  Our Core Values
+                </h2>
+                <p className="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+                  Our culture and operating standards are built on five fundamental pillars that define how we design, fabricate, and deliver every project.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* 5 Value Cards in a Responsive Grid */}
+            <div className="mt-12 lg:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 items-stretch">
+              {coreValues.map((val, idx) => {
+                const Icon = val.icon;
+                return (
+                  <Reveal key={val.name} delay={idx * 60}>
+                    <div className="group relative flex flex-col justify-between rounded-xs border border-[#EAE4D9] bg-white p-6 transition-all duration-300 hover:border-[#c59b27] hover:shadow-[0_10px_28px_rgba(82,6,9,0.08)] hover:-translate-y-1 h-full">
+                      <div>
+                        {/* Top Bar with Icon & Number */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-xs bg-[#520609]/10 border border-[#c59b27]/40 text-[#7a0d11] transition-all duration-300 group-hover:bg-[#520609] group-hover:text-[#e5be58]">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <span className="font-display text-lg font-black text-slate-300 group-hover:text-[#c59b27] transition-colors">
+                            {val.num}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="font-display text-lg font-black uppercase tracking-tight text-foreground mt-4 group-hover:text-[#7a0d11] transition-colors">
+                          {val.name}
+                        </h3>
+
+                        {/* Tagline */}
+                        <div className="mt-1 inline-block font-display text-[0.68rem] font-bold uppercase tracking-wider text-[#c59b27] border-b border-[#c59b27]/30 pb-0.5">
+                          {val.tagline}
+                        </div>
+
+                        {/* Description */}
+                        <p className="mt-3 text-xs text-slate-600 leading-relaxed font-normal">
+                          {val.desc}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 pt-3 border-t border-[#EAE4D9]/80 flex items-center justify-between text-[0.68rem] text-[#7a0d11] font-bold">
+                        <span>Pillar 0{idx + 1}</span>
+                        <Sparkles className="h-3.5 w-3.5 text-[#c59b27]" />
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
