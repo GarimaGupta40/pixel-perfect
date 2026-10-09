@@ -24,7 +24,6 @@ import {
 import { Navbar, Footer } from "@/components/site/Sections";
 
 // Image Assets
-import refinerySunset from "@/assets/refinery-sunset-panorama.png";
 import aboutHeroSunset from "@/assets/about-hero-sunset.jpg";
 import aboutWhoEngineers from "@/assets/about-who-engineers.jpg";
 import techniciansImg from "@/assets/technicians.jpg";
@@ -181,9 +180,9 @@ export function AboutPage() {
           {/* Full-Bleed Background Refinery Photo */}
           <div className="absolute inset-0 z-0">
             <img
-              src={refinerySunset}
+              src={aboutHeroSunset}
               alt="Lexus India sunset industrial refinery and process plant"
-              className="h-full w-full object-cover object-[70%_center] lg:object-[60%_center] filter contrast-[1.08] brightness-[0.96]"
+              className="h-full w-full object-cover object-[72%_center] lg:object-center filter contrast-[1.08] brightness-[0.96]"
             />
             {/* Dark Cinematic Gradient for High Text Legibility on Left */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0c0d11]/95 via-[#0c0d11]/80 via-48% to-transparent" />
