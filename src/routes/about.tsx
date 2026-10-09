@@ -161,7 +161,7 @@ function AboutPage() {
                     className="relative w-full aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] object-cover"
                   />
                   <div className="absolute bottom-0 right-0 bg-primary text-primary-foreground px-6 py-5 max-w-[16rem]">
-                    <p className="eyebrow text-gold-light">Since inception</p>
+                    <p className="eyebrow text-gold-light">Pune, India</p>
                     <p className="mt-2 font-display font-bold uppercase leading-tight">
                       Engineering for process industries
                     </p>
