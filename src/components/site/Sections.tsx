@@ -44,11 +44,11 @@ import indFood from "@/assets/ind-food.jpg";
 import indEvaporation from "@/assets/ind-evaporation.jpg";
 
 const NAV = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Industries", href: "#industries" },
-  { label: "Projects", href: "#projects" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Projects", href: "/#projects" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /* ---------- helpers ---------- */
