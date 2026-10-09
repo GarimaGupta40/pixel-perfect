@@ -43,11 +43,11 @@ import indWaterTreat from "@/assets/ind-water-treat.jpg";
 import indFood from "@/assets/ind-food.jpg";
 import indEvaporation from "@/assets/ind-evaporation.jpg";
 
-const NAV = [
+const NAV: { label: string; href?: string }[] = [
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Industries", href: "/#industries" },
   { label: "Projects", href: "/#projects" },
-  { label: "About", href: "/about" },
+  { label: "About Us" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -117,9 +117,14 @@ export function Navbar() {
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:gap-10 md:flex">
           {NAV.map((n) => (
             <a
-              key={n.href}
-              href={n.href}
-              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 hover:text-[#7a0d11] transition-colors link-underline pb-1"
+              key={n.label}
+              href={n.href || "#"}
+              onClick={(e) => {
+                if (!n.href || n.href === "#") {
+                  e.preventDefault();
+                }
+              }}
+              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 hover:text-[#7a0d11] transition-colors link-underline pb-1 cursor-pointer"
             >
               {n.label}
             </a>
@@ -1985,10 +1990,15 @@ export function Footer() {
             <span className="block h-[2px] w-7 bg-[#c59b27] mt-2 mb-4" />
             <ul className="space-y-2.5">
               {NAV.map((n) => (
-                <li key={n.href}>
+                <li key={n.label}>
                   <a
-                    href={n.href}
-                    className="text-xs sm:text-[0.82rem] font-medium text-slate-700 hover:text-[#7a0d11] transition-colors"
+                    href={n.href || "#"}
+                    onClick={(e) => {
+                      if (!n.href || n.href === "#") {
+                        e.preventDefault();
+                      }
+                    }}
+                    className="text-xs sm:text-[0.82rem] font-medium text-slate-700 hover:text-[#7a0d11] transition-colors cursor-pointer"
                   >
                     {n.label}
                   </a>
